@@ -87,4 +87,8 @@
     <string name="not_registered">Not Registered ?</string>
     <string name="lastname">lastName</string>
     <string name="firstName">First Name</string>
+    <string name="skipTutorial">Skip</string>
+    <string name="nextTutorial">Next</string>
+    <string name="tutorialInfo"></string>
+    <string name="moduleTitle" />
 </resources>
