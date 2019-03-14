@@ -52,7 +52,8 @@ public class RegisterActivity extends AppCompatActivity {
                 String user = textUsername.getText().toString().trim();
                 String pwd = textPassword.getText().toString().trim();
                 String cnf_pwd = textCnfPassword.getText().toString().trim();
-                String firstName = textFirstName.getText().toString().trim(); String lastName = textLastName.getText().toString().trim();
+                String firstName = textFirstName.getText().toString().trim();
+                String lastName = textLastName.getText().toString().trim();
                 String exp = textExpertise.getText().toString().trim();
                 if ( Validate() )
                 {
