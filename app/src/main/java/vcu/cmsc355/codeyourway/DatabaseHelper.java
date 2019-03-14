@@ -75,13 +75,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] columns = {COL_1};
         SQLiteDatabase db = getReadableDatabase();
         String selection = COL_3 + "=?" + " and " + COL_4 + "=?";
+        String mailID = COL_2 + "=?" + " and " + COL_4 + "=?";
         String[] selectionArgs = {username, password};
         Cursor cursor = db.query(TABLE_NAME, columns, selection, selectionArgs, null, null, null);
+        Cursor cursor2 = db.query(TABLE_NAME, columns, mailID, selectionArgs, null, null, null);
         int count = cursor.getCount();
+        int mailCount =cursor2.getCount();
         cursor.close();
         db.close();
 
-        if (count > 0)
+        if (count == 1 || mailCount==1)
             return true;
         else
             return false;
