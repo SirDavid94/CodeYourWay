@@ -85,4 +85,8 @@
     <string name="user_profile">User Profile</string>
     <string name="register_now">Register Now</string>
     <string name="not_registered">Not Registered ?</string>
+    <string name="lastname">lastName</string>
+    <string name="firstName">First Name</string>
+    <string name="elementary_programming">Elementary Programming</string>
+    <string name="selections">Selections</string>
 </resources>

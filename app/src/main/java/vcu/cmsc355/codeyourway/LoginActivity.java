@@ -13,7 +13,7 @@ import android.widget.Toast;
 
 
 public class LoginActivity extends AppCompatActivity {
-    EditText textEmail;
+    //EditText textEmail;
     EditText textUsername;
     EditText textPassword;
     Button buttonLogin;
