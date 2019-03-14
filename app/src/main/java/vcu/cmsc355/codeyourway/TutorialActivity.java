@@ -1,5 +1,6 @@
 package vcu.cmsc355.codeyourway;
 
+
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -28,10 +29,11 @@ public class TutorialActivity extends AppCompatActivity {
                 Toast.makeText(this, "Button Under Development", Toast.LENGTH_SHORT).show();
                 break;
 
-            case R.id.nextbttn:
+            case R.id.skipButton:
                 Toast.makeText(this, "Button Under Development", Toast.LENGTH_SHORT).show();
                 break;
         }
 
     }
 }
+
