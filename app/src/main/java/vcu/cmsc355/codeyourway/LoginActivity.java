@@ -1,6 +1,7 @@
 package vcu.cmsc355.codeyourway;
 
 
+import android.app.Notification;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -13,8 +14,8 @@ import android.widget.Toast;
 
 
 public class LoginActivity extends AppCompatActivity {
-    //EditText textEmail;
-    EditText textUsername;
+    public static String walkthroughUser;
+    public  EditText textUsername;
     EditText textPassword;
     Button buttonLogin;
     TextView ForgotPasswordButton;
@@ -40,6 +41,10 @@ public class LoginActivity extends AppCompatActivity {
 
                 Intent registerIntent = new Intent(LoginActivity.this,RegisterActivity.class);
                 startActivity(registerIntent);
+
+
+
+
             }
         });
 
@@ -60,6 +65,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String user = textUsername.getText().toString().trim();
+                walkthroughUser=user;
                 String pwd = textPassword.getText().toString().trim();
                 Boolean res = db.checkUser(user,pwd);
                 if (res == true)
@@ -79,6 +85,10 @@ public class LoginActivity extends AppCompatActivity {
         );
 
 
+
+    }
+    public static String getUser() {
+        return walkthroughUser;
 
     }
 }
