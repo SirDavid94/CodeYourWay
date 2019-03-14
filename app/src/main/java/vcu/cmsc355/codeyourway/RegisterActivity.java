@@ -11,6 +11,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class RegisterActivity extends AppCompatActivity {
+    EditText textFirstName;
+    EditText textLastName;
+    EditText textExpertise;
     EditText textEmail;
     EditText textUsername;
     EditText textPassword;
@@ -24,8 +27,10 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-
+        textExpertise = (EditText) findViewById(R.id.textExpertise);
         db = new DatabaseHelper(this);
+        textFirstName = (EditText) findViewById(R.id.textFirstName);
+        textLastName = (EditText) findViewById(R.id.textLastName);
         textEmail = (EditText) findViewById(R.id.text_email);
         textUsername = (EditText) findViewById(R.id.text_username);
         textPassword = (EditText) findViewById(R.id.text_password);
@@ -47,8 +52,8 @@ public class RegisterActivity extends AppCompatActivity {
                 String user = textUsername.getText().toString().trim();
                 String pwd = textPassword.getText().toString().trim();
                 String cnf_pwd = textCnfPassword.getText().toString().trim();
-
-
+                String firstName = textFirstName.getText().toString().trim(); String lastName = textLastName.getText().toString().trim();
+                String exp = textExpertise.getText().toString().trim();
                 if ( Validate() )
                 {
                     Toast.makeText(RegisterActivity.this, "Invalid Username/Password Combo", Toast.LENGTH_SHORT).show();
@@ -67,7 +72,7 @@ public class RegisterActivity extends AppCompatActivity {
                 else {
 
                     if (pwd.equals(cnf_pwd)) {
-                        long val = db.addUser(email, user, pwd);
+                        long val = db.addUser(email, user, pwd,firstName, lastName, exp);
                         if (val > 0) {
 
                             Toast.makeText(RegisterActivity.this, "Account Registered ", Toast.LENGTH_SHORT).show();
