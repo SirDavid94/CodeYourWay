@@ -71,4 +71,24 @@
 
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/forgot_Password"
+        android:layout_width="130dp"
+        android:layout_height="44dp"
+        android:background="@null"
+        android:text="Forgot Password"
+        android:paddingTop="20dp"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textColor="#fff" />
+
+    <TextView
+        android:id="@+id/forgot_username"
+        android:layout_width="139dp"
+        android:layout_height="44dp"
+        android:background="@null"
+        android:paddingTop="20dp"
+        android:text="Forgot Username"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textColor="#fff" />
+
 </LinearLayout>

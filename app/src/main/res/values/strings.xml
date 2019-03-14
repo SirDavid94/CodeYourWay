@@ -87,5 +87,6 @@
     <string name="not_registered">Not Registered ?</string>
     <string name="lastname">lastName</string>
     <string name="firstName">First Name</string>
-    <string name="hello_first_name_last_name">Hello first_name. Last_name</string>
+    <string name="elementary_programming">Elementary Programming</string>
+    <string name="selections">Selections</string>
 </resources>
