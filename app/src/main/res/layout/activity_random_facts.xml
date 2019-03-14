@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".randomFacts">
+    tools:context=".RandomFacts">
 
     <TextView
         android:id="@+id/facts_header"
@@ -32,7 +32,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        android:text="@string/the_java_programming_language_was_developed_by_james_gosling"
+        android:text="@string/the_java_programming_language_is_developed_by_james_gosling"
         android:textAlignment="center"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -51,7 +51,7 @@
         android:layout_marginRight="48dp"
         android:layout_marginBottom="48dp"
         android:background="@color/colorPrimary"
-        android:text="home"
+        android:text="@string/home"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/facts_conten"
@@ -68,7 +68,7 @@
         android:layout_marginRight="104dp"
         android:layout_marginBottom="48dp"
         android:background="@color/colorPrimary"
-        android:text="Settings"
+        android:text="@string/settings"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/button2"
         app:layout_constraintHorizontal_bias="0.468"
@@ -85,7 +85,7 @@
         android:layout_marginTop="108dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:text="Show next facts ->->->"
+        android:text="@string/show_next_facts"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/facts_conten" />

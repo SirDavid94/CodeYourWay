@@ -7,12 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class WalkthroughActivity extends AppCompatActivity implements View.OnClickListener {
-
-
-
-
-
-    @Override
+        @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_walkthrough);
@@ -33,18 +28,19 @@ public class WalkthroughActivity extends AppCompatActivity implements View.OnCli
         switch (view.getId())
         {
             case R.id.skipbttn:
+                loadFacts();
                 break;
 
             case R.id.nextbttn:
-            loadHome();
+
                 break;
         }
 
     }
 
-    private void loadHome()
+    private void loadFacts()
     {
-        startActivity(new Intent(this,WalkthroughActivity.class));
+        startActivity(new Intent(this,RandomFacts.class));
         finish();
     }
 

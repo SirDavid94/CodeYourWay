@@ -89,4 +89,9 @@
     <string name="firstName">First Name</string>
     <string name="elementary_programming">Elementary Programming</string>
     <string name="selections">Selections</string>
+    <string name="facts_of_the_day">Facts of the Day</string>
+    <string name="the_java_programming_language_is_developed_by_james_gosling">The Java Programming Language is developed by James Gosling</string>
+    <string name="show_next_facts"><![CDATA[Show next facts ->->->]]></string>
+    <string name="settings">Settings</string>
+    <string name="home">home</string>
 </resources>

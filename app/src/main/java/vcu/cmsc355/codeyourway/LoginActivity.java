@@ -46,8 +46,8 @@ public class LoginActivity extends AppCompatActivity {
                 Boolean res = db.checkUser(user,pwd);
                 if (res == true)
                 {
-                    Intent homeActivity = new Intent(LoginActivity.this, MenuActivity.class);
-                    startActivity(homeActivity);
+                    Intent loginActivity = new Intent(LoginActivity.this, WalkthroughActivity.class);
+                    startActivity(loginActivity);
                 }
                 else
                 {
