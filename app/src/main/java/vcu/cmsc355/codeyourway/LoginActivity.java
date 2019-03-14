@@ -17,6 +17,8 @@ public class LoginActivity extends AppCompatActivity {
     EditText textUsername;
     EditText textPassword;
     Button buttonLogin;
+    TextView ForgotPasswordButton;
+    TextView ForgotUsernameButton;
     TextView textViewRegister;
     DatabaseHelper db;
 
@@ -28,6 +30,8 @@ public class LoginActivity extends AppCompatActivity {
         db = new DatabaseHelper(this);
         textUsername = (EditText)findViewById(R.id.text_username);
         textPassword = (EditText)findViewById(R.id.text_password);
+        ForgotPasswordButton =(TextView) findViewById(R.id.forgot_Password);
+        ForgotUsernameButton = (TextView) findViewById(R.id.forgot_username);
         buttonLogin = (Button)findViewById(R.id.button_login);
         textViewRegister = (TextView)findViewById(R.id.text_register);
         textViewRegister.setOnClickListener(new View.OnClickListener() {
@@ -38,6 +42,10 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(registerIntent);
             }
         });
+
+        //ForgotUsernameButton.setOnClickListener();
+
+
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -55,7 +63,10 @@ public class LoginActivity extends AppCompatActivity {
 
                 }
             }
-        });
+        }
+
+
+        );
 
 
 

@@ -94,4 +94,9 @@
     <string name="show_next_facts"><![CDATA[Show next facts ->->->]]></string>
     <string name="settings">Settings</string>
     <string name="home">home</string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="forgot_username">Forgot Username</string>
+    <string name="title_activity_development">Development</string>
+    <string name="skip_tutorial">Skip Tutorial</string>
+    <string name="next_tutorial">Next Tutorial</string>
 </resources>
