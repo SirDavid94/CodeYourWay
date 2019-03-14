@@ -43,9 +43,19 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        //ForgotUsernameButton.setOnClickListener();
+        ForgotUsernameButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(LoginActivity.this, "Button Under Development", Toast.LENGTH_SHORT).show();
+            }
+        });
 
-
+        ForgotPasswordButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(LoginActivity.this, "Button Under Development", Toast.LENGTH_SHORT).show();
+            }
+        });
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

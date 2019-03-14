@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class WalkthroughActivity extends AppCompatActivity implements View.OnClickListener {
         @Override
@@ -32,7 +33,7 @@ public class WalkthroughActivity extends AppCompatActivity implements View.OnCli
                 break;
 
             case R.id.nextbttn:
-
+                Toast.makeText(this, "Button Under Development", Toast.LENGTH_SHORT).show();
                 break;
         }
 
