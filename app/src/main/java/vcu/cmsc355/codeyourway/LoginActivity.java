@@ -12,7 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
-
+//Instantiating variables
 public class LoginActivity extends AppCompatActivity {
     public static String walkthroughUser;
     public  EditText textUsername;
@@ -48,6 +48,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        //Button is under development. Displays toast until completion
         ForgotUsernameButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -55,12 +56,15 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        //Button is under development. Displays toast until completion
         ForgotPasswordButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(LoginActivity.this, "Button Under Development", Toast.LENGTH_SHORT).show();
             }
         });
+
+        //User db method checkUser to verify if username and password specified
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
