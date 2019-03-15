@@ -6,12 +6,14 @@
 package vcu.cmsc355.codeyourway;
 
 import android.content.Intent;
+import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.Objects;
 import java.util.Random;
 
 public class RandomFacts extends AppCompatActivity {
@@ -27,6 +29,9 @@ public class RandomFacts extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_random_facts);
 
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) { // Change the label for for this activity only
+//            Objects.requireNonNull(getSupportActionBar()).setTitle("Random Facts");
+//        }
 
         db = new DatabaseHelper(this);
         facts_content = (TextView) findViewById(R.id.facts_conten);                //display the random facts
@@ -38,7 +43,7 @@ public class RandomFacts extends AppCompatActivity {
         facts_content.setText(display_fact);  //this should display the random facts
 
         settings.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {                                               //take to the settings page
+            public void onClick(View v) {                                           //take to the settings page
                 Intent settingsIntent = new Intent(RandomFacts.this, SettingsActivity.class);
                 startActivity(settingsIntent);
             }
@@ -53,7 +58,7 @@ public class RandomFacts extends AppCompatActivity {
 
         next_random.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {                                               //call the random facts method
+            public void onClick(View v) {                                        //call the random facts method
 //                Intent next_randomIntent = new Intent(RandomFacts.this, )
                 random_facts();
                 facts_content.setText(display_fact); //display the next random facts if clicked on "show me the next random facts"
@@ -63,7 +68,7 @@ public class RandomFacts extends AppCompatActivity {
 
     }
 
-    private void  random_facts() {
+    private void random_facts() {
         String[] facts = new String[4];                                                 //need this to store 5 random facts about java or Android studio in general
         facts[0] = "The java programming language is developed by james gosling";
         facts[1] = "Java is the second most popular language and is very popular among the developers";
@@ -71,7 +76,7 @@ public class RandomFacts extends AppCompatActivity {
         facts[3] = "In Java, The meaning of Final keyword is not final. It has different meanings in java. It can be Final class, Final method, Final field or Final variable.";
 
         Random rand = new Random();
-        int random_num = rand.nextInt(4); //getting a random number from 0 to 3 to show the random facts
+        int random_num = rand.nextInt(4);                                         //getting a random number from 0 to 3 to show the random facts
 //        if (random_num == 4) {
 //            random_num = 3;
 //        }
