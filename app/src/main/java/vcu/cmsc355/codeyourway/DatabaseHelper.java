@@ -7,6 +7,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+//variable Declarations
 public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String DATABASE_NAME="register.db";
     public static final String TABLE_NAME="registeruser";
@@ -29,11 +30,23 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
+    //Verifies if a previous table exists with the same name and drops them from the database
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
         onCreate(db);
     }
+
+    /**
+     * Function to add user data to database during registration
+     * @param email
+     * @param user
+     * @param password
+     * @param firstName
+     * @param lastName
+     * @param expertise
+     * @return res of type long to note if data is succesffully added to database ( res <=0 for error, res >0 for success )
+     */
     public long addUser(String email, String user, String password, String firstName, String lastName, String expertise) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -48,7 +61,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return res;
 
     }
-    // checks for Multiple user entries during registration
+
+    /**
+     * checks for Multiple user entries during registration using username and email
+     * @param username
+     * @param email
+     * @return boolean true if multiple values exist and otherwise if not
+     */
     public boolean MultipleUser (String username, String email) {
         String[] columns = {COL_3};
         String[] emailColumns = {COL_2};
@@ -70,7 +89,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         } else
             return false;
     }
-    //validates a user credentials for login purposes
+
+    /**
+     * validates a user credentials for login purposes. uses email or username password combo
+     * provided by user at login
+     * @param username
+     * @param password
+     * @return boolean true if user account exists and otherwise if not
+     */
     public boolean checkUser(String username, String password) {
         String[] columns = {COL_1};
         SQLiteDatabase db = getReadableDatabase();
