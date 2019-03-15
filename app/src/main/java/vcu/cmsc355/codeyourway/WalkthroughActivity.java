@@ -15,13 +15,10 @@ public class WalkthroughActivity extends AppCompatActivity implements View.OnCli
 
         Button BnNext;
         Button BnSkip;
-
         BnNext = (Button) findViewById(R.id.skipbttn);
         BnSkip = (Button) findViewById(R.id.nextbttn);
         BnNext.setOnClickListener(this);
         BnSkip.setOnClickListener(this);
-
-
 
     }
 
