@@ -18,7 +18,7 @@
         android:gravity="center"
         android:text="Introduction To  Elementary Programming"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/userNameText"
+        app:layout_constraintBottom_toTopOf="@+id/tutorialView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -35,7 +35,7 @@
         android:text="@string/skip_tutorial"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userNameText" />
+        app:layout_constraintTop_toBottomOf="@+id/tutorialView" />
 
     <Button
         android:id="@+id/nextButton"
@@ -49,10 +49,10 @@
         android:text="@string/next_tutorial"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userNameText" />
+        app:layout_constraintTop_toBottomOf="@+id/tutorialView" />
 
     <TextView
-        android:id="@+id/userNameText"
+        android:id="@+id/tutorialView"
         android:layout_width="342dp"
         android:layout_height="402dp"
         android:layout_marginStart="8dp"

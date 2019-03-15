@@ -14,6 +14,7 @@
         <activity android:name=".ProfileActivity" />
         <activity android:name=".WalkthroughActivity" />
         <activity android:name=".CreateProfileActivity" />
+        <activity android:name=".TutorialActivity" />
         <activity android:name=".SettingsActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".MenuActivity" />

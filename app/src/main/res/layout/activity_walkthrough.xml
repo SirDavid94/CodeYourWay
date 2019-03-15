@@ -7,7 +7,16 @@
     tools:context=".WalkthroughActivity">
 
     <TextView
-        android:id="@+id/userNameText"
+        android:id="@+id/textView"
+        android:layout_width="137dp"
+        android:layout_height="25dp"
+        android:text="Walkthough Page"
+        android:textSize="17sp"
+        tools:layout_editor_absoluteX="137dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <TextView
+        android:id="@+id/tutorialView"
         android:layout_width="130dp"
         android:layout_height="42dp"
         android:layout_marginStart="8dp"
@@ -15,8 +24,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:text="Hello, username!"
-        android:textSize="17dp"
-        android:textStyle="bold"
+        android:textSize="17sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="70dp" />
@@ -31,7 +39,7 @@
         android:layout_marginRight="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/userNameText"
+        app:layout_constraintStart_toEndOf="@+id/tutorialView"
         tools:layout_editor_absoluteY="85dp" />
 
     <Button
@@ -72,5 +80,5 @@
         android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userNameText" />
+        app:layout_constraintTop_toBottomOf="@+id/tutorialView" />
 </android.support.constraint.ConstraintLayout>
