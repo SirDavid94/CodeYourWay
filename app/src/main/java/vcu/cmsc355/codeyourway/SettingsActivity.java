@@ -18,9 +18,10 @@ public class SettingsActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if ( isChecked)
-                {
+                { //Turns on Nightmode when slide to right
                     getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_YES);
                 } else {
+                    //Turns off Nightmode when slide to left
                     getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_NO);
                 }
 
