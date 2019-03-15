@@ -5,5 +5,5 @@ We are a team of 4 working on the Gamification of an android app that teaches en
 Abdulateef Oladele - Project Manager 
 David Akinola    - Negotiator 
 Ezra Yim    - Communication Director
-Nazmus Saqeeb - Documentation Lead
+Nazmus Saqib - Documentation Lead
 
