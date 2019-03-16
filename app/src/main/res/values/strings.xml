@@ -99,4 +99,5 @@
     <string name="title_activity_development">Development</string>
     <string name="skip_tutorial">Skip Tutorial</string>
     <string name="next_tutorial">Next Tutorial</string>
+    <string name="back">BACK</string>
 </resources>

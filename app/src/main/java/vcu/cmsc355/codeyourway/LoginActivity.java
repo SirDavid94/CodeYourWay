@@ -91,6 +91,11 @@ public class LoginActivity extends AppCompatActivity {
 
 
     }
+
+    /**
+     * passes non static username variable to a static context
+     * @return Static variable username
+     */
     public static String getUser() {
         return walkthroughUser;
 
