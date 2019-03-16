@@ -7,10 +7,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class TutorialActivity extends AppCompatActivity {
+public class TutorialActivity extends AppCompatActivity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tutorialpage);
+        setContentView(R.layout.activity_intro_to_programming);
 
         Button BtNext;
         Button BtSkip;
@@ -18,8 +18,8 @@ public class TutorialActivity extends AppCompatActivity {
         BtNext = (Button) findViewById(R.id.nextButton);
         BtSkip = (Button) findViewById(R.id.skipButton);
 
-        //BtNext.setOnClickListener(this);
-        //BtSkip.setOnClickListener(this);
+        BtNext.setOnClickListener(this);
+        BtSkip.setOnClickListener(this);
 
     }
 
