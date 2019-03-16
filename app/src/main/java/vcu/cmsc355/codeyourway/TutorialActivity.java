@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class TutorialActivity extends AppCompatActivity implements View.OnClickListener {
@@ -12,6 +13,7 @@ public class TutorialActivity extends AppCompatActivity implements View.OnClickL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_intro_to_programming);
 
+        TextView tutorialView;
         Button BtNext;
         Button BtSkip;
 

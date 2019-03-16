@@ -5,9 +5,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class WalkthroughActivity extends AppCompatActivity implements View.OnClickListener {
+        TextView HelloMsg;
         @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -15,13 +17,12 @@ public class WalkthroughActivity extends AppCompatActivity implements View.OnCli
 
         Button BnNext;
         Button BnSkip;
-
+        HelloMsg = (TextView) findViewById(R.id.HelloMsg);
+        HelloMsg.setText("Hello " + LoginActivity.getUser());
         BnNext = (Button) findViewById(R.id.skipbttn);
         BnSkip = (Button) findViewById(R.id.nextbttn);
         BnNext.setOnClickListener(this);
         BnSkip.setOnClickListener(this);
-
-
 
     }
 

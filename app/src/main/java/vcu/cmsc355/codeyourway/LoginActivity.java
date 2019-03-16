@@ -1,6 +1,7 @@
 package vcu.cmsc355.codeyourway;
 
 
+import android.app.Notification;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,10 +12,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
-
+//Instantiating variables
 public class LoginActivity extends AppCompatActivity {
-    //EditText textEmail;
-    EditText textUsername;
+    public static String walkthroughUser;
+    public  EditText textUsername;
     EditText textPassword;
     Button buttonLogin;
     TextView ForgotPasswordButton;
@@ -40,9 +41,14 @@ public class LoginActivity extends AppCompatActivity {
 
                 Intent registerIntent = new Intent(LoginActivity.this,RegisterActivity.class);
                 startActivity(registerIntent);
+
+
+
+
             }
         });
 
+        //Button is under development. Displays toast until completion
         ForgotUsernameButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -50,16 +56,20 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        //Button is under development. Displays toast until completion
         ForgotPasswordButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(LoginActivity.this, "Button Under Development", Toast.LENGTH_SHORT).show();
             }
         });
+
+        //User db method checkUser to verify if username and password specified
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String user = textUsername.getText().toString().trim();
+                walkthroughUser=user;
                 String pwd = textPassword.getText().toString().trim();
                 Boolean res = db.checkUser(user,pwd);
                 if (res == true)
@@ -79,6 +89,15 @@ public class LoginActivity extends AppCompatActivity {
         );
 
 
+
+    }
+
+    /**
+     * passes non static username variable to a static context
+     * @return Static variable username
+     */
+    public static String getUser() {
+        return walkthroughUser;
 
     }
 }

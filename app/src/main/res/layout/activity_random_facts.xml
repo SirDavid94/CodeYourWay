@@ -54,7 +54,7 @@
         android:text="@string/home"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/facts_conten"
+        app:layout_constraintTop_toBottomOf="@+id/Show-next-page"
         app:layout_constraintVertical_bias="0.993" />
 
     <Button
@@ -64,17 +64,13 @@
         android:layout_marginStart="48dp"
         android:layout_marginLeft="48dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="104dp"
-        android:layout_marginRight="104dp"
         android:layout_marginBottom="48dp"
         android:background="@color/colorPrimary"
         android:text="@string/settings"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/home_from_random_facts"
-        app:layout_constraintHorizontal_bias="0.468"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/home_from_random_facts"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/Show-next-page"
+        app:layout_constraintVertical_bias="0.923" />
 
     <TextView
         android:id="@+id/Show-next-page"
@@ -82,13 +78,14 @@
         android:layout_height="28dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="100dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
+        android:layout_marginBottom="116dp"
         android:text="@string/show_next_facts"
         android:textAppearance="@style/TextAppearance.AppCompat"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/facts_conten" />
+        tools:ignore="MissingConstraints" />
 
 </android.support.constraint.ConstraintLayout>
