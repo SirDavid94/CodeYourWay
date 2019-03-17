@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 public class WalkthroughActivity extends AppCompatActivity implements View.OnClickListener {
         TextView HelloMsg;
+
         @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,7 +43,7 @@ public class WalkthroughActivity extends AppCompatActivity implements View.OnCli
 
     private void loadFacts()
     {
-        startActivity(new Intent(this,RandomFacts.class));
+        startActivity(new Intent(this, RandomFactsActivity.class));
         finish();
     }
 
