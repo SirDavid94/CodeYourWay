@@ -66,7 +66,8 @@ public class RandomFactsActivity extends AppCompatActivity {
 
     }
 
-    private void random_facts() {
+
+    public void random_facts() {
         String[] facts = new String[4];                                                 //need this to store 5 random facts about java or Android studio in general
         facts[0] = "The java programming language is developed by james gosling";
         facts[1] = "Java is the second most popular language and is very popular among the developers";
@@ -75,9 +76,9 @@ public class RandomFactsActivity extends AppCompatActivity {
 
         Random rand = new Random();
         int random_num = rand.nextInt(4);                                         //getting a random number from 0 to 3 to show the random facts
-//        if (random_num == 4) {
-//            random_num = 3;
-//        }
+        if (random_num == 4) {
+            random_num = 3;
+        }
         display_fact = facts[random_num];
     }
 }
