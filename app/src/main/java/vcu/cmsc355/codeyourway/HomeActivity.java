@@ -9,6 +9,10 @@ import android.widget.Button;
 public class HomeActivity extends AppCompatActivity {
 
     Button elementaryProgram;
+    Button loops;
+    Button selections;
+    Button mathFunctions;
+    Button arrays;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -16,8 +20,42 @@ public class HomeActivity extends AppCompatActivity {
 
 
 
-        elementaryProgram = (Button)findViewById(R.id.elementaryProgramming);
+        elementaryProgram = (Button)findViewById(R.id.introToProgramming);
+        loops = (Button)findViewById(R.id.Loops);
+        selections = (Button)findViewById(R.id.SelectionsModule);
+        mathFunctions = (Button)findViewById(R.id.MathFunc);
+        arrays = (Button)findViewById(R.id.SingleDimArray);
+
+
         elementaryProgram.setOnClickListener(new View.OnClickListener() {                        //take to the settings page
+            public void onClick(View v) {
+                Intent elementaryIntent = new Intent(HomeActivity.this, TutorialActivity.class);
+                startActivity(elementaryIntent);
+            }
+        });
+
+        loops.setOnClickListener(new View.OnClickListener() {                        //take to the settings page
+            public void onClick(View v) {
+                Intent elementaryIntent = new Intent(HomeActivity.this, TutorialActivity.class);
+                startActivity(elementaryIntent);
+            }
+        });
+
+        selections.setOnClickListener(new View.OnClickListener() {                        //take to the settings page
+            public void onClick(View v) {
+                Intent elementaryIntent = new Intent(HomeActivity.this, TutorialActivity.class);
+                startActivity(elementaryIntent);
+            }
+        });
+
+        mathFunctions.setOnClickListener(new View.OnClickListener() {                        //take to the settings page
+            public void onClick(View v) {
+                Intent elementaryIntent = new Intent(HomeActivity.this, TutorialActivity.class);
+                startActivity(elementaryIntent);
+            }
+        });
+
+        arrays.setOnClickListener(new View.OnClickListener() {                        //take to the settings page
             public void onClick(View v) {
                 Intent elementaryIntent = new Intent(HomeActivity.this, TutorialActivity.class);
                 startActivity(elementaryIntent);
