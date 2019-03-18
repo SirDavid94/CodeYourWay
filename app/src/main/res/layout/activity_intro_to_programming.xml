@@ -7,7 +7,7 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/moduleTitle"
+        android:id="@+id/mathFunctionView"
         android:layout_width="188dp"
         android:layout_height="48dp"
         android:layout_marginStart="8dp"
@@ -19,7 +19,7 @@
         android:gravity="center"
         android:text="Introduction To  Elementary Programming"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/tutorialView"
+        app:layout_constraintBottom_toTopOf="@+id/introView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -36,7 +36,7 @@
         android:text="@string/skip_tutorial"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tutorialView" />
+        app:layout_constraintTop_toBottomOf="@+id/introView" />
 
     <Button
         android:id="@+id/nextButton"
@@ -50,19 +50,19 @@
         android:text="@string/next_tutorial"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tutorialView" />
+        app:layout_constraintTop_toBottomOf="@+id/introView" />
 
     <TextView
-        android:id="@+id/tutorialView"
+        android:id="@+id/introView"
         android:layout_width="342dp"
         android:layout_height="402dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="37dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:text="Viverra mauris in aliquam sem fringilla ut morbi tincidunt augue. Nec feugiat nisl pretium fusce id velit ut. Tortor condimentum lacinia quis vel eros donec ac odio. Sit amet dictum sit amet. At risus viverra adipiscing at in tellus integer. Sed id semper risus in hendrerit gravida. Vel fringilla est ullamcorper eget nulla. Egestas sed tempus urna et pharetra pharetra massa massa ultricies. Convallis convallis tellus id interdum velit laoreet. Faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis aliquam. Enim diam vulputate ut pharetra sit amet. Dui accumsan sit amet nulla. Hendrerit gravida rutrum quisque non tellus orci ac. Ultricies integer quis auctor elit."
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/moduleTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/mathFunctionView" />
 </android.support.constraint.ConstraintLayout>

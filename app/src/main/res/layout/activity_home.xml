@@ -28,7 +28,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
-        android:id="@+id/elementaryProgramming"
+        android:id="@+id/introToProgramming"
         android:layout_width="348dp"
         android:layout_height="56dp"
         android:layout_marginStart="31dp"
@@ -62,7 +62,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/elementaryProgramming" />
+        app:layout_constraintTop_toBottomOf="@+id/introToProgramming" />
 
     <Button
         android:id="@+id/MathFunc"

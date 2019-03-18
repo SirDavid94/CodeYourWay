@@ -13,6 +13,7 @@ public class TutorialActivity extends AppCompatActivity implements View.OnClickL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_intro_to_programming);
 
+
         TextView tutorialView;
         Button BtNext;
         Button BtSkip;
