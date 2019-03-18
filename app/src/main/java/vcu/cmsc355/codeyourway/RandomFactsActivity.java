@@ -6,17 +6,15 @@
 package vcu.cmsc355.codeyourway;
 
 import android.content.Intent;
-import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import java.util.Objects;
 import java.util.Random;
 
-public class RandomFacts extends AppCompatActivity {
+public class RandomFactsActivity extends AppCompatActivity {
     TextView facts_content;     //display facts
     TextView next_random;       //click to show the next random facts
     Button home;                //bottom right button
@@ -39,19 +37,19 @@ public class RandomFacts extends AppCompatActivity {
         home = (Button) findViewById(R.id.home_from_random_facts);               //home button
         settings = (Button) findViewById(R.id.settings_from_random_activity);   //setting button
 
-        random_facts();                     //everytime user visit RandomFacts page, they will see a facts
+        random_facts();                     //everytime user visit RandomFactsActivity page, they will see a facts
         facts_content.setText(display_fact);  //this should display the random facts
 
         settings.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {                                           //take to the settings page
-                Intent settingsIntent = new Intent(RandomFacts.this, SettingsActivity.class);
+                Intent settingsIntent = new Intent(RandomFactsActivity.this, SettingsActivity.class);
                 startActivity(settingsIntent);
             }
         });
 
         home.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {                                               //take to the home page
-                Intent homeIntent = new Intent(RandomFacts.this, HomeActivity.class);
+                Intent homeIntent = new Intent(RandomFactsActivity.this, HomeActivity.class);
                 startActivity(homeIntent);
             }
         });
@@ -59,7 +57,7 @@ public class RandomFacts extends AppCompatActivity {
         next_random.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {                                        //call the random facts method
-//                Intent next_randomIntent = new Intent(RandomFacts.this, )
+//                Intent next_randomIntent = new Intent(RandomFactsActivity.this, )
                 random_facts();
                 facts_content.setText(display_fact); //display the next random facts if clicked on "show me the next random facts"
             }
@@ -68,7 +66,8 @@ public class RandomFacts extends AppCompatActivity {
 
     }
 
-    private void random_facts() {
+
+    public void random_facts() {
         String[] facts = new String[4];                                                 //need this to store 5 random facts about java or Android studio in general
         facts[0] = "The java programming language is developed by james gosling";
         facts[1] = "Java is the second most popular language and is very popular among the developers";
@@ -77,9 +76,9 @@ public class RandomFacts extends AppCompatActivity {
 
         Random rand = new Random();
         int random_num = rand.nextInt(4);                                         //getting a random number from 0 to 3 to show the random facts
-//        if (random_num == 4) {
-//            random_num = 3;
-//        }
+        if (random_num == 4) {
+            random_num = 3;
+        }
         display_fact = facts[random_num];
     }
 }

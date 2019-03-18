@@ -24,7 +24,7 @@ public class SettingsActivity extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(SettingsActivity.this, RandomFacts.class));
+                startActivity(new Intent(SettingsActivity.this, RandomFactsActivity.class));
             }
         });
 
