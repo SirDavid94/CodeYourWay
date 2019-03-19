@@ -8,10 +8,10 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class TutorialActivity extends AppCompatActivity implements View.OnClickListener {
+public class MathFuncTutorialActivity extends AppCompatActivity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_intro_to_programming);
+        setContentView(R.layout.activity_math_fucntions);
 
 
         TextView tutorialView;
