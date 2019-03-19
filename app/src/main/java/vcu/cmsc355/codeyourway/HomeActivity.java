@@ -29,35 +29,35 @@ public class HomeActivity extends AppCompatActivity {
 
         elementaryProgram.setOnClickListener(new View.OnClickListener() {                        //take to the settings page
             public void onClick(View v) {
-                Intent elementaryIntent = new Intent(HomeActivity.this, TutorialActivity.class);
+                Intent elementaryIntent = new Intent(HomeActivity.this, IntroTutorialActivity.class);
                 startActivity(elementaryIntent);
             }
         });
 
         loops.setOnClickListener(new View.OnClickListener() {                        //take to the settings page
             public void onClick(View v) {
-                Intent elementaryIntent = new Intent(HomeActivity.this, TutorialActivity.class);
+                Intent elementaryIntent = new Intent(HomeActivity.this, LoopTutorialActivity.class);
                 startActivity(elementaryIntent);
             }
         });
 
         selections.setOnClickListener(new View.OnClickListener() {                        //take to the settings page
             public void onClick(View v) {
-                Intent elementaryIntent = new Intent(HomeActivity.this, TutorialActivity.class);
+                Intent elementaryIntent = new Intent(HomeActivity.this, SelectionsTutorialActivity.class);
                 startActivity(elementaryIntent);
             }
         });
 
         mathFunctions.setOnClickListener(new View.OnClickListener() {                        //take to the settings page
             public void onClick(View v) {
-                Intent elementaryIntent = new Intent(HomeActivity.this, TutorialActivity.class);
+                Intent elementaryIntent = new Intent(HomeActivity.this, MathFuncTutorialActivity.class);
                 startActivity(elementaryIntent);
             }
         });
 
         arrays.setOnClickListener(new View.OnClickListener() {                        //take to the settings page
             public void onClick(View v) {
-                Intent elementaryIntent = new Intent(HomeActivity.this, TutorialActivity.class);
+                Intent elementaryIntent = new Intent(HomeActivity.this, ArraysTutorialActivity.class);
                 startActivity(elementaryIntent);
             }
         });
