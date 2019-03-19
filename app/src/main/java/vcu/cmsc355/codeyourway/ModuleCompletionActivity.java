@@ -14,15 +14,20 @@ public class ModuleCompletionActivity extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_arrays);
-
+        setContentView(R.layout.activity_module_completion);
 
 
         BtHome = (Button) findViewById(R.id.goHomeButton);
         BtNextModule = (Button) findViewById(R.id.nextModuleButton);
 
-    }
 
-    // will finish this class today// David.//
+
+        BtHome.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent moduleCompletionIntent = new Intent(ModuleCompletionActivity.this, HomeActivity.class);
+                startActivity(moduleCompletionIntent);
+            }
+        });
+    }
 }
 
