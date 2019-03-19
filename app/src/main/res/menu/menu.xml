@@ -15,4 +15,5 @@
         android:id="@+id/menuSettings"
         android:title="Settings"
         />
+
 </menu>

@@ -40,7 +40,7 @@ public class MenuActivity extends AppCompatActivity {
 
             case R.id.menuProfile:
                 Toast.makeText(this, "Opening user profile", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(this, CreateProfileActivity.class));
+                startActivity(new Intent(this, ProfileActivity.class));
                 finish();
                 break;
         }
