@@ -1,0 +1,25 @@
+|                                                                         |            |                                                                                                    |  |  |  |  | 
+|-------------------------------------------------------------------------|------------|----------------------------------------------------------------------------------------------------|--|--|--|--| 
+| SCRUM MEETINGS - Group 3 Team IOS                                       |            |                                                                                                    |  |  |  |  | 
+|                                                                         |            | WEEK 2                                                                                             |  |  |  |  | 
+| Question                                                                | Person     | 3/19/2018                                                                                          |  |  |  |  | 
+| What did you complete since the last meeting?                           | Abdulateef | Added the Menu bar to the Homepage                                                                 |  |  |  |  | 
+|                                                                         | Ezra       | Started working on select level uml page                                                           |  |  |  |  | 
+|                                                                         | David      | Changed the button shape and color for every page to make the buttons more rounded                 |  |  |  |  | 
+|                                                                         | Saqib      | I completed logout page                                                                            |  |  |  |  | 
+| What will you accomplish before the next meeting?                       | Abdulateef | I plan to have complete a local database of the app Gameplay                                       |  |  |  |  | 
+|                                                                         | Ezra       | Working on the backand of the UML                                                                  |  |  |  |  | 
+|                                                                         | David      | Working on tutorial page paragraphs                                                                |  |  |  |  | 
+|                                                                         | Saqib      | Working on the Database                                                                            |  |  |  |  | 
+| Do you have anything that's getting in the way of doing your work?      | Abdulateef | Integrating the local database into the cloud                                                      |  |  |  |  | 
+|                                                                         | Ezra       | none                                                                                               |  |  |  |  | 
+|                                                                         | David      | none                                                                                               |  |  |  |  | 
+|                                                                         | Saqib      | none                                                                                               |  |  |  |  | 
+| What insights have you made?                                            | Abdulateef | Database Organization over a Network connection will require certain phone permissions to process  |  |  |  |  | 
+|                                                                         | Ezra       | None                                                                                               |  |  |  |  | 
+|                                                                         | David      | none                                                                                               |  |  |  |  | 
+|                                                                         | Saqib      | None                                                                                               |  |  |  |  | 
+| Do any changes to the project need to be made as a result of your work? | Abdulateef | None                                                                                               |  |  |  |  | 
+|                                                                         | Ezra       | none                                                                                               |  |  |  |  | 
+|                                                                         | David      | none                                                                                               |  |  |  |  | 
+|                                                                         | Saqib      | yes. We need to add cloud database                                                                 |  |  |  |  | 
