@@ -34,14 +34,14 @@ public class ArraysTutorialActivity extends AppCompatActivity implements View.On
                 break;
 
             case R.id.skipButton:
-                goToLvl();
+                goToArrLvl();
                 break;
         }
 
     }
 
 
-    private void goToLvl()
+    private void goToArrLvl()
     {
         startActivity(new Intent(this, SelectLevelArrayActivity.class));
         finish();
