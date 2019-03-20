@@ -3,20 +3,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:layout_editor_absoluteY="81dp">
+    android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/mathFunctionView"
         android:layout_width="188dp"
         android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="16dp"
-        android:layout_marginBottom="13dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:gravity="center"
         android:text="Introduction To  Elementary Programming"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/textView5"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -51,35 +53,28 @@
     <TextView
         android:id="@+id/introView"
         android:layout_width="342dp"
-        android:layout_height="294dp"
+        android:layout_height="270dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:gravity="center"
-        android:text=" Class - A class defines a type and is used to define what all objects of that class know and can do.
-        Compiler - Software that translates the Java source code (ends in .java) into the Java class file (ends in .class).
-        Compile time error - An error that is found during the compilation. These are also called syntax errors.
-        Constructor - Used to initialize fields in a newly created object.
-        Field - A field holds data or a property - what an object knows or keeps track of.
-        Java - A programming language that you can use to tell a computer what to do.
-        Main Method - Where execution starts in a Java program.
-        Method - Defines behavior - what an object can do.
-        Object - Objects do the actual work in an object-oriented program.
-        Syntax Error - A syntax error is an error in the specification of the program."
+        android:text=" class - used to define a new class
+        public - a visibility keyword which is used to control the classes that have access. The keyword public means the code in any class has direct access.
+        private - a visibility keyword which is used to control the classes that have access. The keyword private means that only the code in the current class has direct access. "
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <TextView
-        android:id="@+id/textView5"
-        android:layout_width="166dp"
-        android:layout_height="38dp"
-        android:layout_marginBottom="8dp"
+        android:id="@+id/textView3"
+        android:layout_width="121dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="8dp"
         android:gravity="center"
-        android:text="Concept Summary"
-        app:layout_constraintBottom_toTopOf="@+id/introView"
+        android:text="Java Keyword Summary"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mathFunctionView" />
 </android.support.constraint.ConstraintLayout>
