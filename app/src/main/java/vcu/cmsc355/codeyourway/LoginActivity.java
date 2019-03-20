@@ -3,6 +3,7 @@ package vcu.cmsc355.codeyourway;
 
 import android.app.Notification;
 import android.content.Intent;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -14,6 +15,7 @@ import android.widget.Toast;
 
 //Instantiating variables
 public class LoginActivity extends AppCompatActivity {
+
     public static String walkthroughUser;
     public  EditText textUsername;
     EditText textPassword;
@@ -28,6 +30,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
         db = new DatabaseHelper(this);
         textUsername = (EditText)findViewById(R.id.text_username);
         textPassword = (EditText)findViewById(R.id.text_password);
