@@ -1,5 +1,6 @@
 package vcu.cmsc355.codeyourway;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -32,9 +33,18 @@ public class LoopTutorialActivity extends AppCompatActivity implements View.OnCl
                 break;
 
             case R.id.skipButton:
-                Toast.makeText(this, "Button Under Development", Toast.LENGTH_SHORT).show();
+                goToLoopLvl();
                 break;
         }
 
     }
+
+
+
+    private void goToLoopLvl()
+    {
+        startActivity(new Intent(this, SelectLevelArrayActivity.class));
+        finish();
+    }
 }
+
