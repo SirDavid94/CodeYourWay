@@ -1,6 +1,7 @@
 package vcu.cmsc355.codeyourway;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -29,6 +30,8 @@ public class MathFuncTutorialActivity extends AppCompatActivity implements View.
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.nextButton:
+                Intent questionsIntent = new Intent(MathFuncTutorialActivity.this, MCquestionActivity.class);
+                startActivity(questionsIntent);
                 Toast.makeText(this, "Button Under Development", Toast.LENGTH_SHORT).show();
                 break;
 
