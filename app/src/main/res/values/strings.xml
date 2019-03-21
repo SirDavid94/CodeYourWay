@@ -102,4 +102,12 @@
     <string name="back">BACK</string>
     <string name="module_message">Congratulations! You have completed this Module!</string>
     <string name="level_complete">Level Completed!!</string>
+    <string name="levels_info_from_MCSquestionsPage">Level#</string>
+    <string name="questions_headings">questions#</string>
+    <string name="question3">question3</string>
+    <string name="question4">question4</string>
+    <string name="question2">question2</string>
+    <string name="actual_questions">actual_questions</string>
+    <string name="question1">question1</string>
+    <string name="submit">Submit</string>
 </resources>
