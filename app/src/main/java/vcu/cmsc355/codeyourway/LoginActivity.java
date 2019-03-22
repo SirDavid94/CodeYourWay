@@ -19,6 +19,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.database.ChildEventListener;
+
+import java.util.Objects;
+
 import vcu.cmsc355.codeyourway.Model.User;
 
 
@@ -44,7 +47,6 @@ public class LoginActivity extends AppCompatActivity {
 
         database = FirebaseDatabase.getInstance();
         users = database.getReference("Users");
-
         textUsername = (EditText) findViewById(R.id.text_username);
         textPassword = (EditText) findViewById(R.id.text_password);
         ForgotPasswordButton = (TextView) findViewById(R.id.forgot_Password);
@@ -92,17 +94,18 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    private void SignIn(final String userName, final String pwd) {
+    private void SignIn(final String user, final String pwd) {
         users.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange( DataSnapshot dataSnapshot) {
-                if (dataSnapshot.child(userName).exists()) {
-                    if (!userName.isEmpty()) {
-                        User user = dataSnapshot.getValue(User.class);
+                if (dataSnapshot.child(user).exists()) {
+                    if (!user.isEmpty()) {
+                        User login  = dataSnapshot.child(user).getValue(User.class);
 
-                        Toast.makeText(LoginActivity.this, "Logging in User", Toast.LENGTH_SHORT).show();
-                        if (user.getPassword().equals(pwd)) {
-                            Toast.makeText(LoginActivity.this, "Logging in User", Toast.LENGTH_SHORT).show();
+                        if (login.getPassword().equals(pwd)) {
+
+                            startActivity(new Intent(LoginActivity.this,RandomFactsActivity.class));
+
                         } else {
                             Toast.makeText(LoginActivity.this, "Wrong Password", Toast.LENGTH_SHORT).show();
                         }
@@ -111,6 +114,8 @@ public class LoginActivity extends AppCompatActivity {
                         Toast.makeText(LoginActivity.this, "Please enter Username", Toast.LENGTH_SHORT).show();
                     }
                 }
+                else
+                    Toast.makeText(LoginActivity.this, "User not found ! ", Toast.LENGTH_SHORT).show();
             }
 
             @Override
