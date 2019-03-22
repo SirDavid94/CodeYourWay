@@ -1,10 +1,6 @@
 package vcu.cmsc355.codeyourway;
 
-
-import android.app.Notification;
 import android.content.Intent;
-import android.os.Handler;
-import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -20,16 +16,14 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.database.ChildEventListener;
 
-import java.util.Objects;
-
 import vcu.cmsc355.codeyourway.Model.User;
 
 
 
-//Instantiating variables
+
 public class LoginActivity extends AppCompatActivity {
 
-    public static String walkthroughUser;
+    //Instantiating variables
     public EditText textUsername;
     EditText textPassword;
     Button buttonLogin;
@@ -127,18 +121,6 @@ public class LoginActivity extends AppCompatActivity {
         });
 
     }
-
-    /**
-     * passes non static username variable to a static context
-     * @return Static variable username
-     */
-    public  String getUser() {
-        return walkthroughUser;
-
-    }
-
-
-
 
 }
 
