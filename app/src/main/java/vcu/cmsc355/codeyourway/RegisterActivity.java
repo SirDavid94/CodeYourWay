@@ -9,7 +9,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.database.ChildEventListener;
 
+import vcu.cmsc355.codeyourway.Model.User;
 
 //Instantiating variables
 public class RegisterActivity extends AppCompatActivity {
@@ -23,20 +31,24 @@ public class RegisterActivity extends AppCompatActivity {
     EditText textCnfPassword;
     Button buttonRegister;
     TextView textViewLogin;
-    DatabaseHelper db;
 
 
+    FirebaseDatabase database;
+    DatabaseReference users;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        textExpertise = (EditText) findViewById(R.id.textExpertise);
-        db = new DatabaseHelper(this);
+
+        database = FirebaseDatabase.getInstance();
+        users = database.getReference("Users");
+
         textFirstName = (EditText) findViewById(R.id.textFirstName);
         textLastName = (EditText) findViewById(R.id.textLastName);
         textEmail = (EditText) findViewById(R.id.text_email);
         textUsername = (EditText) findViewById(R.id.text_username);
         textPassword = (EditText) findViewById(R.id.text_password);
+        textExpertise = (EditText) findViewById(R.id.textExpertise);
         textCnfPassword = (EditText) findViewById(R.id.text_cnf_password);
         buttonRegister = (Button) findViewById(R.id.button_register);
         textViewLogin = (TextView) findViewById(R.id.text_login);
@@ -54,15 +66,7 @@ public class RegisterActivity extends AppCompatActivity {
         buttonRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String email = textEmail.getText().toString().trim();
-                String user = textUsername.getText().toString().trim();
-                String pwd = textPassword.getText().toString().trim();
-                String cnf_pwd = textCnfPassword.getText().toString().trim();
-                String firstName = textFirstName.getText().toString().trim();
-                String lastName = textLastName.getText().toString().trim();
-                String exp = textExpertise.getText().toString().trim();
 
-                //checks if email and password is valid
                 if ( Validate() )
                 {
                     Toast.makeText(RegisterActivity.this, "Invalid Username/Password Combo", Toast.LENGTH_SHORT).show();
@@ -73,32 +77,57 @@ public class RegisterActivity extends AppCompatActivity {
                 {
                     Toast.makeText(RegisterActivity.this, "Invalid Email", Toast.LENGTH_SHORT).show();
                 }
-                else if ( db.MultipleUser(user, email) )
+
+                else if (ValidatePwd())
                 {
-                    Toast.makeText(RegisterActivity.this, "Account already Exists!!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegisterActivity.this, "Passwords doesn't match", Toast.LENGTH_SHORT).show();
                 }
+                else
+                SignUp();
+            }
+
+        });
+
+
+    }
+
+    private void SignUp() {
+        textFirstName = (EditText) findViewById(R.id.textFirstName);
+        textLastName = (EditText) findViewById(R.id.textLastName);
+        textEmail = (EditText) findViewById(R.id.text_email);
+        textUsername = (EditText) findViewById(R.id.text_username);
+        textExpertise = (EditText) findViewById(R.id.textExpertise);
+        textPassword = (EditText) findViewById(R.id.text_password);
+        textCnfPassword = (EditText) findViewById(R.id.text_cnf_password);
+
+        final User user = new User(textUsername.getText().toString().trim(),
+                textEmail.getText().toString().trim(),
+                textFirstName.getText().toString().trim(),
+                textLastName.getText().toString().trim(),
+                textPassword.getText().toString().trim(),
+                textExpertise.getText().toString().trim());
+        users.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot.child(user.getUserName()).exists())
+
+                    Toast.makeText(RegisterActivity.this, "User Already exists !", Toast.LENGTH_SHORT).show();
                 else {
-                        //Checks if user password matches
-                    if (pwd.equals(cnf_pwd)) {
+                    users.child(user.getUserName())
+                            .setValue(user);
+                    Toast.makeText(RegisterActivity.this, "User Registration Successful !", Toast.LENGTH_SHORT).show();
 
-                        long val = db.addUser(email, user, pwd,firstName, lastName, exp);
-                        if (val > 0) {
-
-                            Toast.makeText(RegisterActivity.this, "Account Registered ", Toast.LENGTH_SHORT).show();
-                            Intent moveToLogin = new Intent(RegisterActivity.this, LoginActivity.class);
-                            startActivity(moveToLogin);
-                        } else {
-
-                            Toast.makeText(RegisterActivity.this, "Registration error", Toast.LENGTH_SHORT).show();
-
-                        }
-
-                    } else {
-                        Toast.makeText(RegisterActivity.this, "Password doesn't match", Toast.LENGTH_SHORT).show();
-                    }
+                    startActivity( new Intent(RegisterActivity.this, LoginActivity.class));
                 }
             }
 
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+                Toast.makeText(RegisterActivity.this, "Database Error !", Toast.LENGTH_SHORT).show();
+
+
+            }
         });
 
 
@@ -123,9 +152,22 @@ public class RegisterActivity extends AppCompatActivity {
      */
     private boolean ValidateEmail() {
 
-        if (textEmail.getText().toString().contains("@") || textEmail.getText().toString().contains(".") ) {
+        if (textEmail.getText().toString().contains("@") && textEmail.getText().toString().contains(".") ) {
+            return false;
+        }
+        return true;
+    }
+
+    /**
+     * function validates User password for a match
+     * @return boolean true if passwords match and false if otherwise
+     */
+    private boolean ValidatePwd() {
+
+        if (textPassword.getText().toString().equals(textCnfPassword.getText().toString())) {
             return false;
         }
         return true;
     }
 }
+

@@ -19,7 +19,7 @@ public class WalkthroughActivity extends AppCompatActivity implements View.OnCli
         Button BnNext;
         Button BnSkip;
         HelloMsg = (TextView) findViewById(R.id.HelloMsg);
-        HelloMsg.setText("Hello " + LoginActivity.getUser());
+        //HelloMsg.setText("Hello " + LoginActivity.getUser());
         BnNext = (Button) findViewById(R.id.skipbttn);
         BnSkip = (Button) findViewById(R.id.nextbttn);
         BnNext.setOnClickListener(this);
