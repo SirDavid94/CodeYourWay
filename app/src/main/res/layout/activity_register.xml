@@ -89,7 +89,7 @@
             android:paddingLeft="2dp" />
     </LinearLayout>
 
-    <EditText
+    <Spinner
         android:id="@+id/textExpertise"
         android:layout_width="260dp"
         android:layout_height="42dp"

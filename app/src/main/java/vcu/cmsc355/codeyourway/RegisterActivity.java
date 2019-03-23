@@ -1,12 +1,16 @@
 package vcu.cmsc355.codeyourway;
 
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.google.firebase.database.DataSnapshot;
@@ -19,11 +23,11 @@ import com.google.firebase.database.ChildEventListener;
 import vcu.cmsc355.codeyourway.Model.User;
 
 //Instantiating variables
-public class RegisterActivity extends AppCompatActivity {
+public class RegisterActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     EditText textFirstName;
     EditText textLastName;
-    EditText textExpertise;
+    Spinner textExpertise;
     EditText textEmail;
     EditText textUsername;
     EditText textPassword;
@@ -41,16 +45,28 @@ public class RegisterActivity extends AppCompatActivity {
 
         database = FirebaseDatabase.getInstance();
         users = database.getReference("Users");
-
         textFirstName = (EditText) findViewById(R.id.textFirstName);
         textLastName = (EditText) findViewById(R.id.textLastName);
         textEmail = (EditText) findViewById(R.id.text_email);
         textUsername = (EditText) findViewById(R.id.text_username);
         textPassword = (EditText) findViewById(R.id.text_password);
-        textExpertise = (EditText) findViewById(R.id.textExpertise);
+        textExpertise = (Spinner) findViewById(R.id.textExpertise);
         textCnfPassword = (EditText) findViewById(R.id.text_cnf_password);
         buttonRegister = (Button) findViewById(R.id.button_register);
         textViewLogin = (TextView) findViewById(R.id.text_login);
+        textExpertise.setOnItemSelectedListener(this);
+
+        // Create an ArrayAdapter using the string array and a default spinner layout
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.expertise, android.R.layout.simple_spinner_item);
+         // Specify the layout to use when the list of choices appears
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        // Apply the adapter to the spinner
+        textExpertise.setAdapter(adapter);
+
+
+
+
 
         //opens the Login Page if the login button is clicked
         textViewLogin.setOnClickListener(new View.OnClickListener() {
@@ -96,15 +112,16 @@ public class RegisterActivity extends AppCompatActivity {
         textEmail = (EditText) findViewById(R.id.text_email);
         textFirstName = (EditText) findViewById(R.id.textFirstName);
         textLastName = (EditText) findViewById(R.id.textLastName);
-        textExpertise = (EditText) findViewById(R.id.textExpertise);
+        textExpertise = (Spinner) findViewById(R.id.textExpertise);
         textCnfPassword = (EditText) findViewById(R.id.text_cnf_password);
+
 
         final User user = new User(textUsername.getText().toString().trim(),
                 textPassword.getText().toString().trim(),
                 textEmail.getText().toString().trim(),
                 textFirstName.getText().toString().trim(),
                 textLastName.getText().toString().trim(),
-                textExpertise.getText().toString().trim());
+                String.valueOf(textExpertise.getSelectedItem()));
         users.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -168,5 +185,18 @@ public class RegisterActivity extends AppCompatActivity {
         }
         return true;
     }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        // An item was selected. You can retrieve the selected item using
+        // parent.getItemAtPosition(pos)
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
+        // Another interface callback
+    }
+
 }
 
