@@ -26,25 +26,34 @@ public class SliderAdapter  extends PagerAdapter {
     };
 
     public String[] lst_title = {
-            "Welcome",
+            "Welcome to CodeYourWay ",
             "Learn",
             "Code",
             "Play"
     };
 
     public String[] lst_description = {
-            "Welcome to code Your way, With us You'll learn to code from beginning ",
-            "Description 2",
-            "Description 3",
-            "Description 4"
+            "Welcome to code Your way, With us You'll learn to code from beginning, There are tutorials to " +
+                    "explain what you get to see in every page and a link to learn more ",
+            "There are 6 various Modules in the app containing various levels",
+            "You will be presented with various challenges which gets harder with a new level and you get" +
+                    "to win a badge for a successful level completion",
+            "Also you can play the Extra modules to win more badges and Rank higher than your " +
+                    "friends on the Leaderboard "
         };
+
+    public SliderAdapter (Context cOntext ) {
+        this.context = cOntext;
+
+
+    }
 
 
     public int[] lst_backgroundColor = {
-            Color.rgb(55,55,55),
-            Color.rgb(239,85,85),
-        Color.rgb(110,49,89),
-        Color.rgb(1,188,212)
+            Color.WHITE,
+            Color.WHITE,
+            Color.WHITE,
+            Color.WHITE
 
     };
 
@@ -60,7 +69,7 @@ public class SliderAdapter  extends PagerAdapter {
         return (view==(LinearLayout)object);
     }
 
-    /*@NonNull
+    @NonNull
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
         inflater = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
@@ -69,13 +78,18 @@ public class SliderAdapter  extends PagerAdapter {
         ImageView imgSlide = (ImageView) view.findViewById(R.id.slideImg);
         TextView textTitle = ( TextView) view.findViewById(R.id.sliderTitle);
         TextView description = ( TextView) view.findViewById(R.id.sliderDesc);
-        //layoutSlide.setBackgroundColor(lst_backgroundColor(position));
+        layoutSlide.setBackgroundColor(lst_backgroundColor[position]);
+        imgSlide.setImageResource(lst_image[position]);
+        textTitle.setText(lst_title[position]);
+        description.setText(lst_description[position]);
+        container.addView(view);
+        return view;
+    }
 
-    };*/
 
 
     @Override
     public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
-        super.destroyItem(container, position, object);
+        container.removeView((LinearLayout)object);
     }
 }
