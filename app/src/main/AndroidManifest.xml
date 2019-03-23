@@ -9,7 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Done"></activity>
+        <activity
+            android:name=".WalkThrough.WalkThroughActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_walk_through"
+            android:theme="@style/FullscreenTheme"></activity>
+        <activity android:name=".Done" />
         <activity android:name=".GamePlay" />
         <activity android:name=".SelectLevel" />
         <activity android:name=".LoginActivity" />

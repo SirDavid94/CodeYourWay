@@ -5,4 +5,6 @@
     <color name="colorAccent">#D81B60</color>
     <color name="levelcolor">#009688</color>
     <color name="bTColor">#009688</color>
+
+    <color name="black_overlay">#66000000</color>
 </resources>

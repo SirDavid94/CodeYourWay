@@ -102,4 +102,8 @@
     <string name="back">BACK</string>
     <string name="module_message">Congratulations! You have completed this Module!</string>
     <string name="level_complete">Level Completed!!</string>
+
+    <string name="title_activity_walk_through">WalkThroughActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>
