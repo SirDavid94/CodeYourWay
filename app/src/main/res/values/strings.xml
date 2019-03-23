@@ -102,4 +102,5 @@
     <string name="back">BACK</string>
     <string name="module_message">Congratulations! You have completed this Module!</string>
     <string name="level_complete">Level Completed!!</string>
+    <string name="send_email">Send Email</string>
 </resources>
