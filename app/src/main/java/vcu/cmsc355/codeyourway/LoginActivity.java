@@ -16,6 +16,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.database.ChildEventListener;
 
+import vcu.cmsc355.codeyourway.Model.Common;
 import vcu.cmsc355.codeyourway.Model.User;
 
 
@@ -99,6 +100,7 @@ public class LoginActivity extends AppCompatActivity {
                         if (login.getPassword().equals(pwd)) {
 
                             startActivity(new Intent(LoginActivity.this,RandomFactsActivity.class));
+                            Common.currentUser = login;
 
                         } else {
                             Toast.makeText(LoginActivity.this, "Wrong Password", Toast.LENGTH_SHORT).show();
