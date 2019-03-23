@@ -9,18 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".WalkThrough.WalkThroughActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="@string/title_activity_walk_through"
-            android:theme="@style/FullscreenTheme"></activity>
+        <activity android:name=".WalkThrough.WalkThroughActivity"></activity>
         <activity android:name=".Done" />
         <activity android:name=".GamePlay" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".RandomFactsActivity" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".ProfileActivity" />
-        <activity android:name=".WalkthroughActivity" />
         <activity android:name=".CreateProfileActivity" />
         <activity android:name=".IntroTutorialActivity" />
         <activity android:name=".SelectionsTutorialActivity" />

@@ -11,9 +11,11 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+
 import vcu.cmsc355.codeyourway.R;
 
 public class SliderAdapter  extends PagerAdapter {
+
 
     Context context;
     LayoutInflater inflater;
