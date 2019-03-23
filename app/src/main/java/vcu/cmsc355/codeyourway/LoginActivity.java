@@ -18,8 +18,7 @@ import com.google.firebase.database.ChildEventListener;
 
 import vcu.cmsc355.codeyourway.Model.Common;
 import vcu.cmsc355.codeyourway.Model.User;
-
-
+import vcu.cmsc355.codeyourway.WalkThrough.WalkThroughActivity;
 
 
 public class LoginActivity extends AppCompatActivity {
@@ -99,7 +98,7 @@ public class LoginActivity extends AppCompatActivity {
 
                         if (login.getPassword().equals(pwd)) {
 
-                            startActivity(new Intent(LoginActivity.this,RandomFactsActivity.class));
+                            startActivity(new Intent(LoginActivity.this, WalkThroughActivity.class));
                             Common.currentUser = login;
 
                         } else {

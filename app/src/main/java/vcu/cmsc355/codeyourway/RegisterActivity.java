@@ -91,19 +91,19 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private void SignUp() {
+        textUsername = (EditText) findViewById(R.id.text_username);
+        textPassword = (EditText) findViewById(R.id.text_password);
+        textEmail = (EditText) findViewById(R.id.text_email);
         textFirstName = (EditText) findViewById(R.id.textFirstName);
         textLastName = (EditText) findViewById(R.id.textLastName);
-        textEmail = (EditText) findViewById(R.id.text_email);
-        textUsername = (EditText) findViewById(R.id.text_username);
         textExpertise = (EditText) findViewById(R.id.textExpertise);
-        textPassword = (EditText) findViewById(R.id.text_password);
         textCnfPassword = (EditText) findViewById(R.id.text_cnf_password);
 
         final User user = new User(textUsername.getText().toString().trim(),
+                textPassword.getText().toString().trim(),
                 textEmail.getText().toString().trim(),
                 textFirstName.getText().toString().trim(),
                 textLastName.getText().toString().trim(),
-                textPassword.getText().toString().trim(),
                 textExpertise.getText().toString().trim());
         users.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override

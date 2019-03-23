@@ -16,7 +16,6 @@
             android:theme="@style/FullscreenTheme"></activity>
         <activity android:name=".Done" />
         <activity android:name=".GamePlay" />
-        <activity android:name=".SelectLevel" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".RandomFactsActivity" />
         <activity android:name=".HomeActivity" />
