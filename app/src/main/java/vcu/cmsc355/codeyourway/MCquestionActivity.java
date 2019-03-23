@@ -18,14 +18,13 @@ public class MCquestionActivity extends AppCompatActivity {
     TextView level_header;           //display facts
     TextView questions_num;          //shows the question number
     Button submit;                   //middle submit button
-    TextView question;               //question user
-
-    // going to see
+    TextView question;               //question user going to see
     DatabaseHelper db;               //not implemented
     RadioButton answer1;             //answer options user going to choose
     RadioButton answer2;             //
     RadioButton answer3;             //
     RadioButton answer4;             //
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +49,12 @@ public class MCquestionActivity extends AppCompatActivity {
 
     }
 
+    String get_question; //primary store the question after getting it from the selected module page
+    String first;       //first answer option
+    String second;      //second answer option
+    String third;       //third answer option
+    String fourth;      //fourth answer option
+
     /**
      * @param question
      * @param first
@@ -57,9 +62,20 @@ public class MCquestionActivity extends AppCompatActivity {
      * @param third
      * @param fourth
      */
-    public void getAnswers(String question, String first, String second, String third, String fourth) { //this method should all the questions and answers. the answers will be placed randomly
+    public void getAnsewer(String question, String first, String second, String third, String fourth) {
+        get_question = question;
+        this.first = first;
+        this.second = second;
+        this.third = third;
+        this.fourth = fourth;
+    }
 
-        this.question.setText(question);// show the question in the text box
+    /**
+     *
+     */
+    public void setAnswers() { //this method should all the questions and answers. the answers will be placed randomly
+
+        this.question.setText(get_question);// show the question in the text box
 
         //here on out I created algorithm to show answers randomly
         int random_numbers[] = new int[4];
@@ -89,6 +105,10 @@ public class MCquestionActivity extends AppCompatActivity {
             answer3.setText(first);
             answer4.setText(second);
         }
+
+    }
+
+    public void getOtherInfo() {
 
     }
 
