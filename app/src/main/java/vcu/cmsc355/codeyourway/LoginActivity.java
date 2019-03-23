@@ -72,7 +72,9 @@ public class LoginActivity extends AppCompatActivity {
         ForgotPasswordButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(LoginActivity.this, "Button Under Development", Toast.LENGTH_SHORT).show();
+                Intent resetPasswordIntent = new Intent(LoginActivity.this, ResetPasswordActivity.class);
+                startActivity(resetPasswordIntent);
+
             }
         });
 
