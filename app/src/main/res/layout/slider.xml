@@ -9,9 +9,9 @@
 
         <ImageView
             android:id="@+id/slideImg"
-            android:layout_marginTop="50dp"
-            android:layout_width="200dp"
-            android:layout_height="200dp" />
+            android:layout_marginTop="100dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp" />
 
         <TextView
             android:id="@+id/sliderTitle"

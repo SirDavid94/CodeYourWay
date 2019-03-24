@@ -8,8 +8,10 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.TextView;
 
 import vcu.cmsc355.codeyourway.HomeActivity;
+import vcu.cmsc355.codeyourway.Model.Common;
 import vcu.cmsc355.codeyourway.R;
 
 
@@ -18,8 +20,8 @@ public class WalkThroughActivity extends AppCompatActivity {
     private ViewPager viewPager;
     private SliderAdapter adapterSlide;
     Button buttonNext, buttonSkip, buttonGetStarted;
+    TextView helloMsg;
     int position = 0 ;
-    //TabLayout tabIndicator;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,20 +39,18 @@ public class WalkThroughActivity extends AppCompatActivity {
         // hide the action bar
 
         getSupportActionBar().hide();
-
         buttonNext = findViewById(R.id.btn_next);
         buttonSkip = findViewById(R.id.tv_skip);
         buttonGetStarted = findViewById(R.id.btn_get_started);
-        //tabIndicator = findViewById(R.id.tab_indicator);
-
+        helloMsg =  findViewById(R.id.HelloMsg);
         viewPager = (ViewPager) findViewById(R.id.viewPager);
         adapterSlide = new SliderAdapter(this);
         viewPager.setAdapter(adapterSlide);
 
-        // setup tablayout with viewpager
 
-        // tabIndicator.setupWithViewPager(viewPager);
-
+        Bundle bundle = getIntent().getExtras();
+        String username = bundle.getString("username");
+        helloMsg.setText("Hello "+ username);
 
 
         buttonNext.setOnClickListener(new View.OnClickListener() {
