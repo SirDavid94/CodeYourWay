@@ -1,9 +1,6 @@
 package vcu.cmsc355.codeyourway;
 
-
-import android.app.Notification;
 import android.content.Intent;
-import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,40 +9,51 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
-//Instantiating variables
+import vcu.cmsc355.codeyourway.Model.Common;
+import vcu.cmsc355.codeyourway.Model.User;
+import vcu.cmsc355.codeyourway.WalkThrough.WalkThroughActivity;
+
+
 public class LoginActivity extends AppCompatActivity {
 
-    public static String walkthroughUser;
-    public  EditText textUsername;
+    //Instantiating variables
+    public EditText textUsername;
     EditText textPassword;
     Button buttonLogin;
     TextView ForgotPasswordButton;
     TextView ForgotUsernameButton;
     TextView textViewRegister;
-    DatabaseHelper db;
 
+    FirebaseDatabase database;
+    DatabaseReference users;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        db = new DatabaseHelper(this);
-        textUsername = (EditText)findViewById(R.id.text_username);
-        textPassword = (EditText)findViewById(R.id.text_password);
-        ForgotPasswordButton =(TextView) findViewById(R.id.forgot_Password);
+        database = FirebaseDatabase.getInstance();
+        users = database.getReference("Users");
+        textUsername = (EditText) findViewById(R.id.text_username);
+        textPassword = (EditText) findViewById(R.id.text_password);
+        ForgotPasswordButton = (TextView) findViewById(R.id.forgot_Password);
         ForgotUsernameButton = (TextView) findViewById(R.id.forgot_username);
-        buttonLogin = (Button)findViewById(R.id.button_login);
-        textViewRegister = (TextView)findViewById(R.id.text_register);
+        buttonLogin = (Button) findViewById(R.id.button_login);
+        textViewRegister = (TextView) findViewById(R.id.text_register);
+
+
         textViewRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Intent registerIntent = new Intent(LoginActivity.this,RegisterActivity.class);
+                Intent registerIntent = new Intent(LoginActivity.this, RegisterActivity.class);
                 startActivity(registerIntent);
-
-
 
 
             }
@@ -63,44 +71,60 @@ public class LoginActivity extends AppCompatActivity {
         ForgotPasswordButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(LoginActivity.this, "Button Under Development", Toast.LENGTH_SHORT).show();
+                Intent resetPasswordIntent = new Intent(LoginActivity.this, ResetPasswordActivity.class);
+                startActivity(resetPasswordIntent);
+
             }
         });
 
-        //User db method checkUser to verify if username and password specified
+
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String user = textUsername.getText().toString().trim();
-                walkthroughUser=user;
-                String pwd = textPassword.getText().toString().trim();
-                Boolean res = db.checkUser(user,pwd);
-                if (res == true)
-                {
-                    Intent loginActivity = new Intent(LoginActivity.this, WalkthroughActivity.class);
-                    startActivity(loginActivity);
+                SignIn(textUsername.getText().toString().trim(),
+                        textPassword.getText().toString().trim());
+            }
+        });
+
+
+    }
+
+    private void SignIn(final String user, final String pwd) {
+        users.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange( DataSnapshot dataSnapshot) {
+                if (dataSnapshot.child(user).exists()) {
+                    if (!user.isEmpty()) {
+                        User login  = dataSnapshot.child(user).getValue(User.class);
+
+                        if (login.getPassword().equals(pwd)) {
+
+                            startActivity(new Intent(LoginActivity.this, WalkThroughActivity.class));
+                            Common.currentUser = login;
+
+                        } else {
+                            Toast.makeText(LoginActivity.this, "Wrong Password", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                    else {
+                        Toast.makeText(LoginActivity.this, "Please enter Username", Toast.LENGTH_SHORT).show();
+                    }
                 }
                 else
-                {
-                    Toast.makeText(LoginActivity.this, "login Error", Toast. LENGTH_SHORT).show();
-
-                }
+                    Toast.makeText(LoginActivity.this, "User not found ! ", Toast.LENGTH_SHORT).show();
             }
-        }
+
+            @Override
+            public void onCancelled( DatabaseError databaseError) {
+
+            }
 
 
-        );
-
-
-
-    }
-
-    /**
-     * passes non static username variable to a static context
-     * @return Static variable username
-     */
-    public static String getUser() {
-        return walkthroughUser;
+        });
 
     }
+
 }
+
+
+

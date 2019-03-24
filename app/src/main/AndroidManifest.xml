@@ -9,14 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SelectSelectionsLevelActivity"></activity>
-        <activity android:name=".SelelctMathLevelActivity" />
-        <activity android:name=".SelectLevelArrayActivity" />
+        <activity android:name=".WalkThrough.WalkThroughActivity"></activity>
+        <activity android:name=".Done" />
+        <activity android:name=".GamePlay" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".RandomFactsActivity" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".ProfileActivity" />
-        <activity android:name=".WalkthroughActivity" />
         <activity android:name=".CreateProfileActivity" />
         <activity android:name=".IntroTutorialActivity" />
         <activity android:name=".SelectionsTutorialActivity" />
@@ -24,6 +23,7 @@
         <activity android:name=".LoopTutorialActivity" />
         <activity android:name=".MathFuncTutorialActivity" />
         <activity android:name=".SettingsActivity" />
+        <activity android:name=".ResetPasswordActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".MenuActivity" />
         <activity android:name=".SplashActivity">
