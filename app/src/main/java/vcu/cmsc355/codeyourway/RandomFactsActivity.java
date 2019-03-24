@@ -37,8 +37,8 @@ public class RandomFactsActivity extends AppCompatActivity {
         home = (Button) findViewById(R.id.home_from_random_facts);               //home button
         settings = (Button) findViewById(R.id.settings_from_random_activity);   //setting button
 
-        random_facts();                     //everytime user visit RandomFactsActivity page, they will see a facts
-        facts_content.setText(display_fact);  //this should display the random facts
+        random_facts();                         //everytime user visit RandomFactsActivity page, they will see a facts
+        facts_content.setText(display_fact);   //this should display the random facts
 
         settings.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {                                           //take to the settings page
