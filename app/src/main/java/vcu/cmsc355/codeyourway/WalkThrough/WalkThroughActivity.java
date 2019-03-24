@@ -68,7 +68,7 @@ public class WalkThroughActivity extends AppCompatActivity {
                 if (position == 3) { // when we reach to the last screen
 
 
-                    loaddLastScreen();
+                    loadLastScreen();
 
 
                 }
@@ -103,7 +103,7 @@ public class WalkThroughActivity extends AppCompatActivity {
 
     }
 
-    private void loaddLastScreen() {
+    private void loadLastScreen() {
 
         buttonNext.setVisibility(View.INVISIBLE);
         buttonGetStarted.setVisibility(View.VISIBLE);
