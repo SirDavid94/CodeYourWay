@@ -110,4 +110,16 @@
     <string name="actual_questions">actual_questions</string>
     <string name="question1">question1</string>
     <string name="submit">Submit</string>
+
+    <string name="title_activity_walk_through">WalkThroughActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="send_email">Send Email</string>
+
+    <string-array name="expertise">
+        <item>Beginner</item>
+        <item>Intermediate</item>
+        <item>Professional</item>
+        <item>Hacker</item>
+    </string-array>
 </resources>
