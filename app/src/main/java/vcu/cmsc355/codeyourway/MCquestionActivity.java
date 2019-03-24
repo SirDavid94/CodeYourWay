@@ -71,9 +71,9 @@ public class MCquestionActivity extends AppCompatActivity {
     }
 
     /**
-     *
+     * This method should display all the answer choice randomly (
      */
-    public void setAnswers() { //this method should all the questions and answers. the answers will be placed randomly
+    public void setAnswers() {
 
         this.question.setText(get_question);// show the question in the text box
 
@@ -107,9 +107,24 @@ public class MCquestionActivity extends AppCompatActivity {
         }
 
     }
+    String levelInfo;       //info about current level
+    String questionnum;     //current question number
 
-    public void getOtherInfo() {
+    /**
+     * @param levelInfo
+     * @param questionnum
+     */
+    public void getOtherInfo(String levelInfo, String questionnum) { //getting the from other module page
+        this.levelInfo = levelInfo;
+        this.questionnum = questionnum;
+    }
 
+    /**
+     * this function are solely responsible for displaying the current level and question number
+     */
+    public  void setOtherInfo(){
+        level_header.setText(levelInfo);
+        questions_num.setText(questionnum);
     }
 
 }
