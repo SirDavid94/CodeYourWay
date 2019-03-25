@@ -99,7 +99,9 @@ public class LoginActivity extends AppCompatActivity {
 
                         if (login.getPassword().equals(pwd)) {
 
-                            startActivity(new Intent(LoginActivity.this, WalkThroughActivity.class));
+                            Intent successfulLogin = new Intent(LoginActivity.this, WalkThroughActivity.class);
+                            successfulLogin.putExtra("username",user);
+                            startActivity(successfulLogin);
                             Common.currentUser = login;
 
                         } else {

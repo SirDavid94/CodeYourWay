@@ -3,19 +3,18 @@ package vcu.cmsc355.codeyourway.Model;
 public class Question {
     private String Question, CorrectAnswer, AnswerA, AnswerB, AnswerC, AnswerD, CategoryID, IsFillAnswer;
 
-    public Question() {
+    public Question(String question, String correctAnswer, String answerA, String answerB, String answerC, String answerD, String categoryID, String isFillAnswer) {
+        this.Question = question;
+        this.CorrectAnswer = correctAnswer;
+        this.AnswerA = answerA;
+        this.AnswerB = answerB;
+        this.AnswerC = answerC;
+        this.AnswerD = answerD;
+        this.CategoryID = categoryID;
+        this.IsFillAnswer = isFillAnswer;
     }
 
-
-    public Question(String question, String correctAnswer, String answerA, String answerB, String answerC, String answerD, String categoryID, String isFillAnswer) {
-        Question = question;
-        CorrectAnswer = correctAnswer;
-        AnswerA = answerA;
-        AnswerB = answerB;
-        AnswerC = answerC;
-        AnswerD = answerD;
-        CategoryID = categoryID;
-        IsFillAnswer = isFillAnswer;
+    public Question() {
     }
 
     public String getQuestion() {
@@ -23,7 +22,7 @@ public class Question {
     }
 
     public void setQuestion(String question) {
-        Question = question;
+        this.Question = question;
     }
 
     public String getCorrectAnswer() {
@@ -31,7 +30,7 @@ public class Question {
     }
 
     public void setCorrectAnswer(String correctAnswer) {
-        CorrectAnswer = correctAnswer;
+        this.CorrectAnswer = correctAnswer;
     }
 
     public String getAnswerA() {
@@ -39,7 +38,7 @@ public class Question {
     }
 
     public void setAnswerA(String answerA) {
-        AnswerA = answerA;
+        this.AnswerA = answerA;
     }
 
     public String getAnswerB() {
@@ -55,7 +54,7 @@ public class Question {
     }
 
     public void setAnswerC(String answerC) {
-        AnswerC = answerC;
+        this.AnswerC = answerC;
     }
 
     public String getAnswerD() {
@@ -63,7 +62,7 @@ public class Question {
     }
 
     public void setAnswerD(String answerD) {
-        AnswerD = answerD;
+        this.AnswerD = answerD;
     }
 
     public String getCategoryID() {
@@ -71,7 +70,7 @@ public class Question {
     }
 
     public void setCategoryID(String categoryID) {
-        CategoryID = categoryID;
+        this.CategoryID = categoryID;
     }
 
     public String getIsFillAnswer() {
@@ -79,6 +78,6 @@ public class Question {
     }
 
     public void setIsFillAnswer(String isFillAnswer) {
-        IsFillAnswer = isFillAnswer;
+        this.IsFillAnswer = isFillAnswer;
     }
 }

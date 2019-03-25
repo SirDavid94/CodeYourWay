@@ -10,8 +10,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
-
 import vcu.cmsc355.codeyourway.R;
 
 public class SliderAdapter  extends PagerAdapter {
@@ -19,6 +17,7 @@ public class SliderAdapter  extends PagerAdapter {
 
     Context context;
     LayoutInflater inflater;
+
 
     public int[] lst_image = {
         R.drawable.logo,
