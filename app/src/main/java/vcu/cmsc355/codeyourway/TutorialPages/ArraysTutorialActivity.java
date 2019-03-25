@@ -1,4 +1,4 @@
-package vcu.cmsc355.codeyourway;
+package vcu.cmsc355.codeyourway.TutorialPages;
 
 
 import android.content.Intent;
@@ -8,6 +8,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import vcu.cmsc355.codeyourway.R;
+import vcu.cmsc355.codeyourway.SelectLevelArrayActivity;
 
 public class ArraysTutorialActivity extends AppCompatActivity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
