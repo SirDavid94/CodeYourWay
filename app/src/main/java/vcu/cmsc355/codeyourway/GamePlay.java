@@ -29,7 +29,7 @@ public class GamePlay extends AppCompatActivity implements View.OnClickListener 
     int index =0;
     int score = 0;
     int thisQuestion = 0;
-    int totalQuestion;
+    int totalQuestion = 10;
     int correctAnswer;
     ProgressBar progressBar;
     Button buttonA,buttonB,buttonC,buttonD;
@@ -148,7 +148,7 @@ public class GamePlay extends AppCompatActivity implements View.OnClickListener 
         super.onResume();
 
         totalQuestion = Common.questionList.size();
-        progressBar.setProgress(progressValue);
+        //progressBar.setProgress(0);
         progressValue++;
     }
 
