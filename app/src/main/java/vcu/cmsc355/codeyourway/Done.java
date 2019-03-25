@@ -38,7 +38,6 @@ public class Done extends AppCompatActivity {
         progressBar = (ProgressBar) findViewById(R.id.doneProgressBar);
         btnTryAgain = (Button)findViewById(R.id.btnTryAgain);
         btnNextLevel = (Button) findViewById(R.id.btnNextLevel);
-
         btnTryAgain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
