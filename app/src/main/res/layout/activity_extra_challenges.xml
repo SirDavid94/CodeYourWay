@@ -66,7 +66,6 @@
         android:adjustViewBounds="true"
         android:background="@color/bTColor"
         android:clickable="true"
-        android:rotation="45"
         android:text="2"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
