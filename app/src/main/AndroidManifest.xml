@@ -19,11 +19,7 @@
         <activity android:name=".LevelCompletionActivity" />
         <activity android:name=".ProfileActivity" />
         <activity android:name=".CreateProfileActivity" />
-        <activity android:name=".IntroTutorialActivity" />
-        <activity android:name=".SelectionsTutorialActivity" />
         <activity android:name=".TutorialPages.ArraysTutorialActivity" />
-        <activity android:name=".LoopTutorialActivity" />
-        <activity android:name=".MathFuncTutorialActivity" />
         <activity android:name=".SettingsActivity" />
         <activity android:name=".ResetPasswordActivity" />
         <activity android:name=".RegisterActivity" />

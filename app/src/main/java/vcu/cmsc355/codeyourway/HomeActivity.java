@@ -10,6 +10,10 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import vcu.cmsc355.codeyourway.TutorialPages.ArraysTutorialActivity;
+import vcu.cmsc355.codeyourway.TutorialPages.IntroTutorialActivity;
+import vcu.cmsc355.codeyourway.TutorialPages.LoopTutorialActivity;
+import vcu.cmsc355.codeyourway.TutorialPages.MathFuncTutorialActivity;
+import vcu.cmsc355.codeyourway.TutorialPages.SelectionsTutorialActivity;
 
 public class HomeActivity extends AppCompatActivity {
 

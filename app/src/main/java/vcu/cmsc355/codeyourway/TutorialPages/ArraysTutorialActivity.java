@@ -7,12 +7,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import vcu.cmsc355.codeyourway.GameLevel.LevelSelectionActivity;
-import vcu.cmsc355.codeyourway.GamePlay;
 import vcu.cmsc355.codeyourway.R;
-import vcu.cmsc355.codeyourway.SelectLevelArrayActivity;
 
 public class ArraysTutorialActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
