@@ -28,11 +28,14 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
         android:text="Want some more challenges? Play these extra levels to get more badges"
+        app:layout_constraintBottom_toTopOf="@+id/btn_second_challenge"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="147dp" />
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <Button
         android:id="@+id/btn_first_challenge"
@@ -45,7 +48,6 @@
         android:adjustViewBounds="true"
         android:background="@color/bTColor"
         android:clickable="true"
-        android:rotation="45"
         android:text="1"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -94,15 +96,18 @@
         android:layout_height="57dp"
         android:layout_marginStart="56dp"
         android:layout_marginLeft="56dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="93dp"
         android:layout_marginRight="93dp"
+        android:layout_marginBottom="8dp"
         android:background="@drawable/rounded_button"
         android:text="Badges List"
         android:textColor="#fff"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btn_home"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="453dp" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_first_challenge" />
 
 
     <Button
@@ -113,13 +118,14 @@
         android:layout_marginLeft="93dp"
         android:layout_marginEnd="60dp"
         android:layout_marginRight="60dp"
+        android:layout_marginBottom="100dp"
         android:background="@drawable/rounded_button"
         android:text="Home"
         android:textColor="#fff"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btn_badges_list"
-        tools:layout_editor_absoluteY="453dp" />
+        app:layout_constraintStart_toEndOf="@+id/btn_badges_list" />
 
 
 
