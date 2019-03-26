@@ -19,7 +19,7 @@
         <activity android:name=".CreateProfileActivity" />
         <activity android:name=".IntroTutorialActivity" />
         <activity android:name=".SelectionsTutorialActivity" />
-        <activity android:name=".ArraysTutorialActivity" />
+        <activity android:name=".TutorialPages.ArraysTutorialActivity" />
         <activity android:name=".LoopTutorialActivity" />
         <activity android:name=".MathFuncTutorialActivity" />
         <activity android:name=".SettingsActivity" />

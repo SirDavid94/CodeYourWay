@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import vcu.cmsc355.codeyourway.TutorialPages.ArraysTutorialActivity;
+
 public class HomeActivity extends AppCompatActivity {
 
     Button elementaryProgram;
