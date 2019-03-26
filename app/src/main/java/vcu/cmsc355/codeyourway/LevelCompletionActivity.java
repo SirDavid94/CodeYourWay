@@ -13,6 +13,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import vcu.cmsc355.codeyourway.Model.Common;
+import vcu.cmsc355.codeyourway.Model.Leaderboard;
 import vcu.cmsc355.codeyourway.Model.QuestionScore;
 
 public class LevelCompletionActivity extends AppCompatActivity {
@@ -20,19 +21,18 @@ public class LevelCompletionActivity extends AppCompatActivity {
     Button nextLevel;
     TextView completionMessage, congratulationMessage, passingScore,totalScore,failedMessage;
 
-    //Firebase instance
+    //FireBase instance
     FirebaseDatabase database;
-    DatabaseReference ScoresDatabase;
+    DatabaseReference LeaderBoard;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_levelcompletion_page);
 
-        //Question score Instantiation
+        //LeaderBoard Instantiation
         database = FirebaseDatabase.getInstance();
-        ScoresDatabase = database.getReference("LeaderBoard");
-
+        LeaderBoard = database.getReference("LeaderBoard");
 
         completionMessage = findViewById(R.id.completionMessage);
         congratulationMessage = findViewById(R.id.congratulationMessage);
@@ -68,7 +68,7 @@ public class LevelCompletionActivity extends AppCompatActivity {
                 totalScore.setTextColor(Color.GREEN);
                 failedMessage.setVisibility(View.INVISIBLE);
 
-               /* ScoresDatabase.child(String.format("%s_%s", Common.currentUser.getUsername(), Common.CategoryID))
+               /* LeaderBoard.child(String.format("%s_%d", Common.currentUser.getUsername(), Common.CategoryID))
                         .setValue(new QuestionScore(String.format("%s_%s", Common.currentUser.getUsername(), Common.CategoryID),
                                 Common.currentUser.getUsername(),
                                 String.valueOf(score))); */
@@ -80,11 +80,11 @@ public class LevelCompletionActivity extends AppCompatActivity {
                 congratulationMessage.setText("Sorry you fucked up. Try Again!!");
                 congratulationMessage.setTextColor(Color.RED);
             }
-
+            // Sets the user's score to the display page
             totalScore.setText(" YOUR SCORE :    "+ score + "%");
         }
 
-
+        //Plays the same game Level over again
         tryAgain.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent tryAgainIntent = new Intent(LevelCompletionActivity.this, GamePlay.class);
@@ -92,6 +92,8 @@ public class LevelCompletionActivity extends AppCompatActivity {
             }
         });
 
+
+        //Starts the next Game Level when the button is clicked
         nextLevel.setOnClickListener(new View.OnClickListener() {                        //take to the settings page
             public void onClick(View v) {
                startActivity(new Intent(LevelCompletionActivity.this,GamePlay.class));

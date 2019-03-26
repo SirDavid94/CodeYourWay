@@ -52,7 +52,6 @@ public class GamePlay extends AppCompatActivity {
 
         currentModule  = findViewById(R.id.CurrentModule);
         currentLevel   = findViewById(R.id.CurrentLevel);
-        txtQuestionNum = findViewById(R.id.txtTotalQuestion);
         question_text  = findViewById(R.id.questionMultipleAnswer);
         buttonA        = findViewById(R.id.btnAnswerA);
         buttonB        = findViewById(R.id.btnAnswerB);
