@@ -22,7 +22,7 @@ public class MathFuncTutorialActivity extends AppCompatActivity {
         Button BtContinue;
 
 
-        BtContinue = (Button) findViewById(R.id.ContinueArrays);
+        BtContinue = (Button) findViewById(R.id.ContinueMathFunc);
         moduleID = findViewById(R.id.MathFuncModuleID);
 
         Bundle bundle = getIntent().getExtras();
