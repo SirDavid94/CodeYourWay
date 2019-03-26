@@ -23,7 +23,20 @@ public class ExtraChallengesActivity extends AppCompatActivity {
 
 
 
+        buttonHome.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {                                               //take to the home page
+                Intent homeIntent = new Intent(ExtraChallengesActivity.this, HomeActivity.class);
+                startActivity(homeIntent);
+            }
+        });
 
+
+        buttonBadgeList.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent homeIntent = new Intent(ExtraChallengesActivity.this, HomeActivity.class);
+                startActivity(homeIntent);
+            }
+        });
 
 
     }
