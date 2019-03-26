@@ -9,6 +9,9 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import vcu.cmsc355.codeyourway.Model.Common;
 import vcu.cmsc355.codeyourway.Model.QuestionScore;
 
@@ -17,10 +20,20 @@ public class LevelCompletionActivity extends AppCompatActivity {
     Button nextLevel;
     TextView completionMessage, congratulationMessage, passingScore,totalScore,failedMessage;
 
+    //Firebase instance
+    FirebaseDatabase database;
+    DatabaseReference ScoresDatabase;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_levelcompletion_page);
+
+        //Question score Instantiation
+        database = FirebaseDatabase.getInstance();
+        ScoresDatabase = database.getReference("LeaderBoard");
+
+
         completionMessage = findViewById(R.id.completionMessage);
         congratulationMessage = findViewById(R.id.congratulationMessage);
         passingScore = findViewById(R.id.passingScoreMessage);
