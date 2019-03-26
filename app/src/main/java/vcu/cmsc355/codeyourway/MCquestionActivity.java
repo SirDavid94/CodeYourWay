@@ -94,12 +94,12 @@ public class MCquestionActivity extends AppCompatActivity {
             answer2.setText(third);
             answer3.setText(second);
             answer4.setText(first);
-        } else if (random_numbers[0] == 3) {
+        } else if (random_numbers[0] == 2) {
             answer1.setText(second);
             answer2.setText(first);
             answer3.setText(fourth);
             answer4.setText(third);
-        } else if (random_numbers[0] == 4) {
+        } else if (random_numbers[0] == 3) {
             answer1.setText(third);
             answer2.setText(fourth);
             answer3.setText(first);

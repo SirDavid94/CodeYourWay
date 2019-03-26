@@ -9,48 +9,39 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import vcu.cmsc355.codeyourway.GameLevel.LevelSelectionActivity;
+import vcu.cmsc355.codeyourway.GamePlay;
 import vcu.cmsc355.codeyourway.MCquestionActivity;
 import vcu.cmsc355.codeyourway.R;
 import vcu.cmsc355.codeyourway.SelectLevelArrayActivity;
 
-public class MathFuncTutorialActivity extends AppCompatActivity implements View.OnClickListener {
+public class MathFuncTutorialActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_math_fucntions);
 
 
         TextView tutorialView;
-        Button BtNext;
-        Button BtSkip;
-
-        BtNext = (Button) findViewById(R.id.nextButton);
-        BtSkip = (Button) findViewById(R.id.skipButton);
-
-        BtNext.setOnClickListener(this);
-        BtSkip.setOnClickListener(this);
-
-    }
-
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.nextButton:
-                Intent questionsIntent = new Intent(MathFuncTutorialActivity.this, MCquestionActivity.class);
-                startActivity(questionsIntent);
-                Toast.makeText(this, "Button Under Development", Toast.LENGTH_SHORT).show();
-                break;
-
-            case R.id.skipButton:
-                goToMathLvl();
-                break;
-        }
-
-    }
+        TextView moduleID;
+        Button BtContinue;
 
 
-    private void goToMathLvl()
-    {
-        startActivity(new Intent(this, SelectLevelArrayActivity.class));
-        finish();
+        BtContinue = (Button) findViewById(R.id.ContinueArrays);
+        moduleID = findViewById(R.id.MathFuncModuleID);
+
+        Bundle bundle = getIntent().getExtras();
+        String module = bundle.getString("module");
+
+
+        BtContinue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent levelSelection = new Intent(MathFuncTutorialActivity.this, LevelSelectionActivity.class);
+                levelSelection.putExtra("moduleID",3);
+                startActivity(levelSelection);
+            }
+        });
+
     }
 }
 

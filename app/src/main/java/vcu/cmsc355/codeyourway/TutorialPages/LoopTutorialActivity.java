@@ -5,48 +5,47 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import vcu.cmsc355.codeyourway.GameLevel.LevelSelectionActivity;
+import vcu.cmsc355.codeyourway.GamePlay;
 import vcu.cmsc355.codeyourway.R;
 import vcu.cmsc355.codeyourway.SelectLevelArrayActivity;
 
-public class LoopTutorialActivity extends AppCompatActivity implements View.OnClickListener {
+public class LoopTutorialActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_loops);
 
 
+        Button BtContinue;
+        TextView moduleID;
 
-        Button BtNext;
-        Button BtSkip;
 
-        BtNext = (Button) findViewById(R.id.nextButton);
-        BtSkip = (Button) findViewById(R.id.skipButton);
+        BtContinue = (Button) findViewById(R.id.ContinueLoop);
+        moduleID = findViewById(R.id.LoopsModuleID);
 
-        BtNext.setOnClickListener(this);
-        BtSkip.setOnClickListener(this);
+        Bundle bundle = getIntent().getExtras();
+        String module = bundle.getString("module");
+
+
+
+
+        BtContinue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent levelSelection = new Intent(LoopTutorialActivity.this, LevelSelectionActivity.class);
+                levelSelection.putExtra("moduleID",4);
+                startActivity(levelSelection);
+            }
+        });
 
     }
 
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.nextButton:
-                Toast.makeText(this, "Button Under Development", Toast.LENGTH_SHORT).show();
-                break;
-
-            case R.id.skipButton:
-                goToLoopLvl();
-                break;
-        }
-
-    }
-
-
-
-    private void goToLoopLvl()
-    {
-        startActivity(new Intent(this, SelectLevelArrayActivity.class));
-        finish();
-    }
 }
+
+
+
+
 

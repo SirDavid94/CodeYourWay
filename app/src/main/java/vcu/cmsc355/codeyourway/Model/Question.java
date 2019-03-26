@@ -1,10 +1,10 @@
 package vcu.cmsc355.codeyourway.Model;
 
 public class Question {
-    private String Question, CorrectAnswer, AnswerA, AnswerB, AnswerC, AnswerD, CategoryID, IsFillAnswer;
+    private String module1, CorrectAnswer, AnswerA, AnswerB, AnswerC, AnswerD, CategoryID, IsFillAnswer;
 
     public Question(String question, String correctAnswer, String answerA, String answerB, String answerC, String answerD, String categoryID, String isFillAnswer) {
-        this.Question = question;
+        this.module1 = question;
         this.CorrectAnswer = correctAnswer;
         this.AnswerA = answerA;
         this.AnswerB = answerB;
@@ -18,11 +18,11 @@ public class Question {
     }
 
     public String getQuestion() {
-        return Question;
+        return module1;
     }
 
     public void setQuestion(String question) {
-        this.Question = question;
+        this.module1 = question;
     }
 
     public String getCorrectAnswer() {

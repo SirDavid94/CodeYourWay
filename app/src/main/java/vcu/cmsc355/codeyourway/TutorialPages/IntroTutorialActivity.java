@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import vcu.cmsc355.codeyourway.GameLevel.LevelSelectionActivity;
 import vcu.cmsc355.codeyourway.GamePlay;
 import vcu.cmsc355.codeyourway.R;
 
@@ -18,18 +19,25 @@ public class IntroTutorialActivity extends AppCompatActivity {
 
 
         TextView tutorialView;
+        TextView moduleID;
         Button BtContinue;
 
 
         BtContinue = (Button) findViewById(R.id.ContinueIntro);
+        moduleID = findViewById(R.id.IntroModuleID);
+
+        Bundle bundle = getIntent().getExtras();
+        String module = bundle.getString("module");
+
 
         BtContinue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(IntroTutorialActivity.this, GamePlay.class));
+                Intent levelSelection = new Intent(IntroTutorialActivity.this, LevelSelectionActivity.class);
+                levelSelection.putExtra("moduleID",1);
+                startActivity(levelSelection);
             }
         });
-
 
     }
 

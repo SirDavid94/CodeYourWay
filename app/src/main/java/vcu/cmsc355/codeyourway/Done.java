@@ -22,7 +22,7 @@ public class Done extends AppCompatActivity {
 
     //Firebase instance
     FirebaseDatabase database;
-    DatabaseReference question_score;
+    DatabaseReference ScoresDatabase;
 
 
     @Override
@@ -31,7 +31,7 @@ public class Done extends AppCompatActivity {
         setContentView(R.layout.activity_done);
 
         database = FirebaseDatabase.getInstance();
-        question_score = database.getReference("Question_Score");
+        ScoresDatabase = database.getReference("Question_Score");
 
         txtResultScore = (TextView) findViewById(R.id.txtTotalScore);
         getTxtResultQuestion = (TextView) findViewById(R.id.txtTotalQuestion);
@@ -70,7 +70,7 @@ public class Done extends AppCompatActivity {
             progressBar.setMax(totalQuestion);
             progressBar.setProgress(correctAnswer);
 
-            question_score.child(String.format("%s_%s", Common.currentUser.getUsername(), Common.CategoryID))
+            ScoresDatabase.child(String.format("%s_%s", Common.currentUser.getUsername(), Common.CategoryID))
                 .setValue(new QuestionScore(String.format("%s_%s", Common.currentUser.getUsername(), Common.CategoryID),
                         Common.currentUser.getUsername(),
                         String.valueOf(score)));

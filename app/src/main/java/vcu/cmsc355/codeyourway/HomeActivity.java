@@ -34,35 +34,40 @@ public class HomeActivity extends AppCompatActivity {
         elementaryProgram.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent elementaryIntent = new Intent(HomeActivity.this, IntroTutorialActivity.class);
+                elementaryIntent.putExtra("Module", "module1");
                 startActivity(elementaryIntent);
             }
         });
 
         loops.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent elementaryIntent = new Intent(HomeActivity.this, LoopTutorialActivity.class);
-                startActivity(elementaryIntent);
+                Intent loops = new Intent(HomeActivity.this, LoopTutorialActivity.class);
+                loops.putExtra("Module", "module2");
+                startActivity(loops);
             }
         });
 
         selections.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent elementaryIntent = new Intent(HomeActivity.this, SelectionsTutorialActivity.class);
-                startActivity(elementaryIntent);
+                Intent selections = new Intent(HomeActivity.this, SelectionsTutorialActivity.class);
+                selections.putExtra("Module", "module3");
+                startActivity(selections);
             }
         });
 
         mathFunctions.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent elementaryIntent = new Intent(HomeActivity.this, MathFuncTutorialActivity.class);
-                startActivity(elementaryIntent);
+                Intent mathFunctions = new Intent(HomeActivity.this, MathFuncTutorialActivity.class);
+                mathFunctions.putExtra("Module", "module4");
+                startActivity(mathFunctions);
             }
         });
 
         arrays.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent elementaryIntent = new Intent(HomeActivity.this, ArraysTutorialActivity.class);
-                startActivity(elementaryIntent);
+                Intent arrays = new Intent(HomeActivity.this, ArraysTutorialActivity.class);
+                arrays.putExtra("Module", "module5");
+                startActivity(arrays);
             }
         });
 

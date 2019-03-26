@@ -9,45 +9,41 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import vcu.cmsc355.codeyourway.GameLevel.LevelSelectionActivity;
+import vcu.cmsc355.codeyourway.GamePlay;
 import vcu.cmsc355.codeyourway.R;
 import vcu.cmsc355.codeyourway.SelectLevelArrayActivity;
 
-public class SelectionsTutorialActivity extends AppCompatActivity implements View.OnClickListener {
+public class SelectionsTutorialActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_selections);
 
 
         TextView tutorialView;
-        Button BtNext;
-        Button BtSkip;
+        TextView moduleID;
+        Button BtContinue;
 
-        BtNext = (Button) findViewById(R.id.nextButton);
-        BtSkip = (Button) findViewById(R.id.skipButton);
 
-        BtNext.setOnClickListener(this);
-        BtSkip.setOnClickListener(this);
+        BtContinue = (Button) findViewById(R.id.ContinueSelections);
+        moduleID = findViewById(R.id.selectionsModuleID);
+
+        Bundle bundle = getIntent().getExtras();
+        String module = bundle.getString("module");
+
+
+
+        BtContinue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent levelSelection = new Intent(SelectionsTutorialActivity.this, LevelSelectionActivity.class);
+                levelSelection.putExtra("moduleID",2);
+                startActivity(levelSelection);
+            }
+        });
 
     }
 
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.nextButton:
-                Toast.makeText(this, "Button Under Development", Toast.LENGTH_SHORT).show();
-                break;
-
-            case R.id.skipButton:
-                goToSelectionLvl();
-                break;
-        }
-
-    }
-
-
-    private void goToSelectionLvl()
-    {
-        startActivity(new Intent(this, SelectLevelArrayActivity.class));
-        finish();
-    }
 }
 

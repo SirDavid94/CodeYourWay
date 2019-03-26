@@ -1,4 +1,4 @@
-package vcu.cmsc355.codeyourway;
+package vcu.cmsc355.codeyourway.GameLevel;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -7,20 +7,27 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
-public class LoopSelectLevelActivity extends AppCompatActivity implements View.OnClickListener {
+import vcu.cmsc355.codeyourway.CreateProfileActivity;
+import vcu.cmsc355.codeyourway.LoginActivity;
+import vcu.cmsc355.codeyourway.R;
+import vcu.cmsc355.codeyourway.SettingsActivity;
+
+public class LevelSelectionActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_loop_select_level);
- Button button1 = findViewById(R.id.level1);
+        setContentView(R.layout.activity_level_selection);
+        Button button1 = findViewById(R.id.level1);
         Button button2 = findViewById(R.id.level2);
         Button button3 = findViewById(R.id.level3);
         Button button4 = findViewById(R.id.level4);
         Button button5 = findViewById(R.id.level5);
         Button button6 = findViewById(R.id.level6);
+        TextView moduleID = findViewById(R.id.ModuleID);
 
         button1.setOnClickListener(this);
         button2.setOnClickListener(this);
@@ -28,6 +35,11 @@ public class LoopSelectLevelActivity extends AppCompatActivity implements View.O
         button4.setOnClickListener(this);
         button5.setOnClickListener(this);
         button6.setOnClickListener(this);
+
+
+        Bundle bundle = getIntent().getExtras();
+        int moduleNum = bundle.getInt("moduleID");
+        moduleID.setText("MOD:  "+moduleNum);
 
 
 
@@ -77,7 +89,7 @@ public class LoopSelectLevelActivity extends AppCompatActivity implements View.O
                 startActivity(new Intent(this, LoginActivity.class));
                 break;
             case R.id.menuSettings:
-                startActivity(new Intent(this,SettingsActivity.class));
+                startActivity(new Intent(this, SettingsActivity.class));
                 break;
 
             case R.id.menuProfile:

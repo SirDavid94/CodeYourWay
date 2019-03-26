@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -43,7 +45,7 @@ public class GamePlay extends AppCompatActivity {
 
         //firebase reference
         database = FirebaseDatabase.getInstance();
-        questions = database.getReference("Questions");
+        questions = database.getReference("module1");
 
 
         txtScore = (TextView) findViewById(R.id.txtScore);
@@ -60,8 +62,8 @@ public class GamePlay extends AppCompatActivity {
 
     private void UpdateQuestion() {
 
-        ++total;
-        if (total > 10)
+
+        if (total > 5)
         {
             // Open Done Activity
             onFinish();
@@ -69,7 +71,8 @@ public class GamePlay extends AppCompatActivity {
 
         else
         {
-            reference = FirebaseDatabase.getInstance().getReference().child("Questions").child(String.valueOf(total));
+            total++;
+            reference = FirebaseDatabase.getInstance().getReference().child("module1").child(String.valueOf(total));
             //questions.child("Questions").child(String.valueOf(total));
             reference.addValueEventListener(new ValueEventListener() {
                 @Override
@@ -337,7 +340,7 @@ public class GamePlay extends AppCompatActivity {
         }
     public void onFinish() {
        // tv.setText("Completed");
-        Intent completed = new Intent(GamePlay.this, Done.class);
+        Intent completed = new Intent(GamePlay.this, LevelCompletionActivity.class);
         completed.putExtra("total",String.valueOf(total));
         completed.putExtra("correct",String.valueOf(correct));
         completed.putExtra("Incorrect",String.valueOf(wrong));
