@@ -22,6 +22,8 @@ import vcu.cmsc355.codeyourway.Model.Question;
 
 public class GamePlay extends AppCompatActivity {
 
+    int moduleID = 0;
+    int levelID = 0;
     int index = 0;
     int correct = 0;
     int wrong  = 0;
@@ -30,7 +32,8 @@ public class GamePlay extends AppCompatActivity {
     int correctAnswer;
     ProgressBar progressBar;
     Button buttonA, buttonB, buttonC, buttonD;
-    TextView txtScore, txtQuestionNum, question_text, question_fill;
+    TextView txtScore, txtQuestionNum, question_text;
+    TextView currentModule, currentLevel;
 
 
     //Firebase Instantiation
@@ -47,15 +50,22 @@ public class GamePlay extends AppCompatActivity {
         database = FirebaseDatabase.getInstance();
         questions = database.getReference("module1");
 
+        currentModule  = findViewById(R.id.CurrentModule);
+        currentLevel   = findViewById(R.id.CurrentLevel);
+        txtQuestionNum = findViewById(R.id.txtTotalQuestion);
+        question_text  = findViewById(R.id.questionMultipleAnswer);
+        buttonA        = findViewById(R.id.btnAnswerA);
+        buttonB        = findViewById(R.id.btnAnswerB);
+        buttonC        = findViewById(R.id.btnAnswerC);
+        buttonD        = findViewById(R.id.btnAnswerD);
 
-        txtScore = (TextView) findViewById(R.id.txtScore);
-        txtQuestionNum = (TextView) findViewById(R.id.txtTotalQuestion);
-        question_text = (TextView) findViewById(R.id.questionMultipleAnswer);
-        //question_fill = (TextView) findViewById(R.id.questionFillAnswer);
-        buttonA = (Button) findViewById(R.id.btnAnswerA);
-        buttonB = (Button) findViewById(R.id.btnAnswerB);
-        buttonC = (Button) findViewById(R.id.btnAnswerC);
-        buttonD = (Button) findViewById(R.id.btnAnswerD);
+
+        Bundle bundle = getIntent().getExtras();
+         moduleID = bundle.getInt("moduleID");
+         levelID  = bundle.getInt("level");
+
+         currentLevel.setText( "LVL : "+ levelID);
+         currentModule.setText("MOD : "+moduleID);
 
         UpdateQuestion();
     }
@@ -71,7 +81,7 @@ public class GamePlay extends AppCompatActivity {
 
         else
         {
-            total++;
+
             reference = FirebaseDatabase.getInstance().getReference().child("module1").child(String.valueOf(total));
             //questions.child("Questions").child(String.valueOf(total));
             reference.addValueEventListener(new ValueEventListener() {
@@ -333,7 +343,7 @@ public class GamePlay extends AppCompatActivity {
                 }
             });
 
-
+            total++;
         }
 
 

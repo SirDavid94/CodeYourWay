@@ -18,7 +18,7 @@ import vcu.cmsc355.codeyourway.SettingsActivity;
 
 public class LevelSelectionActivity extends AppCompatActivity implements View.OnClickListener {
 
-    String moduleIdentification;
+    int moduleIdentification;
     //int level;
 
     @Override
@@ -45,7 +45,7 @@ public class LevelSelectionActivity extends AppCompatActivity implements View.On
         int moduleNum = bundle.getInt("moduleID");
         moduleID.setText("MOD:  "+moduleNum);
 
-        moduleIdentification = "module"+moduleNum;
+        moduleIdentification = moduleNum;
 
 
 
@@ -76,6 +76,7 @@ public class LevelSelectionActivity extends AppCompatActivity implements View.On
                 Intent level3 = new Intent (LevelSelectionActivity.this, GamePlay.class);
                 level3.putExtra("moduleID", moduleIdentification);
                 level3.putExtra("level", 3);
+                startActivity(level3);
                 break;
 
             case R.id.level4:
@@ -108,7 +109,6 @@ public class LevelSelectionActivity extends AppCompatActivity implements View.On
 
     public boolean onCreateOptionsMenu (Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
-
         return true;
 
     }

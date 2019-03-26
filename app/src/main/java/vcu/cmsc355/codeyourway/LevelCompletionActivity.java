@@ -9,6 +9,9 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import vcu.cmsc355.codeyourway.Model.Common;
+import vcu.cmsc355.codeyourway.Model.QuestionScore;
+
 public class LevelCompletionActivity extends AppCompatActivity {
     Button tryAgain;
     Button nextLevel;
@@ -39,19 +42,27 @@ public class LevelCompletionActivity extends AppCompatActivity {
             int incorrect = Integer.parseInt(incorrectString);
             double scoreInt = (double)Integer.parseInt(scoreString);
 
-
-
+            //Sets the passing score to green
             passingScore.setTextColor(Color.GREEN);
 
-            int score = (int)((scoreInt/total)*100);
 
+            // Calculates Percentage for passing score
+            int score = (int)((scoreInt/(total-1))*100);
+
+            // If score is 80% or greater then the user has passed the level
             if(score >= 80)
             {
                 totalScore.setTextColor(Color.GREEN);
                 failedMessage.setVisibility(View.INVISIBLE);
+
+               /* ScoresDatabase.child(String.format("%s_%s", Common.currentUser.getUsername(), Common.CategoryID))
+                        .setValue(new QuestionScore(String.format("%s_%s", Common.currentUser.getUsername(), Common.CategoryID),
+                                Common.currentUser.getUsername(),
+                                String.valueOf(score))); */
             }
             else
             {
+                // If score is less than 80% then the user failed the level
                 totalScore.setTextColor(Color.RED);
                 congratulationMessage.setText("Sorry you fucked up. Try Again!!");
                 congratulationMessage.setTextColor(Color.RED);
