@@ -24,7 +24,7 @@ public class IntroTutorialActivity extends AppCompatActivity {
         BtContinue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(IntroTutorialActivity.this, GamePlay.class));
+                startActivity(new Intent(IntroTutorialActivity.this, MCquestionActivity.class));
             }
         });
 

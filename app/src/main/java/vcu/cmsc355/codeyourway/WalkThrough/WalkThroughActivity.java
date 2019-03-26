@@ -13,6 +13,7 @@ import android.widget.TextView;
 import vcu.cmsc355.codeyourway.HomeActivity;
 import vcu.cmsc355.codeyourway.Model.Common;
 import vcu.cmsc355.codeyourway.R;
+import vcu.cmsc355.codeyourway.RandomFactsActivity;
 
 
 public class WalkThroughActivity extends AppCompatActivity {
@@ -94,7 +95,7 @@ public class WalkThroughActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                startActivity(new Intent(WalkThroughActivity.this, HomeActivity.class));
+                startActivity(new Intent(WalkThroughActivity.this, RandomFactsActivity.class));
 
             }
 

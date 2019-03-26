@@ -1,5 +1,4 @@
 package vcu.cmsc355.codeyourway;
-
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Handler;
