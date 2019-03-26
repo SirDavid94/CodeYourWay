@@ -25,11 +25,6 @@ public class ArraysTutorialActivity extends AppCompatActivity {
         BtContinue = (Button) findViewById(R.id.ContinueArrays);
         moduleID = findViewById(R.id.ArraysModuleID);
 
-        Bundle bundle = getIntent().getExtras();
-        String module = bundle.getString("module");
-
-
-
         BtContinue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

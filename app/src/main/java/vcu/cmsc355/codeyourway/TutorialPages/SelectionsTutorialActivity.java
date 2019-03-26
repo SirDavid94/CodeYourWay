@@ -25,12 +25,7 @@ public class SelectionsTutorialActivity extends AppCompatActivity {
         BtContinue = (Button) findViewById(R.id.ContinueSelections);
         moduleID = findViewById(R.id.selectionsModuleID);
 
-        Bundle bundle = getIntent().getExtras();
-        String module = bundle.getString("module");
-
-
-
-        BtContinue.setOnClickListener(new View.OnClickListener() {
+              BtContinue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 

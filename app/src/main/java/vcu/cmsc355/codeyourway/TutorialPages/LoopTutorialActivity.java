@@ -23,12 +23,6 @@ public class LoopTutorialActivity extends AppCompatActivity {
         BtContinue = (Button) findViewById(R.id.ContinueLoop);
         moduleID = findViewById(R.id.LoopsModuleID);
 
-        Bundle bundle = getIntent().getExtras();
-        String module = bundle.getString("module");
-
-
-
-
         BtContinue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -25,10 +25,6 @@ public class MathFuncTutorialActivity extends AppCompatActivity {
         BtContinue = (Button) findViewById(R.id.ContinueMathFunc);
         moduleID = findViewById(R.id.MathFuncModuleID);
 
-        Bundle bundle = getIntent().getExtras();
-        String module = bundle.getString("module");
-
-
         BtContinue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

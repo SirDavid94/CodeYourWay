@@ -26,9 +26,6 @@ public class IntroTutorialActivity extends AppCompatActivity {
         BtContinue = (Button) findViewById(R.id.ContinueIntro);
         moduleID = findViewById(R.id.IntroModuleID);
 
-        Bundle bundle = getIntent().getExtras();
-        String module = bundle.getString("module");
-
 
         BtContinue.setOnClickListener(new View.OnClickListener() {
             @Override
