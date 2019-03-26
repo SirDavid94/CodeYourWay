@@ -84,7 +84,7 @@ public class WalkThroughActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                startActivity(new Intent(WalkThroughActivity.this, HomeActivity.class));
+                startActivity(new Intent(WalkThroughActivity.this, RandomFactsActivity.class));
 
             }
 
