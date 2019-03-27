@@ -78,7 +78,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        //Button is under development. Displays toast until completion
+        //Resets Password
         ForgotPasswordButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
