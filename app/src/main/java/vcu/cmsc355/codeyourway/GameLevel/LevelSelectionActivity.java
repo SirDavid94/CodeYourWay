@@ -13,6 +13,7 @@ import android.widget.Toast;
 import vcu.cmsc355.codeyourway.CreateProfileActivity;
 import vcu.cmsc355.codeyourway.GamePlay;
 import vcu.cmsc355.codeyourway.LoginActivity;
+import vcu.cmsc355.codeyourway.ProfileActivity;
 import vcu.cmsc355.codeyourway.R;
 import vcu.cmsc355.codeyourway.SettingsActivity;
 
@@ -128,7 +129,7 @@ public class LevelSelectionActivity extends AppCompatActivity implements View.On
 
             case R.id.menuProfile:
                 Toast.makeText(this, "Opening user profile", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(this, CreateProfileActivity.class));
+                startActivity(new Intent(this, ProfileActivity.class));
                 finish();
                 break;
         }
