@@ -17,9 +17,8 @@ import com.google.firebase.database.ValueEventListener;
 
 public class ProfileActivity extends AppCompatActivity {
 
-    Button changePassword;
+    Button changePassword,downloadGameData;
     TextView name, lastName, EmailProfile, userName, levelsCompleted, moduleCompletionLevel, expertise;
-    Button downloadGameData;
     private String currentUserId;
     private FirebaseAuth mAuth;
     private DatabaseReference profileUserRef;
@@ -70,6 +69,7 @@ public class ProfileActivity extends AppCompatActivity {
 
             }
         });
+
 
     }
 
