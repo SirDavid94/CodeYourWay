@@ -10,13 +10,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
 import vcu.cmsc355.codeyourway.Model.Common;
 import vcu.cmsc355.codeyourway.Model.User;
 import vcu.cmsc355.codeyourway.WalkThrough.WalkThroughActivity;
@@ -32,6 +30,7 @@ public class LoginActivity extends AppCompatActivity {
     TextView ForgotUsernameButton;
     TextView textViewRegister;
 
+    //Instantiating Database
     FirebaseDatabase database;
     DatabaseReference users;
 
@@ -129,6 +128,8 @@ public class LoginActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled( DatabaseError databaseError) {
+
+                Toast.makeText(LoginActivity.this, "Error, Please check your Internet Connection", Toast.LENGTH_SHORT).show();
 
             }
 

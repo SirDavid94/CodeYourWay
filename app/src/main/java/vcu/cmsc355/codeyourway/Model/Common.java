@@ -6,6 +6,7 @@ import java.util.List;
 public class Common {
 
     public static User currentUser;
+    public static Awards User;
     public static String CategoryID;
     public static List<Question> questionList = new ArrayList<>();
 }

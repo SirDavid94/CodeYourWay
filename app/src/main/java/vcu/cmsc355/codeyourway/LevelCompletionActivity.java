@@ -1,5 +1,11 @@
 package vcu.cmsc355.codeyourway;
 
+/**
+ * Class LevelCompletionActivity displays after User has successfully completed a game level
+ * It display the game stats and informs the user if they passed a level or not
+ * Game data is uploaded if user earns a badge with a score greater than 80%
+ */
+
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -7,49 +13,47 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import vcu.cmsc355.codeyourway.Model.Awards;
 
-import vcu.cmsc355.codeyourway.Model.Common;
-import vcu.cmsc355.codeyourway.Model.Leaderboard;
-import vcu.cmsc355.codeyourway.Model.QuestionScore;
 
 public class LevelCompletionActivity extends AppCompatActivity {
     Button tryAgain;
     Button nextLevel;
-    TextView completionMessage, congratulationMessage, passingScore,totalScore,failedMessage;
+    int awardPoint = 1; //point to award to user every time they complete a level
+    TextView completionMessage, congratulationMessage,
+             passingScore,totalScore,failedMessage;
 
     //FireBase instance
     FirebaseDatabase database;
-    DatabaseReference LeaderBoard;
+    DatabaseReference Award;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_levelcompletion_page);
 
-        //LeaderBoard Instantiation
+        //Ranking Instantiation
         database = FirebaseDatabase.getInstance();
-        LeaderBoard = database.getReference("LeaderBoard");
-
+        Award = database.getReference("Awards");
         completionMessage = findViewById(R.id.completionMessage);
         congratulationMessage = findViewById(R.id.congratulationMessage);
         passingScore = findViewById(R.id.passingScoreMessage);
         totalScore = findViewById(R.id.scoreMessage);
         failedMessage = findViewById(R.id.failedMessage);
-
-
         tryAgain = (Button) findViewById(R.id.tryAgainButton);
         nextLevel = (Button) findViewById(R.id.nextLevelButton);
 
-        Bundle bundle = getIntent().getExtras();
+        //Gets all data sent from previous page
+         Bundle bundle = getIntent().getExtras();
         if (bundle != null)
         {
-            String totalString= bundle.getString("total");
+            String totalString     = bundle.getString("total");
             String incorrectString = bundle.getString("Incorrect");
-            String scoreString = bundle.getString("correct");
+            String scoreString     = bundle.getString("correct");
+            int completedLevel     = bundle.getInt("levelID",1);
+            int completedModule    = bundle.getInt("moduleID",1);
 
             double total = (double)Integer.parseInt(totalString);
             int incorrect = Integer.parseInt(incorrectString);
@@ -68,10 +72,14 @@ public class LevelCompletionActivity extends AppCompatActivity {
                 totalScore.setTextColor(Color.GREEN);
                 failedMessage.setVisibility(View.INVISIBLE);
 
-               /* LeaderBoard.child(String.format("%s_%d", Common.currentUser.getUsername(), Common.CategoryID))
-                        .setValue(new QuestionScore(String.format("%s_%s", Common.currentUser.getUsername(), Common.CategoryID),
-                                Common.currentUser.getUsername(),
-                                String.valueOf(score))); */
+               //Creates User data to generate award data for upload to online Database
+                final Awards awardUpload = new Awards("bash",
+                        awardPoint,completedModule,completedLevel);
+
+                //Uses user's Username as a key to upload data to Database
+                Award.child(Awards.getUser())
+                        .setValue(awardUpload);
+
             }
             else
             {
@@ -84,7 +92,7 @@ public class LevelCompletionActivity extends AppCompatActivity {
             totalScore.setText(" YOUR SCORE :    "+ score + "%");
         }
 
-        //Plays the same game Level over again
+        //Starts the same game Level over again
         tryAgain.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent tryAgainIntent = new Intent(LevelCompletionActivity.this, GamePlay.class);
@@ -92,9 +100,8 @@ public class LevelCompletionActivity extends AppCompatActivity {
             }
         });
 
-
         //Starts the next Game Level when the button is clicked
-        nextLevel.setOnClickListener(new View.OnClickListener() {                        //take to the settings page
+        nextLevel.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                startActivity(new Intent(LevelCompletionActivity.this,GamePlay.class));
             }

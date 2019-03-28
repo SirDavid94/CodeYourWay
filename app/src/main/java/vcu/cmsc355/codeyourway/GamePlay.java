@@ -36,7 +36,7 @@ public class GamePlay extends AppCompatActivity {
     TextView currentModule, currentLevel;
 
 
-    //Firebase Instantiation
+    //FireBase Instantiation
     FirebaseDatabase database;
     DatabaseReference questions;
 
@@ -46,7 +46,7 @@ public class GamePlay extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_play);
 
-        //firebase reference
+        //fireBase reference
         database = FirebaseDatabase.getInstance();
         questions = database.getReference("module1");
 
@@ -353,6 +353,8 @@ public class GamePlay extends AppCompatActivity {
         completed.putExtra("total",String.valueOf(total));
         completed.putExtra("correct",String.valueOf(correct));
         completed.putExtra("Incorrect",String.valueOf(wrong));
+        completed.putExtra("ModuleID", moduleID);
+        completed.putExtra("LevelID",levelID );
         startActivity(completed);
     }
 
