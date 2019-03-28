@@ -9,15 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ExtraChallengesActivity"></activity>
+        <activity android:name=".LeaderBoard"></activity>
+        <activity android:name=".ExtraChallengesActivity" />
         <activity android:name=".WalkThrough.WalkThroughActivity" />
-        <activity android:name=".Done" />
         <activity android:name=".GamePlay" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".RandomFactsActivity" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".LevelCompletionActivity" />
-        <activity android:name=".ProfileActivity" />
         <activity android:name=".CreateProfileActivity" />
         <activity android:name=".TutorialPages.ArraysTutorialActivity" />
         <activity android:name=".TutorialPages.SelectionsTutorialActivity" />
@@ -26,6 +25,7 @@
         <activity android:name=".TutorialPages.LoopTutorialActivity" />
         <activity android:name=".SettingsActivity" />
         <activity android:name=".GameLevel.LevelSelectionActivity" />
+        <activity android:name=".ProfileActivity" />
         <activity android:name=".ResetPasswordActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".MenuActivity" />

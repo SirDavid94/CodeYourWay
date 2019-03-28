@@ -97,7 +97,13 @@ public class HomeActivity extends AppCompatActivity {
 
             case R.id.menuProfile:
                 Toast.makeText(this, "Opening user profile", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(this, CreateProfileActivity.class));
+                startActivity(new Intent(this, ProfileActivity.class));
+                finish();
+                break;
+
+            case R.id.HallOfFame:
+                Toast.makeText(this, "Opening LeaderBoard", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(this, LeaderBoard.class));
                 finish();
                 break;
         }

@@ -8,6 +8,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 public class MenuActivity extends AppCompatActivity {
 
     @Override
@@ -30,7 +33,7 @@ public class MenuActivity extends AppCompatActivity {
 
         switch(item.getItemId())  {
             case R.id.menuLogout:
-                Toast.makeText(this, "Logging user out", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Logging User Out", Toast.LENGTH_SHORT).show();
                 finish();
                 startActivity(new Intent(this, LoginActivity.class));
                 break;
@@ -39,7 +42,7 @@ public class MenuActivity extends AppCompatActivity {
                 break;
 
             case R.id.menuProfile:
-                Toast.makeText(this, "Opening user profile", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Opening User Profile", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(this, ProfileActivity.class));
                 finish();
                 break;
