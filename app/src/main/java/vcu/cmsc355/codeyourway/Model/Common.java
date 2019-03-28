@@ -5,7 +5,11 @@ import java.util.List;
 
 public class Common {
 
-    public static User currentUser;
+    public static String currentUser;
     public static String CategoryID;
     public static List<Question> questionList = new ArrayList<>();
+
+    public static String getCurrentUser() {
+        return currentUser;
+    }
 }

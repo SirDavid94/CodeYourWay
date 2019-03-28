@@ -16,4 +16,9 @@
         android:title="Settings"
         />
 
+    <item
+        android:id="@+id/HallOfFame"
+        android:title="Hall of Fame"
+        />
+
 </menu>

@@ -100,6 +100,12 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(new Intent(HomeActivity.this, ProfileActivity.class));
                 finish();
                 break;
+
+            case R.id.HallOfFame:
+                Toast.makeText(this, "Opening LeaderBoard", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(this, LeaderBoard.class));
+                finish();
+                break;
         }
         return true;
 
