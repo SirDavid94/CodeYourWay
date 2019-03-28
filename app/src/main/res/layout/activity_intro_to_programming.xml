@@ -29,45 +29,17 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="147dp"
         android:layout_marginLeft="147dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="176dp"
         android:layout_marginRight="176dp"
         android:layout_marginBottom="16dp"
-        android:textColor="#fff"
-        android:textStyle="bold"
         android:background="@drawable/rounded_button"
         android:text="Continue"
+        android:textColor="#fff"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/introView"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/introView"
-        android:layout_width="396dp"
-        android:layout_height="415dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:gravity="center"
-        android:text=" Class - A class defines a type and is used to define what all objects of that class know and can do.
-        Compiler - Software that translates the Java source code (ends in .java) into the Java class file (ends in .class).
-        Compile time error - An error that is found during the compilation. These are also called syntax errors.
-        Constructor - Used to initialize fields in a newly created object.
-        Field - A field holds data or a property - what an object knows or keeps track of.
-        Java - A programming language that you can use to tell a computer what to do.
-        Main Method - Where execution starts in a Java program.
-        Method - Defines behavior - what an object can do.
-        Object - Objects do the actual work in an object-oriented program.
-        Syntax Error - A syntax error is an error in the specification of the program."
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView5"
@@ -97,4 +69,40 @@
         app:layout_constraintEnd_toStartOf="@+id/SingleDimArray"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:id="@+id/introScrollview"
+        android:layout_width="395dp"
+        android:layout_height="420dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="9dp"
+        app:layout_constraintBottom_toTopOf="@+id/ContinueIntro"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Viverra mauris in aliquam sem fringilla ut morbi tincidunt augue. Nec feugiat nisl pretium fusce id velit ut. Tortor condimentum lacinia quis vel eros donec ac odio. Sit amet dictum sit amet. At risus viverra adipiscing l;koiufyfdtsfhkjhyiturysctdfvybgnmhnigbfvrecsudtfbyohijoongybfdtrseaxtcsrydtfbygunhiojminiubydtcrsexascrydvtfybgunhmijo,minfvycsreawxtcsdtfgumj,opkmnbfvcsxawzxecsrfbuhjokpl[k,ogufvazWZAESRTFGHIJOPL[.PJMGFTSEAZqzwescrthmijk.plk,mhgbfvsexzwqWESCRBGUMJ,.L,KJMGBFVSEWQAESCRGNJ,K..,MHFTDCAWZQescbghmj,k.l,kjmgfvdcsxawzAXECRFB7HM9,00M9NFVDCSAEWZAEXSDVBNM9,I-0I,9                                                                                                                                                                                                                         U87B6DCSAWZqwaxecdv6gn89,i0-.oi,98bdcrsawaesrdvgn89i,0-."
+        app:layout_constraintBottom_toTopOf="@+id/ContinueIntro"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
 </android.support.constraint.ConstraintLayout>
