@@ -16,6 +16,7 @@ import android.widget.TextView;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import vcu.cmsc355.codeyourway.Model.Awards;
+import vcu.cmsc355.codeyourway.Model.Common;
 
 
 public class LevelCompletionActivity extends AppCompatActivity {
@@ -45,6 +46,9 @@ public class LevelCompletionActivity extends AppCompatActivity {
         tryAgain = (Button) findViewById(R.id.tryAgainButton);
         nextLevel = (Button) findViewById(R.id.nextLevelButton);
 
+        // Gets a copy of the user's name for database purposes
+        String currentUser = Common.getCurrentUser();
+
         //Gets all data sent from previous page
          Bundle bundle = getIntent().getExtras();
         if (bundle != null)
@@ -73,7 +77,7 @@ public class LevelCompletionActivity extends AppCompatActivity {
                 failedMessage.setVisibility(View.INVISIBLE);
 
                //Creates User data to generate award data for upload to online Database
-                final Awards awardUpload = new Awards("bash",
+                final Awards awardUpload = new Awards(currentUser,
                         awardPoint,completedModule,completedLevel);
 
                 //Uses user's Username as a key to upload data to Database
