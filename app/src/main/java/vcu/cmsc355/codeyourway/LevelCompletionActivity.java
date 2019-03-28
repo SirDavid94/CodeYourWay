@@ -21,6 +21,7 @@ import vcu.cmsc355.codeyourway.Model.Common;
 
 public class LevelCompletionActivity extends AppCompatActivity {
     Button tryAgain;
+    int completedLevel,completedModule;
     Button nextLevel;
     int awardPoint = 1; //point to award to user every time they complete a level
     TextView completionMessage, congratulationMessage,
@@ -56,8 +57,8 @@ public class LevelCompletionActivity extends AppCompatActivity {
             String totalString     = bundle.getString("total");
             String incorrectString = bundle.getString("Incorrect");
             String scoreString     = bundle.getString("correct");
-            int completedLevel     = bundle.getInt("levelID",1);
-            int completedModule    = bundle.getInt("moduleID",1);
+            completedLevel         = bundle.getInt("levelID");
+            completedModule        = bundle.getInt("moduleID");
 
             double total = (double)Integer.parseInt(totalString);
             int incorrect = Integer.parseInt(incorrectString);
@@ -99,15 +100,29 @@ public class LevelCompletionActivity extends AppCompatActivity {
         //Starts the same game Level over again
         tryAgain.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+
                 Intent tryAgainIntent = new Intent(LevelCompletionActivity.this, GamePlay.class);
                 startActivity(tryAgainIntent);
             }
         });
 
+
+
         //Starts the next Game Level when the button is clicked
         nextLevel.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-               startActivity(new Intent(LevelCompletionActivity.this,GamePlay.class));
+                Intent nextLevel = new Intent(LevelCompletionActivity.this,GamePlay.class);
+
+                //Checks to see if a user has finished a module and takes them to the next module
+                if ( completedLevel == 6 && completedModule < 5)
+                {
+                    completedModule++;
+                    completedLevel = 1;
+                }
+                nextLevel.putExtra("ModuleID",completedModule );
+                nextLevel.putExtra("LevelID",completedLevel );
+
+               startActivity(nextLevel);
             }
         });
     }

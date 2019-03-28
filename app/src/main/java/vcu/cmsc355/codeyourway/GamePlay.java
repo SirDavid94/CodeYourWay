@@ -24,16 +24,15 @@ public class GamePlay extends AppCompatActivity {
 
     int moduleID = 0;
     int levelID = 0;
-    int index = 0;
     int correct = 0;
     int wrong  = 0;
+    int count, reserveCount =1;
     int total = 1;
+    String moduleCall;
     DatabaseReference reference;
-    int correctAnswer;
     ProgressBar progressBar;
     Button buttonA, buttonB, buttonC, buttonD;
-    TextView txtScore, txtQuestionNum, question_text;
-    TextView currentModule, currentLevel;
+    TextView question_text, currentModule, currentLevel;
 
 
     //FireBase Instantiation
@@ -58,15 +57,46 @@ public class GamePlay extends AppCompatActivity {
         buttonC        = findViewById(R.id.btnAnswerC);
         buttonD        = findViewById(R.id.btnAnswerD);
 
-
+        //Gets level and Module data sent from previous page
         Bundle bundle = getIntent().getExtras();
          moduleID = bundle.getInt("moduleID");
          levelID  = bundle.getInt("level");
-
+         //Adds level ID to string module for call to fireBase database
+         moduleCall = "module"+moduleID;
+         //Sets Tag texts to identify game pages
          currentLevel.setText( "LVL : "+ levelID);
          currentModule.setText("MOD : "+moduleID);
 
-        UpdateQuestion();
+
+         //uses the LevelID sent from previous page to
+        //set question pointer to appropriate question Number
+         selectLevel(levelID);
+         UpdateQuestion();
+    }
+
+    private void selectLevel(int levelID) {
+
+        if ( levelID == 1) {
+            count = 1;
+        }
+        else if ( levelID == 2) {
+            count = 6;
+        }
+        else if (levelID == 3) {
+            count = 11;
+        }
+        else if (levelID == 4) {
+            count = 16;
+        }
+        else if (levelID == 5) {
+            count = 21;
+        }
+        else if (levelID == 6) {
+            count = 26;
+        } else {
+            count = count;
+        }
+        reserveCount = count;
     }
 
     private void UpdateQuestion() {
@@ -75,14 +105,14 @@ public class GamePlay extends AppCompatActivity {
         if (total > 5)
         {
             // Open Done Activity
+            count = reserveCount;
             onFinish();
         }
 
         else
         {
 
-            reference = FirebaseDatabase.getInstance().getReference().child("module1").child(String.valueOf(total));
-            //questions.child("Questions").child(String.valueOf(total));
+            reference = FirebaseDatabase.getInstance().getReference().child(moduleCall).child(String.valueOf(count));
             reference.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -343,6 +373,7 @@ public class GamePlay extends AppCompatActivity {
             });
 
             total++;
+            count++;
         }
 
 
