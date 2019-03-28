@@ -30,7 +30,7 @@ public class ModuleCompletionActivity extends AppCompatActivity {
             }
         });
 
-        BtNextModule.setOnClickListener(new View.OnClickListener() {                        //take to the settings page
+        BtNextModule.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Toast.makeText(ModuleCompletionActivity.this, "Button Under Development", Toast.LENGTH_SHORT).show();
             }
