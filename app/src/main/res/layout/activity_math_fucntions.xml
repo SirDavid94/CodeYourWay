@@ -15,28 +15,12 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
         android:gravity="center"
         android:text="MATH FUNCTIONS,CHARACTERS AND STRINGS"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-        android:id="@+id/textView2"
-        android:layout_width="342dp"
-        android:layout_height="402dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:text="Viverra mauris in aliquam sem fringilla ut morbi tincidunt augue. Nec feugiat nisl pretium fusce id velit ut. Tortor condimentum lacinia quis vel eros donec ac odio. Sit amet dictum sit amet. At risus viverra adipiscing at in tellus integer. Sed id semper risus in hendrerit gravida. Vel fringilla est ullamcorper eget nulla. Egestas sed tempus urna et pharetra pharetra massa massa ultricies. Convallis convallis tellus id interdum velit laoreet. Faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis aliquam. Enim diam vulputate ut pharetra sit amet. Dui accumsan sit amet nulla. Hendrerit gravida rutrum quisque non tellus orci ac. Ultricies integer quis auctor elit."
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mathFunctionView" />
 
     <Button
         android:id="@+id/ContinueMathFunc"
@@ -44,10 +28,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="147dp"
         android:layout_marginLeft="147dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="26dp"
         android:layout_marginEnd="176dp"
         android:layout_marginRight="176dp"
-        android:layout_marginBottom="60dp"
+        android:layout_marginBottom="24dp"
         android:background="@drawable/rounded_button"
         android:text="Continue"
         android:textColor="#fff"
@@ -56,8 +40,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.062"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.746" />
+        app:layout_constraintTop_toBottomOf="@+id/scrollView4" />
 
 
     <TextView
@@ -69,13 +52,40 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="50dp"
         android:layout_marginRight="50dp"
-        android:layout_marginBottom="44dp"
         android:text="MOD: 3"
         android:textColor="@color/bTColor"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintEnd_toStartOf="@+id/SingleDimArray"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:id="@+id/scrollView4"
+        android:layout_width="395dp"
+        android:layout_height="422dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/ContinueMathFunc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mathFunctionView">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Viverra mauris in aliquam sem fringilla ut morbi tincidunt augue. Nec feugiat nisl pretium fusce id velit ut. Tortor condimentum lacinia quis vel eros donec ac odio. Sit amet dictum sit amet. At risus viverra adipiscing at in tellus integer. Sed id semper risus in hendrerit gravida. Vel fringilla est ullamcorper eget nulla. Egestas sed tempus urna et pharetra pharetra massa massa ultricies. Convallis convallis tellus id interdum velit laoreet. Faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis aliquam. Enim diam vulputate ut pharetra sit amet. Dui accumsan sit amet nulla. Hendrerit gravida rutrum quisque non tellus orci ac. Ultricies integer quis auctor elit." />
+        </LinearLayout>
+    </ScrollView>
 
 </android.support.constraint.ConstraintLayout>
