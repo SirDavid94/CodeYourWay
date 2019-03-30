@@ -94,6 +94,7 @@
                 android:gravity="center"
                 android:text="What is programming?"
                 android:textSize="30sp"
+                android:textStyle="bold"
                 app:fontFamily="casual"
                 app:layout_constraintBottom_toTopOf="@+id/ContinueIntro"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -115,10 +116,23 @@
                 android:id="@+id/textView10"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:includeFontPadding="true"
-                android:text="Programming Languages"
                 android:gravity="center"
+                android:includeFontPadding="true"
+                android:text="\n Programming Languages"
+                android:textSize="24sp"
+                android:textStyle="bold"
                 app:fontFamily="casual" />
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="true"
+                android:text="        The programming language you will learn is Java, which is a high-level language. Other high-level languages you may have heard of include Python, C and C++, Ruby, and JavaScript."
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textStyle="normal|italic"
+                app:fontFamily="casual" />
+
         </LinearLayout>
     </ScrollView>
 
