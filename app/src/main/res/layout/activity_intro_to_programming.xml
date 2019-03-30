@@ -133,6 +133,35 @@
                 android:textStyle="normal|italic"
                 app:fontFamily="casual" />
 
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="\n Hello World"
+                android:includeFontPadding="true"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:fontFamily="casual"
+                android:gravity="center" />
+
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text='\n     public class Hello {
+                    public static void main(String[] args) {
+                    // generate some simple output
+                    System.out.println("Hello, World!");
+                       }
+                    }
+                    \n
+                 When this program runs it displays:
+                 \n                         Hello, World!'
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textStyle="normal|italic"
+                app:fontFamily="casual"
+                android:includeFontPadding="true" />
+
         </LinearLayout>
     </ScrollView>
 
