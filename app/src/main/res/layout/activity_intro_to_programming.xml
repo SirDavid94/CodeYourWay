@@ -62,7 +62,7 @@
     <ScrollView
         android:id="@+id/introScrollview"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="442dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
@@ -71,8 +71,10 @@
         android:layout_marginBottom="9dp"
         app:layout_constraintBottom_toTopOf="@+id/ContinueIntro"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mathFunctionView">
+        app:layout_constraintTop_toBottomOf="@+id/mathFunctionView"
+        app:layout_constraintVertical_bias="0.152">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -82,18 +84,41 @@
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginBottom="8dp"
-                android:text="There once lived in a town of Persia two brothers, one named Cassim and the other Ali Baba. Their father divided a small inheritance equally between them. Cassim married a very rich wife, and became a wealthy merchant. Ali Baba married a woman as poor as himself, and lived by cutting wood, and bringing it upon three asses into the town to sell.  One day, when Ali Baba was in the forest and had just cut wood enough to load his asses, he saw at a distance a great cloud of dust, which seemed to approach him. He observed it with attention, and distinguished soon after a body of horsemen, whom he suspected might be robbers. He determined to leave his asses to save himself. He climbed up a large tree, planted on a high rock, whose branches were thick enough to conceal him, and yet enabled him to see all that passed without being discovered.  The troop, who were to the number of forty, all well mounted and armed, came to the foot of the rock on which the tree stood, and there dismounted. Every man unbridled his horse, tied him to some shrub, and hung about his neck a bag of corn which they had brought behind them. Then each of them took off his saddle-bag, which seemed to Ali Baba from its weight to be full of gold and silver. One, whom he took to be their captain, came under the tree in which Ali Baba was concealed; and making his way through some shrubs, pronounced these words: &quot;Open, Sesame!&quot; As soon as the captain of the robbers had thus spoken, a door opened in the rock; and after he had made all his troop enter before him, he followed them, when the door shut again of itself.  The robbers stayed some time within the rock, during which Ali Baba, fearful of being caught, remained in the tree.  At last the door opened again, and as the captain went in last, so he came out first, and stood to see them all pass by him; when Ali Baba heard him make the door close by pronouncing these words, &quot;Shut, Sesame!&quot; Every man at once went and bridled his horse, fastened his wallet, and mounted again. When the captain saw them all ready, he put himself at their head, and they returned the way they had come.  Ali Baba followed them with his eyes as far as he could see them; and afterward stayed a considerable time before he descended. Remembering the words the captain of the robbers used to cause the door to open and shut, he had the curiosity to try if his pronouncing them would have the same effect. Accordingly, he went among the shrubs, and perceiving the door concealed behind them, stood before it, and said, &quot;Open, Sesame!&quot; The door instantly flew wide open.  Ali Baba, who expected a dark, dismal cavern, was surprised to see a well-lighted and spacious chamber, which received the light from an opening at the top of the rock, and in which were all sorts of provisions, rich bales of silk, stuff, brocade, and valuable carpeting, piled upon one another, gold and silver ingots in great heaps, and money in bags. The sight of all these riches made him suppose that this cave must have been occupied for ages by robbers, who had succeeded one another.  Ali Baba went boldly into the cave, and collected as much of the gold coin, which was in bags, as he thought his three asses could carry. When he had loaded them with the bags, he laid wood over them in such a manner that they could not be seen. When he had passed in and out as often as he wished, he stood before the door, and pronouncing the words, &quot;Shut, Sesame!&quot; the door closed of itself. He then made the best of his way to town.  When Ali Baba got home he drove his asses into a little yard, shut the gates very carefully, threw off the wood that covered the panniers, carried the bags into his house, and ranged them in order before his wife. He then emptied the bags, which raised such a great heap of gold as dazzled his wife's eyes, and then he told her the whole adventure from beginning to end, and, above all, recommended her to keep it secret.  The wife rejoiced greatly at their good fortune, and would count all the gold piece by piece.  &quot;Wife,&quot; replied Ali Baba, &quot;you do not know what you undertake, when you pretend to count the money; you will never have done. I will dig a hole, and bury it. There is no time to be lost.&quot;  &quot;You are in the right, husband,&quot; replied she, &quot;but let us know, as nigh as possible, how much we have. I will borrow a small measure, and measure it, while you dig the hole.&quot;  Away the wife ran to her brother-in-law Cassim, who lived just by, and addressing herself to his wife, desired that she lend her a measure for a little while. Her sister-in-law asked her whether she would have a great or a small one. The other asked for a small one. She bade her stay a little, and she would readily fetch one.  The sister-in-law did so, but as she knew Ali Baba's poverty, she was curious to know what sort of grain his wife wanted to measure, and artfully putting some suet at the bottom of the measure, brought it to her, with an excuse that she was sorry that she had made her stay so long, but that she could not find it sooner."
+                android:gravity="center"
+                android:text="What is programming?"
+                android:textSize="30sp"
+                app:fontFamily="casual"
                 app:layout_constraintBottom_toTopOf="@+id/ContinueIntro"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="            A program is a sequence of instructions that specifies how to perform a computation. The computation might be something mathematical, like solving a system of equations or finding the roots of a polynomial. It can also be a symbolic computation, like searching and replacing text in a document or (strangely enough) compiling a program.\n\n      Input: Get data from the keyboard, a file, a sensor, or some other device. \n     Output: Display data on the screen, or send data to a file or other device. \n     Math: Perform basic mathematical operations like addition and division. \n     Decisions: Check for certain conditions and execute the appropriate code. \n     Repetition: Perform some action repeatedly, usually with some variation."
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textStyle="normal|italic"
+                app:fontFamily="casual"
+                tools:layout_editor_absoluteX="165dp"
+                tools:layout_editor_absoluteY="105dp" />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="true"
+                android:text="Programming Languages"
+                android:gravity="center"
+                app:fontFamily="casual" />
         </LinearLayout>
     </ScrollView>
 
