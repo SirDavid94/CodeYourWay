@@ -156,11 +156,34 @@
                     }
                     \n
                  When this program runs it displays:
-                 \n                         Hello, World!'
+                                         Hello, World!
+                 \n The characters in quotes are called Strings'
                 android:textAppearance="@style/TextAppearance.AppCompat"
                 android:textStyle="normal|italic"
                 app:fontFamily="casual"
                 android:includeFontPadding="true" />
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="\nDeclaring variables"
+                android:includeFontPadding="true"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:fontFamily="casual"
+                android:gravity="center" />
+
+            <TextView
+                android:id="@+id/textView17"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="\n    One of the most powerful features of a programming language is the ability to define and manipulate variables. A variable is a named location that stores a value, it could be numbers, text, images, sounds,"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textStyle="normal|italic"
+                app:fontFamily="casual"
+                android:includeFontPadding="true"
+                />
 
         </LinearLayout>
     </ScrollView>
