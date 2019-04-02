@@ -85,7 +85,7 @@ public class ProfileActivity extends AppCompatActivity {
         btChangePassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(ProfileActivity.this, "Button under construction", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(ProfileActivity.this, ChangePasswordActivity.class));
             }
         });
 
