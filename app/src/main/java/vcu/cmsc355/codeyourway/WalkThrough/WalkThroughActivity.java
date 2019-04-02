@@ -50,8 +50,8 @@ public class WalkThroughActivity extends AppCompatActivity {
 
 
         Bundle bundle = getIntent().getExtras();
-        String username = bundle.getString("username");
-        helloMsg.setText("Hello "+ username);
+       // String username = bundle.getString("username");
+        //helloMsg.setText("Hello "+ username);
 
 
         buttonNext.setOnClickListener(new View.OnClickListener() {

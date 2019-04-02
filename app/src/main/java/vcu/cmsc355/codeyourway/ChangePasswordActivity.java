@@ -1,12 +1,15 @@
 package vcu.cmsc355.codeyourway;
 
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -20,9 +23,11 @@ import com.google.firebase.database.FirebaseDatabase;
 public class ChangePasswordActivity extends AppCompatActivity {
 
     EditText currentPassword, newPassword, confirmPassword;
+    TextView instructionAlert;
     FirebaseUser firebaseUser;
     Button submit;
     FirebaseDatabase firebaseDatabase;
+    String userCurrentPassword, userNewPassword, userConfirmPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,44 +37,73 @@ public class ChangePasswordActivity extends AppCompatActivity {
         currentPassword = findViewById(R.id.current_pass);
         newPassword = findViewById((R.id.new_pass));
         confirmPassword = findViewById((R.id.confirm_pass));
-
+        instructionAlert = findViewById(R.id.PasswordInstruction);
         submit = findViewById(R.id.btn_submit);
 
 
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         firebaseDatabase = FirebaseDatabase.getInstance();
 
-        String userCurrent_Password = currentPassword.getText().toString();
-        String userNew_Password = newPassword.getText().toString();
-        String userConfirm_Password = confirmPassword.getText().toString();
+        userCurrentPassword = currentPassword.getText().toString();
+         userNewPassword = newPassword.getText().toString();
+        userConfirmPassword = confirmPassword.getText().toString();
 
 
-        firebaseUser.updatePassword(userConfirm_Password).addOnCompleteListener(new OnCompleteListener<Void>() {
+
+
+        submit.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onComplete(@NonNull Task<Void> task) {
-                if(task.isSuccessful()){
-                    Toast.makeText(ChangePasswordActivity.this, "Password Changed",Toast.LENGTH_SHORT).show();
-                    finish();
-                }
+            public void onClick(View v) {
 
-                else {
+                if ( PasswordLengthCheck() && PasswordMatchCheck())
+                {
+                    //Password Replace code goes here
+                    firebaseUser.updatePassword(userConfirmPassword).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if(task.isSuccessful()){
+                                Toast.makeText(ChangePasswordActivity.this, "Password Changed",Toast.LENGTH_SHORT).show();
+                                finish();
+                            }
 
-                    Toast.makeText(ChangePasswordActivity.this, "Update failed",Toast.LENGTH_SHORT).show();
+                            else {
+
+                                Toast.makeText(ChangePasswordActivity.this, "Update failed",Toast.LENGTH_SHORT).show();
+
+                            }
+                        }
+                    });
 
                 }
             }
         });
+        }
 
+    /**
+     * Checks if the user input and the confirmation matches
+     * @return boolean true if passwords are a match and boolean false is otherwise
+     */
+    private boolean PasswordMatchCheck() {
 
+        if (userNewPassword != userConfirmPassword) {
 
+            Toast.makeText(ChangePasswordActivity.this, "Passwords doesn't Match", Toast.LENGTH_SHORT).show();
 
+        }
+        return true;
+    }
 
+    /**
+     * Checks the new password string to ensure it is longer than 6 characters
+     * @return boolean true if password is longer than 6 characters and false if otherwise
+     */
+    private boolean PasswordLengthCheck() {
 
-
-}
-
-
-
-
+        if (userCurrentPassword.length() < 6) {
+            instructionAlert.setTextColor(Color.RED);
+            Toast.makeText(this, "Password must be longer than 6 characters", Toast.LENGTH_SHORT).show();
+        }
+        return true;
+    }
 
 }

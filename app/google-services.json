@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "127878432625-4ajukpfn83ml593f5fdmhqufecse1lu8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "vcu.cmsc355.codeyourway",
+            "certificate_hash": "d72bf39ff440b8ba7de4fffc029062f79f0ce8b4"
+          }
+        },
+        {
           "client_id": "127878432625-dbatgbnafl33jqqo0s95l53g4lc5mrou.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
@@ -38,7 +46,12 @@
         },
         "appinvite_service": {
           "status": 2,
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "127878432625-5oujhjkfe338evja5l4vndem3lsi32rs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2
