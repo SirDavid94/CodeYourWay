@@ -24,7 +24,7 @@ public class LevelCompletionActivity extends AppCompatActivity {
     int completedLevel,completedModule;
     Button nextLevel;
     String awardLabel = "badge";
-    int awardPoint = 1; //point to award to user every time they complete a level
+    int awardCount = 1; //point to award to user every time they complete a level
     TextView completionMessage, congratulationMessage,
              passingScore,totalScore,failedMessage;
 
@@ -87,11 +87,16 @@ public class LevelCompletionActivity extends AppCompatActivity {
 
                //Creates User data to generate award data for upload to online Database
                 final Awards awardUpload = new Awards(currentUser,
-                        awardPoint,awardLabel);
+                        awardCount,awardLabel);
 
-                //Uses user's Username as a key to upload data to Database
-                Award.child(Awards.getUser())
-                        .setValue(awardUpload);
+
+
+                //Uses user's Username as a key to upload badge data to Database
+
+               // Award.child(currentUser).updateChildren((awardCount))
+                Award.child(currentUser).child(awardLabel).setValue(1);
+                /*Award.child(Awards.getUser())
+                        .setValue(awardUpload);*/
 
             }
             else
@@ -128,6 +133,7 @@ public class LevelCompletionActivity extends AppCompatActivity {
                     completedModule++;
                     completedLevel = 1;
                 }
+                // condition checks if user hasn't finished all the levels in a module
                 else if ( completedLevel <6 ) {
                     completedLevel++;
                 }
