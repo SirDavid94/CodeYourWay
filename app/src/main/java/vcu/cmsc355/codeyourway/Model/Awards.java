@@ -3,18 +3,17 @@ package vcu.cmsc355.codeyourway.Model;
 public class Awards {
     private static String User;
     private int awardCount;
-    private int Module;
-    private int Level;
+    private String awardLabel;
+
 
 
     public Awards() {
     }
 
-    public Awards(String user, int awardCount, int module, int level) {
+    public Awards(String user, int awardCount, String awardLabel) {
         this.User = user;
         this.awardCount = awardCount;
-        Module = module;
-        Level = level;
+        this.awardLabel = awardLabel;
     }
 
     public static String getUser() {
@@ -33,20 +32,12 @@ public class Awards {
         this.awardCount = awardCount;
     }
 
-    public int getModule() {
-        return Module;
+    public String getAwardLabel() {
+        return awardLabel;
     }
 
-    public void setModule(int module) {
-        Module = module;
-    }
-
-    public int getLevel() {
-        return Level;
-    }
-
-    public void setLevel(int level) {
-        Level = level;
+    public void setAwardLabel(String awardLabel) {
+        this.awardLabel = awardLabel;
     }
 }
 

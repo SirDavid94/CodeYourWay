@@ -23,6 +23,7 @@ public class LevelCompletionActivity extends AppCompatActivity {
     Button tryAgain;
     int completedLevel,completedModule;
     Button nextLevel;
+    String awardLabel = "badge";
     int awardPoint = 1; //point to award to user every time they complete a level
     TextView completionMessage, congratulationMessage,
              passingScore,totalScore,failedMessage;
@@ -55,21 +56,28 @@ public class LevelCompletionActivity extends AppCompatActivity {
         if (bundle != null)
         {
             String totalString     = bundle.getString("total");
-            String incorrectString = bundle.getString("Incorrect");
             String scoreString     = bundle.getString("correct");
-            completedLevel         = bundle.getInt("levelID");
-            completedModule        = bundle.getInt("moduleID");
+            String incorrectString = bundle.getString("Incorrect");
+            String moduleString    = bundle.getString("ModuleID");
+            String levelString     = bundle.getString("LevelID");
+            awardLabel             +=moduleString+levelString;
+
+
+
 
             double total = (double)Integer.parseInt(totalString);
-            int incorrect = Integer.parseInt(incorrectString);
             double scoreInt = (double)Integer.parseInt(scoreString);
+            int incorrect = Integer.parseInt(incorrectString);
+            completedModule      = Integer.parseInt(moduleString);
+            completedLevel        = Integer.parseInt(levelString);
+
 
             //Sets the passing score to green
             passingScore.setTextColor(Color.GREEN);
 
 
             // Calculates Percentage for passing score
-            int score = (int)((scoreInt/(total-1))*100);
+            int score = (int)((scoreInt/5)*100);
 
             // If score is 80% or greater then the user has passed the level
             if(score >= 80)
@@ -79,7 +87,7 @@ public class LevelCompletionActivity extends AppCompatActivity {
 
                //Creates User data to generate award data for upload to online Database
                 final Awards awardUpload = new Awards(currentUser,
-                        awardPoint,completedModule,completedLevel);
+                        awardPoint,awardLabel);
 
                 //Uses user's Username as a key to upload data to Database
                 Award.child(Awards.getUser())
@@ -102,6 +110,8 @@ public class LevelCompletionActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent tryAgainIntent = new Intent(LevelCompletionActivity.this, GamePlay.class);
+                tryAgainIntent.putExtra("moduleID", completedModule);
+                tryAgainIntent.putExtra("level", completedLevel);
                 startActivity(tryAgainIntent);
             }
         });
@@ -111,7 +121,6 @@ public class LevelCompletionActivity extends AppCompatActivity {
         //Starts the next Game Level when the button is clicked
         nextLevel.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent nextLevel = new Intent(LevelCompletionActivity.this,GamePlay.class);
 
                 //Checks to see if a user has finished a module and takes them to the next module
                 if ( completedLevel == 6 && completedModule < 5)
@@ -119,9 +128,12 @@ public class LevelCompletionActivity extends AppCompatActivity {
                     completedModule++;
                     completedLevel = 1;
                 }
-                nextLevel.putExtra("ModuleID",completedModule );
-                nextLevel.putExtra("LevelID",completedLevel );
-
+                else if ( completedLevel <6 ) {
+                    completedLevel++;
+                }
+                Intent nextLevel = new Intent(LevelCompletionActivity.this,GamePlay.class);
+                nextLevel.putExtra("moduleID",completedModule );
+                nextLevel.putExtra("level",completedLevel );
                startActivity(nextLevel);
             }
         });

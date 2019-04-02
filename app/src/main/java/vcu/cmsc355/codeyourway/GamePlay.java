@@ -26,7 +26,7 @@ public class GamePlay extends AppCompatActivity {
     int levelID = 0;
     int correct = 0;
     int wrong  = 0;
-    int count, reserveCount =1;
+    int count = 1;
     int total = 1;
     String moduleCall;
     DatabaseReference reference;
@@ -96,7 +96,7 @@ public class GamePlay extends AppCompatActivity {
         } else {
             count = count;
         }
-        reserveCount = count;
+
     }
 
     private void UpdateQuestion() {
@@ -105,7 +105,6 @@ public class GamePlay extends AppCompatActivity {
         if (total > 5)
         {
             // Open Done Activity
-            count = reserveCount;
             onFinish();
         }
 
@@ -384,8 +383,8 @@ public class GamePlay extends AppCompatActivity {
         completed.putExtra("total",String.valueOf(total));
         completed.putExtra("correct",String.valueOf(correct));
         completed.putExtra("Incorrect",String.valueOf(wrong));
-        completed.putExtra("ModuleID", moduleID);
-        completed.putExtra("LevelID",levelID );
+        completed.putExtra("ModuleID", String.valueOf(moduleID));
+        completed.putExtra("LevelID", String.valueOf(levelID));
         startActivity(completed);
     }
 

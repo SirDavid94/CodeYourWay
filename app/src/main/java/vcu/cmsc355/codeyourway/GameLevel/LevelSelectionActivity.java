@@ -19,7 +19,8 @@ import vcu.cmsc355.codeyourway.SettingsActivity;
 
 public class LevelSelectionActivity extends AppCompatActivity implements View.OnClickListener {
 
-    int moduleIdentification;
+
+    int moduleIdentification, moduleNum;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +43,7 @@ public class LevelSelectionActivity extends AppCompatActivity implements View.On
 
 
         Bundle bundle = getIntent().getExtras();
-        int moduleNum = bundle.getInt("moduleID");
+         moduleNum = bundle.getInt("moduleID");
         moduleID.setText("MOD:  "+moduleNum);
 
         moduleIdentification = moduleNum;
@@ -58,7 +59,7 @@ public class LevelSelectionActivity extends AppCompatActivity implements View.On
             case R.id.level1:
                 Toast.makeText(this, "Starting Level 1 ", Toast.LENGTH_SHORT).show();
                 Intent level1 = new Intent (LevelSelectionActivity.this, GamePlay.class);
-                level1.putExtra("moduleID", moduleIdentification);
+                level1.putExtra("moduleID", moduleNum);
                 level1.putExtra("level", 1);
                 startActivity(level1);
                 break;
@@ -66,7 +67,7 @@ public class LevelSelectionActivity extends AppCompatActivity implements View.On
             case R.id.level2:
                 Toast.makeText(this, "Starting Level 2 ", Toast.LENGTH_SHORT).show();
                 Intent level2 = new Intent (LevelSelectionActivity.this, GamePlay.class);
-                level2.putExtra("moduleID", moduleIdentification);
+                level2.putExtra("moduleID", moduleNum);
                 level2.putExtra("level", 2);
                 startActivity(level2);
                 break;
@@ -74,7 +75,7 @@ public class LevelSelectionActivity extends AppCompatActivity implements View.On
             case R.id.level3:
                 Toast.makeText(this, "Starting Level 3 ", Toast.LENGTH_SHORT).show();
                 Intent level3 = new Intent (LevelSelectionActivity.this, GamePlay.class);
-                level3.putExtra("moduleID", moduleIdentification);
+                level3.putExtra("moduleID", moduleNum);
                 level3.putExtra("level", 3);
                 startActivity(level3);
                 break;
@@ -82,7 +83,7 @@ public class LevelSelectionActivity extends AppCompatActivity implements View.On
             case R.id.level4:
                 Toast.makeText(this, "Starting Level 4 ", Toast.LENGTH_SHORT).show();
                 Intent level4 = new Intent (LevelSelectionActivity.this, GamePlay.class);
-                level4.putExtra("moduleID", moduleIdentification);
+                level4.putExtra("moduleID", moduleNum);
                 level4.putExtra("level", 4);
                 startActivity(level4);
                 break;
@@ -90,7 +91,7 @@ public class LevelSelectionActivity extends AppCompatActivity implements View.On
             case R.id.level5:
                 Toast.makeText(this, "Starting Level 5 ", Toast.LENGTH_SHORT).show();
                 Intent level5 = new Intent (LevelSelectionActivity.this, GamePlay.class);
-                level5.putExtra("moduleID", moduleIdentification);
+                level5.putExtra("moduleID", moduleNum);
                 level5.putExtra("level", 5);
                 startActivity(level5);
                 break;
@@ -98,7 +99,7 @@ public class LevelSelectionActivity extends AppCompatActivity implements View.On
             case R.id.level6:
                 Toast.makeText(this, "Starting Level 6 ", Toast.LENGTH_SHORT).show();
                 Intent level6 = new Intent (LevelSelectionActivity.this, GamePlay.class);
-                level6.putExtra("moduleID", moduleIdentification);
+                level6.putExtra("moduleID", moduleNum);
                 level6.putExtra("level", 6);
                 startActivity(level6);
                 break;

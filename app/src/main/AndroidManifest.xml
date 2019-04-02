@@ -12,7 +12,6 @@
         <activity android:name=".ChangePasswordActivity"></activity>
         <activity android:name=".ExtraChallengesActivity" />
         <activity android:name=".WalkThrough.WalkThroughActivity" />
-        <activity android:name=".Done" />
         <activity android:name=".GamePlay" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".RandomFactsActivity" />
