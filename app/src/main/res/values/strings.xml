@@ -115,6 +115,10 @@
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="send_email">Send Email</string>
+    <string name="select_a_module_to_continue">Select a Module to Continue</string>
+    <string name="math_functions_characters_and_strings">MATH FUNCTIONS, CHARACTERS AND STRINGS</string>
+    <string name="loops">loops</string>
+    <string name="single_dimensional_array">Single Dimensional Array</string>
 
     <string-array name="expertise">
         <item>Beginner</item>

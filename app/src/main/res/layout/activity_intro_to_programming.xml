@@ -29,56 +29,17 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="147dp"
         android:layout_marginLeft="147dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="176dp"
         android:layout_marginRight="176dp"
         android:layout_marginBottom="16dp"
-        android:textColor="#fff"
-        android:textStyle="bold"
         android:background="@drawable/rounded_button"
         android:text="Continue"
+        android:textColor="#fff"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/introView"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/introView"
-        android:layout_width="396dp"
-        android:layout_height="415dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:gravity="center"
-        android:text=" Class - A class defines a type and is used to define what all objects of that class know and can do.
-        Compiler - Software that translates the Java source code (ends in .java) into the Java class file (ends in .class).
-        Compile time error - An error that is found during the compilation. These are also called syntax errors.
-        Constructor - Used to initialize fields in a newly created object.
-        Field - A field holds data or a property - what an object knows or keeps track of.
-        Java - A programming language that you can use to tell a computer what to do.
-        Main Method - Where execution starts in a Java program.
-        Method - Defines behavior - what an object can do.
-        Object - Objects do the actual work in an object-oriented program.
-        Syntax Error - A syntax error is an error in the specification of the program."
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="166dp"
-        android:layout_height="38dp"
-        android:layout_marginTop="8dp"
-        android:gravity="center"
-        android:text="Concept Summary"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mathFunctionView" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/IntroModuleID"
@@ -97,4 +58,134 @@
         app:layout_constraintEnd_toStartOf="@+id/SingleDimArray"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:id="@+id/introScrollview"
+        android:layout_width="0dp"
+        android:layout_height="442dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="9dp"
+        app:layout_constraintBottom_toTopOf="@+id/ContinueIntro"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mathFunctionView"
+        app:layout_constraintVertical_bias="0.152">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
+                android:gravity="center"
+                android:text="What is programming?"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                app:fontFamily="casual"
+                app:layout_constraintBottom_toTopOf="@+id/ContinueIntro"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="            A program is a sequence of instructions that specifies how to perform a computation. The computation might be something mathematical, like solving a system of equations or finding the roots of a polynomial. It can also be a symbolic computation, like searching and replacing text in a document or (strangely enough) compiling a program.\n\n      Input: Get data from the keyboard, a file, a sensor, or some other device. \n     Output: Display data on the screen, or send data to a file or other device. \n     Math: Perform basic mathematical operations like addition and division. \n     Decisions: Check for certain conditions and execute the appropriate code. \n     Repetition: Perform some action repeatedly, usually with some variation."
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textStyle="normal|italic"
+                app:fontFamily="casual"
+                tools:layout_editor_absoluteX="165dp"
+                tools:layout_editor_absoluteY="105dp" />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:includeFontPadding="true"
+                android:text="\n Programming Languages"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:fontFamily="casual" />
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="true"
+                android:text="        The programming language you will learn is Java, which is a high-level language. Other high-level languages you may have heard of include Python, C and C++, Ruby, and JavaScript."
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textStyle="normal|italic"
+                app:fontFamily="casual" />
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="\n Hello World"
+                android:includeFontPadding="true"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:fontFamily="casual"
+                android:gravity="center" />
+
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text='\n     public class Hello {
+                    public static void main(String[] args) {
+                    // generate some simple output
+                    System.out.println("Hello, World!");
+                       }
+                    }
+                    \n
+                 When this program runs it displays:
+                                         Hello, World!
+                 \n The characters in quotes are called Strings'
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textStyle="normal|italic"
+                app:fontFamily="casual"
+                android:includeFontPadding="true" />
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="\nDeclaring variables"
+                android:includeFontPadding="true"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:fontFamily="casual"
+                android:gravity="center" />
+
+            <TextView
+                android:id="@+id/textView17"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="\n    One of the most powerful features of a programming language is the ability to define and manipulate variables. A variable is a named location that stores a value, it could be numbers, text, images, sounds,"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textStyle="normal|italic"
+                app:fontFamily="casual"
+                android:includeFontPadding="true"
+                />
+
+        </LinearLayout>
+    </ScrollView>
+
 </android.support.constraint.ConstraintLayout>

@@ -20,7 +20,6 @@ import vcu.cmsc355.codeyourway.SettingsActivity;
 public class LevelSelectionActivity extends AppCompatActivity implements View.OnClickListener {
 
     int moduleIdentification;
-    //int level;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
