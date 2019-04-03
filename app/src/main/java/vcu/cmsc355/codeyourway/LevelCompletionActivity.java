@@ -9,12 +9,21 @@ package vcu.cmsc355.codeyourway;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.MutableData;
+import com.google.firebase.database.Transaction;
+import com.google.firebase.database.ValueEventListener;
+
 import vcu.cmsc355.codeyourway.Model.Awards;
 import vcu.cmsc355.codeyourway.Model.Common;
 
@@ -24,7 +33,7 @@ public class LevelCompletionActivity extends AppCompatActivity {
     int completedLevel,completedModule;
     Button nextLevel;
     String awardLabel = "badge";
-    int awardCount = 1; //point to award to user every time they complete a level
+    String awardCount = "awardCount"; //point to award to user every time they complete a level
     TextView completionMessage, congratulationMessage,
              passingScore,totalScore,failedMessage;
 
@@ -49,7 +58,7 @@ public class LevelCompletionActivity extends AppCompatActivity {
         nextLevel = (Button) findViewById(R.id.nextLevelButton);
 
         // Gets a copy of the user's name for database purposes
-        String currentUser = Common.getCurrentUser();
+        final String currentUser = Common.getCurrentUser();
 
         //Gets all data sent from previous page
          Bundle bundle = getIntent().getExtras();
@@ -85,18 +94,41 @@ public class LevelCompletionActivity extends AppCompatActivity {
                 totalScore.setTextColor(Color.GREEN);
                 failedMessage.setVisibility(View.INVISIBLE);
 
-               //Creates User data to generate award data for upload to online Database
-                final Awards awardUpload = new Awards(currentUser,
-                        awardCount,awardLabel);
-
-
-
                 //Uses user's Username as a key to upload badge data to Database
 
-               // Award.child(currentUser).updateChildren((awardCount))
-                Award.child(currentUser).child(awardLabel).setValue(1);
-                /*Award.child(Awards.getUser())
-                        .setValue(awardUpload);*/
+                Award.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        if ( dataSnapshot.child(currentUser).child(awardLabel).exists())
+                        {
+                            Awards Label  = dataSnapshot.child(currentUser).getValue(Awards.class);
+                           Awards Count  = dataSnapshot.child(currentUser).getValue(Awards.class);
+
+                           final int labelCount = Label.getCount()+1;
+                           final int awardCounter = Count.getAwardCount()+1;
+
+                            Award.child(currentUser).child(awardLabel).setValue(labelCount);
+                            Award.child(currentUser).child(awardCount).setValue(awardCounter);
+
+                        }
+
+                        else
+                        {
+                            Award.child(currentUser).child(awardLabel).setValue(1);
+                            Awards Count  = dataSnapshot.child(currentUser).getValue(Awards.class);
+                            final int awardCounter = Count.getAwardCount()+1;
+                            Award.child(currentUser).child(awardCount).setValue(awardCounter);
+                            //Update AwardCount
+                        }
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+
 
             }
             else

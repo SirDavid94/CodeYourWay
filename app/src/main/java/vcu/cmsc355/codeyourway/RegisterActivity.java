@@ -20,6 +20,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.database.ChildEventListener;
 
+import vcu.cmsc355.codeyourway.Model.Awards;
+import vcu.cmsc355.codeyourway.Model.Common;
 import vcu.cmsc355.codeyourway.Model.User;
 
 //Instantiating variables
@@ -34,10 +36,12 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
     EditText textCnfPassword;
     Button buttonRegister;
     TextView textViewLogin;
+    int awardCount =0;
 
 
     FirebaseDatabase database;
-    DatabaseReference users;
+    DatabaseReference users, Award;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +49,7 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
 
         database = FirebaseDatabase.getInstance();
         users = database.getReference("Users");
+        Award = database.getReference("Awards");
         textFirstName = (EditText) findViewById(R.id.textFirstName);
         textLastName = (EditText) findViewById(R.id.textLastName);
         textEmail = (EditText) findViewById(R.id.text_email);
@@ -55,6 +60,8 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
         buttonRegister = (Button) findViewById(R.id.button_register);
         textViewLogin = (TextView) findViewById(R.id.text_login);
         textExpertise.setOnItemSelectedListener(this);
+
+
 
         // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
@@ -116,6 +123,10 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
         textCnfPassword = (EditText) findViewById(R.id.text_cnf_password);
 
 
+        final Awards awardUpload = new Awards(textUsername.getText().toString().trim(),
+                awardCount);
+
+
         final User user = new User(textUsername.getText().toString().trim(),
                 textPassword.getText().toString().trim(),
                 textEmail.getText().toString().trim(),
@@ -129,8 +140,12 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
 
                     Toast.makeText(RegisterActivity.this, "User Already exists !", Toast.LENGTH_SHORT).show();
                 else {
+                    //Creates user profile in user database
                     users.child(user.getUsername())
                             .setValue(user);
+                        //Creates an award profile for user
+                    Award.child(Awards.getUser())
+                            .setValue(awardUpload);
                     Toast.makeText(RegisterActivity.this, "User Registration Successful !", Toast.LENGTH_SHORT).show();
 
                     startActivity( new Intent(RegisterActivity.this, LoginActivity.class));
