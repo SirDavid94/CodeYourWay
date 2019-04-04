@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:layout_editor_absoluteY="81dp">
 
     <TextView
         android:id="@+id/mathFunctionView"
@@ -16,11 +16,12 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:gravity="center"
-        android:text="MATH FUNCTIONS,CHARACTERS AND STRINGS"
+        android:text="MATH FUNCTIONS, CHARACTERS AND STRINGS"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 
     <Button
         android:id="@+id/ContinueMathFunc"
@@ -28,20 +29,17 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="147dp"
         android:layout_marginLeft="147dp"
-        android:layout_marginTop="26dp"
         android:layout_marginEnd="176dp"
         android:layout_marginRight="176dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/rounded_button"
         android:text="Continue"
         android:textColor="#fff"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.062"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scrollView4" />
-
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/MathFuncModuleID"
@@ -52,39 +50,132 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="50dp"
         android:layout_marginRight="50dp"
-        android:text="MOD: 3"
+        android:layout_marginBottom="44dp"
+        android:text="MOD: 1"
         android:textColor="@color/bTColor"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintEnd_toStartOf="@+id/SingleDimArray"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ScrollView
-        android:id="@+id/scrollView4"
-        android:layout_width="395dp"
-        android:layout_height="422dp"
+        android:id="@+id/introScrollview"
+        android:layout_width="0dp"
+        android:layout_height="442dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/ContinueMathFunc"
+        android:layout_marginBottom="9dp"
+        app:layout_constraintBottom_toTopOf="@+id/ContinueIntro"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mathFunctionView">
+        app:layout_constraintTop_toBottomOf="@+id/mathFunctionView"
+        app:layout_constraintVertical_bias="0.152">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
+                android:gravity="center"
+                android:text="Math Functions"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                app:fontFamily="sans-serif"
+                app:layout_constraintBottom_toTopOf="@+id/ContinueIntro"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+            <TextView
+                android:id="@+id/textView8"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Viverra mauris in aliquam sem fringilla ut morbi tincidunt augue. Nec feugiat nisl pretium fusce id velit ut. Tortor condimentum lacinia quis vel eros donec ac odio. Sit amet dictum sit amet. At risus viverra adipiscing at in tellus integer. Sed id semper risus in hendrerit gravida. Vel fringilla est ullamcorper eget nulla. Egestas sed tempus urna et pharetra pharetra massa massa ultricies. Convallis convallis tellus id interdum velit laoreet. Faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis aliquam. Enim diam vulputate ut pharetra sit amet. Dui accumsan sit amet nulla. Hendrerit gravida rutrum quisque non tellus orci ac. Ultricies integer quis auctor elit." />
+                android:text="
+In mathematics, you have probably seen functions like sin and log, and you have learned to evaluate expressions like sin(π/2) and log(1/x). First, you evaluate the expression in parentheses, which is called the argument of the function. Then you can evaluate the function itself, maybe by punching it into a calculator.\n\n      This process can be applied repeatedly to evaluate more complex expressions like log(1/ sin(π/2)). First we evaluate the argument of the innermost function, then evaluate the function itself, and so on. \n     Math: Perform basic mathematical operations like addition and division. \n     "
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textStyle="normal|italic"
+                app:fontFamily="sans-serif"
+                tools:layout_editor_absoluteX="165dp"
+                tools:layout_editor_absoluteY="105dp" />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:includeFontPadding="true"
+                android:text="\n Characters"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:fontFamily="sans-serif" />
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="true"
+                android:text="        Strings provide a method named charAt, which extracts a character. It returns a char, a primitive type that stores an individual character (as opposed to strings of them)."
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textStyle="normal|italic"
+                app:fontFamily="sans-serif" />
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:includeFontPadding="true"
+                android:text="\n Strings"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:fontFamily="sans-serif" />
+
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="true"
+                android:text='public class Hello {\npublic static void main(String[] args) {\n// generate some simple output\nSystem.out.println(\"Hello, World!\");\n}\n}\nWhen this program runs it displays:Hello, World!\nThe characters in quotes are called Strings'
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textStyle="normal|italic"
+                app:fontFamily="sans-serif" />
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:includeFontPadding="true"
+                android:text="\nDeclaring variables"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:fontFamily="sans-serif" />
+
+            <TextView
+                android:id="@+id/textView17"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="true"
+                android:text="\n    One of the most powerful features of a programming language is the ability to define and manipulate variables. A variable is a named location that stores a value, it could be numbers, text, images, sounds,"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textStyle="normal|italic"
+                app:fontFamily="sans-serif" />
+
         </LinearLayout>
     </ScrollView>
 
