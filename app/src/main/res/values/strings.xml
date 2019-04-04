@@ -167,6 +167,25 @@ printRow(i, rows);
 	}
 }
 Computers are often used to automate repetitive tasks. Repeating tasks without\nmaking errors is something that computers do well and people do poorly.\nRunning the same code multiple times is called iteration. We have seen methods,\nlike countdown and factorial, that use recursion to iterate. Although\nrecursion is elegant and powerful, it takes some getting used to. Java provides\nlanguage features that make iteration much easier: the while and for\nstatements.\nThe while statement\nUsing a while statement, we can rewrite countdown like this:\npublicstaticvoidcountdown(intn) {\nwhile(n > 0) {\nSystem.out.println(n);\nn = n - 1;\n}\nSystem.out.println(\"Blastoff!\");\n}\nYou can almost read the while statement like English: \\While n is greater\nthan zero, print the value of n and then reduce the value of n by 1. When you\nget to zero, print Blasto\n!\"\nThe for statement\nThe loops we have written so far have several elements in common. They\nstart by initializing a variable, they have a condition that depends on that\nvariable, and inside the loop they do something to update that variable. This\ntype of loop is so common that there is another statement, the for loop, that\nexpresses it more concisely.\nFor example, we could rewrite printTable like this:\npublicstaticvoidprintTable(introws) {\nfor(inti = 1; i <= rows; i = i + 1) {\nprintRow(i, rows);\n\t}\n}\n]]></string>
+    <string name="mod_5_tuto_1"><![CDATA[
+    Creating arrays
+An array is a sequence of values; the values in the array are called elements.
+You can make an array of ints, doubles, or any other type, but all the values
+in an array must have the same type.
+To create an array, you have to declare a variable with an array type and then
+create the array itself. Array types look like other Java types, except they are
+followed by square brackets ([]). For example, the following lines declare that
+counts is an \integer array" and values is a \double array":
+int[] counts;
+double[] values;
+To create the array itself, you have to use the new operator,
+counts =newint[4];
+values =newdouble[size];
+The first assignment makes count refer to an array of four integers. The second
+makes values refer to an array of double, where the number of elements in
+values depends on the value of size.
+
+ ]]></string>
 
     <string-array name="expertise">
     <item>Beginner</item>
