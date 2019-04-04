@@ -129,7 +129,7 @@ In mathematics, you have probably seen functions like sin and log, and you have 
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:includeFontPadding="true"
-                android:text="        Strings provide a method named charAt, which extracts a character. It returns a char, a primitive type that stores an individual character (as opposed to strings of them)."
+                android:text="        Strings provide a method named charAt, which extracts a character. It returns a char, a primitive type that stores an individual character (as opposed to strings of them). \n\n  Character literals, like 'a', appear in single quotes. Unlike string literals, which appear in double quotes, character literals can only contain a single character. Escape sequences, like '\t', are legal because they represent a single character.    "
                 android:textAppearance="@style/TextAppearance.AppCompat"
                 android:textStyle="normal|italic"
                 app:fontFamily="sans-serif" />
@@ -166,15 +166,7 @@ In mathematics, you have probably seen functions like sin and log, and you have 
                 android:textStyle="bold"
                 app:fontFamily="sans-serif" />
 
-            <TextView
-                android:id="@+id/textView17"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:includeFontPadding="true"
-                android:text="\n    One of the most powerful features of a programming language is the ability to define and manipulate variables. A variable is a named location that stores a value, it could be numbers, text, images, sounds,"
-                android:textAppearance="@style/TextAppearance.AppCompat"
-                android:textStyle="normal|italic"
-                app:fontFamily="sans-serif" />
+
 
         </LinearLayout>
     </ScrollView>
