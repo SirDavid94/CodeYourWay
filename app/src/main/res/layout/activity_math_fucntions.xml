@@ -51,7 +51,7 @@
         android:layout_marginEnd="50dp"
         android:layout_marginRight="50dp"
         android:layout_marginBottom="44dp"
-        android:text="MOD: 1"
+        android:text="MOD: 3"
         android:textColor="@color/bTColor"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/textView2"
@@ -105,8 +105,59 @@
                 android:id="@+id/textView8"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Viverra mauris in aliquam sem fringilla ut morbi tincidunt augue. Nec feugiat nisl pretium fusce id velit ut. Tortor condimentum lacinia quis vel eros donec ac odio. Sit amet dictum sit amet. At risus viverra adipiscing at in tellus integer. Sed id semper risus in hendrerit gravida. Vel fringilla est ullamcorper eget nulla. Egestas sed tempus urna et pharetra pharetra massa massa ultricies. Convallis convallis tellus id interdum velit laoreet. Faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis aliquam. Enim diam vulputate ut pharetra sit amet. Dui accumsan sit amet nulla. Hendrerit gravida rutrum quisque non tellus orci ac. Ultricies integer quis auctor elit." />
+                android:text="
+In mathematics, you have probably seen functions like sin and log, and you have learned to evaluate expressions like sin(π/2) and log(1/x). First, you evaluate the expression in parentheses, which is called the argument of the function. Then you can evaluate the function itself, maybe by punching it into a calculator.\n\n      This process can be applied repeatedly to evaluate more complex expressions like log(1/ sin(π/2)). First we evaluate the argument of the innermost function, then evaluate the function itself, and so on. \n     Math: Perform basic mathematical operations like addition and division. \n     "
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textStyle="normal|italic"
+                app:fontFamily="sans-serif"
+                tools:layout_editor_absoluteX="165dp"
+                tools:layout_editor_absoluteY="105dp" />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:includeFontPadding="true"
+                android:text="\n Characters"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:fontFamily="sans-serif" />
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="true"
+                android:text="        Strings provide a method named charAt, which extracts a character. It returns a char, a primitive type that stores an individual character (as opposed to strings of them). \n\n  Character literals, like 'a', appear in single quotes. Unlike string literals, which appear in double quotes, character literals can only contain a single character. Escape sequences, like '\t', are legal because they represent a single character.    "
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textStyle="normal|italic"
+                app:fontFamily="sans-serif" />
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:includeFontPadding="true"
+                android:text="\n Strings"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:fontFamily="sans-serif" />
+
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="true"
+                android:text='public class Hello {\npublic static void main(String[] args) {\n// generate some simple output\nSystem.out.println(\"Hello, World!\");\n}\n}\nWhen this program runs it displays:Hello, World!\nThe characters in quotes are called Strings'
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textStyle="normal|italic"
+                app:fontFamily="sans-serif" />
+
+
         </LinearLayout>
     </ScrollView>
 
 </android.support.constraint.ConstraintLayout>
+
