@@ -13,7 +13,7 @@
         <activity android:name=".ExtraChallengesActivity" />
         <activity android:name=".WalkThrough.WalkThroughActivity" />
         <activity android:name=".GamePlay" />
-        <activity android:name=".SplashActivity" />
+        <activity android:name=".LoginActivity" />
         <activity android:name=".RandomFactsActivity" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".LevelCompletionActivity" />
@@ -28,7 +28,7 @@
         <activity android:name=".ResetPasswordActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".MenuActivity" />
-        <activity android:name=".LoginActivity">
+        <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
