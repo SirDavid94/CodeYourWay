@@ -114,7 +114,7 @@ public class LoginActivity extends AppCompatActivity {
                     if (!user.isEmpty()) {
                         User login  = dataSnapshot.child(user).getValue(User.class);
 
-                        if (login.getPassword().equals(pwd)) {
+                                if (login.getPassword().equals(pwd)) {
 
                             Intent successfulLogin = new Intent(LoginActivity.this, WalkThroughActivity.class);
                             successfulLogin.putExtra("username",user);
