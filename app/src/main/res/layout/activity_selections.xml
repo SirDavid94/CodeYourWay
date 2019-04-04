@@ -85,7 +85,7 @@
                 android:id="@+id/textView2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Viverra mauris in aliquam sem fringilla ut morbi tincidunt augue. Nec feugiat nisl pretium fusce id velit ut. Tortor condimentum lacinia quis vel eros donec ac odio. Sit amet dictum sit amet. At risus viverra adipiscing at in tellus integer. Sed id semper risus in hendrerit gravida. Vel fringilla est ullamcorper eget nulla. Egestas sed tempus urna et pharetra pharetra massa massa ultricies. Convallis convallis tellus id interdum velit laoreet. Faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis aliquam. Enim diam vulputate ut pharetra sit amet. Dui accumsan sit amet nulla. Hendrerit gravida rutrum quisque non tellus orci ac. Ultricies integer quis auctor elit."
+                android:text="@string/mod_2_tuto_1"
                 tools:layout_editor_absoluteX="206dp"
                 tools:layout_editor_absoluteY="114dp" />
         </LinearLayout>

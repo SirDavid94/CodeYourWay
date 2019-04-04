@@ -119,9 +119,57 @@
     <string name="math_functions_characters_and_strings">MATH FUNCTIONS, CHARACTERS AND STRINGS</string>
     <string name="loops">loops</string>
     <string name="single_dimensional_array">Single Dimensional Array</string>
+    <string name="mod_2_tuto_1"><![CDATA[Relational operators are used to check conditions like whether two values are equal, or whether one is greater than the other.
+The following expressions show how they are used:
+x == y //x is equal to y
+x != y //x is notequal to y
+x > y //x is greater than y
+x < y //x is lessthan y
+x >= y //x is greater than or equalto y
+x <= y //x is lessthan or equal to y
+        The result of a relational operator is one of two special values, true or false. These values belong to the data type boolean; in fact, they are the only boolean values.]]></string>
+    <string name="mod_4_tutorial_1"><![CDATA[Computers are often used to automate repetitive tasks. Repeating tasks without
+making errors is something that computers do well and people do poorly.
+Running the same code multiple times is called iteration. We have seen methods,
+like countdown and factorial, that use recursion to iterate. Although
+recursion is elegant and powerful, it takes some getting used to. Java provides
+language features that make iteration much easier: the while and for
+statements.
+
+
+The while statement
+    Using a while statement, we can rewrite countdown like this:
+
+publicstaticvoidcountdown(intn) {
+while(n > 0) {
+System.out.println(n);
+n = n - 1;
+}
+System.out.println("Blastoff!");
+}
+You can almost read the while statement like English: \While n is greater
+than zero, print the value of n and then reduce the value of n by 1. When you
+get to zero, print Blasto
+!"
+
+
+The for statement
+    The loops we have written so far have several elements in common. They
+start by initializing a variable, they have a condition that depends on that
+variable, and inside the loop they do something to update that variable. This
+type of loop is so common that there is another statement, the for loop, that
+expresses it more concisely.
+For example, we could rewrite printTable like this:
+
+publicstaticvoidprintTable(introws) {
+for(inti = 1; i <= rows; i = i + 1) {
+printRow(i, rows);
+	}
+}
+Computers are often used to automate repetitive tasks. Repeating tasks without\nmaking errors is something that computers do well and people do poorly.\nRunning the same code multiple times is called iteration. We have seen methods,\nlike countdown and factorial, that use recursion to iterate. Although\nrecursion is elegant and powerful, it takes some getting used to. Java provides\nlanguage features that make iteration much easier: the while and for\nstatements.\nThe while statement\nUsing a while statement, we can rewrite countdown like this:\npublicstaticvoidcountdown(intn) {\nwhile(n > 0) {\nSystem.out.println(n);\nn = n - 1;\n}\nSystem.out.println(\"Blastoff!\");\n}\nYou can almost read the while statement like English: \\While n is greater\nthan zero, print the value of n and then reduce the value of n by 1. When you\nget to zero, print Blasto\n!\"\nThe for statement\nThe loops we have written so far have several elements in common. They\nstart by initializing a variable, they have a condition that depends on that\nvariable, and inside the loop they do something to update that variable. This\ntype of loop is so common that there is another statement, the for loop, that\nexpresses it more concisely.\nFor example, we could rewrite printTable like this:\npublicstaticvoidprintTable(introws) {\nfor(inti = 1; i <= rows; i = i + 1) {\nprintRow(i, rows);\n\t}\n}\n]]></string>
 
     <string-array name="expertise">
-        <item>Beginner</item>
+    <item>Beginner</item>
         <item>Intermediate</item>
         <item>Professional</item>
         <item>Hacker</item>
