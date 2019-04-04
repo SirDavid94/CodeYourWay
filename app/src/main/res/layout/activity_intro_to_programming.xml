@@ -95,7 +95,7 @@
                 android:text="What is programming?"
                 android:textSize="30sp"
                 android:textStyle="bold"
-                app:fontFamily="casual"
+                app:fontFamily="sans-serif"
                 app:layout_constraintBottom_toTopOf="@+id/ContinueIntro"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -108,7 +108,7 @@
                 android:text="            A program is a sequence of instructions that specifies how to perform a computation. The computation might be something mathematical, like solving a system of equations or finding the roots of a polynomial. It can also be a symbolic computation, like searching and replacing text in a document or (strangely enough) compiling a program.\n\n      Input: Get data from the keyboard, a file, a sensor, or some other device. \n     Output: Display data on the screen, or send data to a file or other device. \n     Math: Perform basic mathematical operations like addition and division. \n     Decisions: Check for certain conditions and execute the appropriate code. \n     Repetition: Perform some action repeatedly, usually with some variation."
                 android:textAppearance="@style/TextAppearance.AppCompat"
                 android:textStyle="normal|italic"
-                app:fontFamily="casual"
+                app:fontFamily="sans-serif"
                 tools:layout_editor_absoluteX="165dp"
                 tools:layout_editor_absoluteY="105dp" />
 
@@ -121,7 +121,7 @@
                 android:text="\n Programming Languages"
                 android:textSize="24sp"
                 android:textStyle="bold"
-                app:fontFamily="casual" />
+                app:fontFamily="sans-serif" />
 
             <TextView
                 android:id="@+id/textView12"
@@ -131,59 +131,49 @@
                 android:text="        The programming language you will learn is Java, which is a high-level language. Other high-level languages you may have heard of include Python, C and C++, Ruby, and JavaScript."
                 android:textAppearance="@style/TextAppearance.AppCompat"
                 android:textStyle="normal|italic"
-                app:fontFamily="casual" />
+                app:fontFamily="sans-serif" />
 
             <TextView
                 android:id="@+id/textView13"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="\n Hello World"
+                android:gravity="center"
                 android:includeFontPadding="true"
+                android:text="\n Hello World"
                 android:textSize="24sp"
                 android:textStyle="bold"
-                app:fontFamily="casual"
-                android:gravity="center" />
+                app:fontFamily="sans-serif" />
 
             <TextView
                 android:id="@+id/textView15"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text='\n     public class Hello {
-                    public static void main(String[] args) {
-                    // generate some simple output
-                    System.out.println("Hello, World!");
-                       }
-                    }
-                    \n
-                 When this program runs it displays:
-                                         Hello, World!
-                 \n The characters in quotes are called Strings'
+                android:includeFontPadding="true"
+                android:text='public class Hello {\npublic static void main(String[] args) {\n// generate some simple output\nSystem.out.println(\"Hello, World!\");\n}\n}\nWhen this program runs it displays:Hello, World!\nThe characters in quotes are called Strings'
                 android:textAppearance="@style/TextAppearance.AppCompat"
                 android:textStyle="normal|italic"
-                app:fontFamily="casual"
-                android:includeFontPadding="true" />
+                app:fontFamily="sans-serif" />
 
             <TextView
                 android:id="@+id/textView16"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="\nDeclaring variables"
+                android:gravity="center"
                 android:includeFontPadding="true"
+                android:text="\nDeclaring variables"
                 android:textSize="24sp"
                 android:textStyle="bold"
-                app:fontFamily="casual"
-                android:gravity="center" />
+                app:fontFamily="sans-serif" />
 
             <TextView
                 android:id="@+id/textView17"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:includeFontPadding="true"
                 android:text="\n    One of the most powerful features of a programming language is the ability to define and manipulate variables. A variable is a named location that stores a value, it could be numbers, text, images, sounds,"
                 android:textAppearance="@style/TextAppearance.AppCompat"
                 android:textStyle="normal|italic"
-                app:fontFamily="casual"
-                android:includeFontPadding="true"
-                />
+                app:fontFamily="sans-serif" />
 
         </LinearLayout>
     </ScrollView>
