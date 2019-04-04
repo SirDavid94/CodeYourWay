@@ -17,6 +17,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import static android.support.test.espresso.Espresso.onView;
+import static android.support.test.espresso.Espresso.pressBack;
 import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.action.ViewActions.closeSoftKeyboard;
 import static android.support.test.espresso.action.ViewActions.replaceText;
@@ -27,21 +28,21 @@ import static org.hamcrest.Matchers.allOf;
 
 @LargeTest
 @RunWith(AndroidJUnit4.class)
-public class mod4_test {
+public class home_activity {
 
     @Rule
     public ActivityTestRule<LoginActivity> mActivityTestRule = new ActivityTestRule<>(LoginActivity.class);
 
     @Test
-    public void random_test_one() {
+    public void all_module_test() {
         // Added a sleep statement to match the app's execution delay.
         // The recommended way to handle such scenarios is to use Espresso idling resources:
         // https://google.github.io/android-testing-support-library/docs/espresso/idling-resource/index.html
-//        try {
-//            Thread.sleep(7000);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
+        try {
+            Thread.sleep(7000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
         ViewInteraction appCompatEditText = onView(
                 allOf(withId(R.id.text_username),
@@ -51,7 +52,7 @@ public class mod4_test {
                                         0),
                                 1),
                         isDisplayed()));
-        appCompatEditText.perform(replaceText("test"), closeSoftKeyboard());
+        appCompatEditText.perform(replaceText("t"), closeSoftKeyboard());
 
         // Added a sleep statement to match the app's execution delay.
         // The recommended way to handle such scenarios is to use Espresso idling resources:
@@ -63,6 +64,26 @@ public class mod4_test {
         }
 
         ViewInteraction appCompatEditText2 = onView(
+                allOf(withId(R.id.text_username), withText("t"),
+                        childAtPosition(
+                                childAtPosition(
+                                        withId(android.R.id.content),
+                                        0),
+                                1),
+                        isDisplayed()));
+        appCompatEditText2.perform(replaceText("test"));
+
+        ViewInteraction appCompatEditText3 = onView(
+                allOf(withId(R.id.text_username), withText("test"),
+                        childAtPosition(
+                                childAtPosition(
+                                        withId(android.R.id.content),
+                                        0),
+                                1),
+                        isDisplayed()));
+        appCompatEditText3.perform(closeSoftKeyboard());
+
+        ViewInteraction appCompatEditText4 = onView(
                 allOf(withId(R.id.text_password),
                         childAtPosition(
                                 childAtPosition(
@@ -70,7 +91,7 @@ public class mod4_test {
                                         0),
                                 2),
                         isDisplayed()));
-        appCompatEditText2.perform(replaceText("test"), closeSoftKeyboard());
+        appCompatEditText4.perform(replaceText("test"), closeSoftKeyboard());
 
         ViewInteraction appCompatButton = onView(
                 allOf(withId(R.id.button_login), withText("Login"),
@@ -92,17 +113,26 @@ public class mod4_test {
         }
 
         ViewInteraction appCompatButton2 = onView(
-                allOf(withId(R.id.btn_next), withText("next"),
+                allOf(withId(R.id.tv_skip), withText("Skip"),
                         childAtPosition(
                                 childAtPosition(
                                         withId(android.R.id.content),
                                         0),
-                                2),
+                                4),
                         isDisplayed()));
         appCompatButton2.perform(click());
 
+        // Added a sleep statement to match the app's execution delay.
+        // The recommended way to handle such scenarios is to use Espresso idling resources:
+        // https://google.github.io/android-testing-support-library/docs/espresso/idling-resource/index.html
+        try {
+            Thread.sleep(7000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
         ViewInteraction appCompatButton3 = onView(
-                allOf(withId(R.id.btn_next), withText("next"),
+                allOf(withId(R.id.home_from_random_facts), withText("home"),
                         childAtPosition(
                                 childAtPosition(
                                         withId(android.R.id.content),
@@ -111,23 +141,52 @@ public class mod4_test {
                         isDisplayed()));
         appCompatButton3.perform(click());
 
+        // Added a sleep statement to match the app's execution delay.
+        // The recommended way to handle such scenarios is to use Espresso idling resources:
+        // https://google.github.io/android-testing-support-library/docs/espresso/idling-resource/index.html
+        try {
+            Thread.sleep(7000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
         ViewInteraction appCompatButton4 = onView(
-                allOf(withId(R.id.btn_next), withText("next"),
+                allOf(withId(R.id.introToProgramming), withText("Elementary Programming"),
+                        childAtPosition(
+                                childAtPosition(
+                                        withId(android.R.id.content),
+                                        0),
+                                1),
+                        isDisplayed()));
+        appCompatButton4.perform(click());
+
+        // Added a sleep statement to match the app's execution delay.
+        // The recommended way to handle such scenarios is to use Espresso idling resources:
+        // https://google.github.io/android-testing-support-library/docs/espresso/idling-resource/index.html
+        try {
+            Thread.sleep(7000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        pressBack();
+
+        // Added a sleep statement to match the app's execution delay.
+        // The recommended way to handle such scenarios is to use Espresso idling resources:
+        // https://google.github.io/android-testing-support-library/docs/espresso/idling-resource/index.html
+        try {
+            Thread.sleep(7000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        ViewInteraction appCompatButton5 = onView(
+                allOf(withId(R.id.SelectionsModule), withText("Selections"),
                         childAtPosition(
                                 childAtPosition(
                                         withId(android.R.id.content),
                                         0),
                                 2),
-                        isDisplayed()));
-        appCompatButton4.perform(click());
-
-        ViewInteraction appCompatButton5 = onView(
-                allOf(withId(R.id.btn_get_started), withText("Get Started"),
-                        childAtPosition(
-                                childAtPosition(
-                                        withId(android.R.id.content),
-                                        0),
-                                3),
                         isDisplayed()));
         appCompatButton5.perform(click());
 
@@ -140,35 +199,37 @@ public class mod4_test {
             e.printStackTrace();
         }
 
-        ViewInteraction appCompatTextView = onView(
-                allOf(withId(R.id.Show_next_page), withText("Show next facts ->->->"),
-                        childAtPosition(
-                                childAtPosition(
-                                        withId(android.R.id.content),
-                                        0),
-                                4),
-                        isDisplayed()));
-        appCompatTextView.perform(click());
+        pressBack();
 
-        ViewInteraction appCompatTextView2 = onView(
-                allOf(withId(R.id.Show_next_page), withText("Show next facts ->->->"),
-                        childAtPosition(
-                                childAtPosition(
-                                        withId(android.R.id.content),
-                                        0),
-                                4),
-                        isDisplayed()));
-        appCompatTextView2.perform(click());
+        // Added a sleep statement to match the app's execution delay.
+        // The recommended way to handle such scenarios is to use Espresso idling resources:
+        // https://google.github.io/android-testing-support-library/docs/espresso/idling-resource/index.html
+        try {
+            Thread.sleep(7000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
         ViewInteraction appCompatButton6 = onView(
-                allOf(withId(R.id.home_from_random_facts), withText("home"),
+                allOf(withId(R.id.MathFunc), withText("MATH FUNCTIONS, CHARACTERS AND STRINGS"),
                         childAtPosition(
                                 childAtPosition(
                                         withId(android.R.id.content),
                                         0),
-                                2),
+                                3),
                         isDisplayed()));
         appCompatButton6.perform(click());
+
+        // Added a sleep statement to match the app's execution delay.
+        // The recommended way to handle such scenarios is to use Espresso idling resources:
+        // https://google.github.io/android-testing-support-library/docs/espresso/idling-resource/index.html
+        try {
+            Thread.sleep(7000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        pressBack();
 
         // Added a sleep statement to match the app's execution delay.
         // The recommended way to handle such scenarios is to use Espresso idling resources:
@@ -198,13 +259,24 @@ public class mod4_test {
             e.printStackTrace();
         }
 
+        pressBack();
+
+        // Added a sleep statement to match the app's execution delay.
+        // The recommended way to handle such scenarios is to use Espresso idling resources:
+        // https://google.github.io/android-testing-support-library/docs/espresso/idling-resource/index.html
+        try {
+            Thread.sleep(7000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
         ViewInteraction appCompatButton8 = onView(
-                allOf(withId(R.id.ContinueLoop), withText("Continue"),
+                allOf(withId(R.id.SingleDimArray), withText("Single Dimensional Array"),
                         childAtPosition(
                                 childAtPosition(
                                         withId(android.R.id.content),
                                         0),
-                                1),
+                                5),
                         isDisplayed()));
         appCompatButton8.perform(click());
 
@@ -217,131 +289,7 @@ public class mod4_test {
             e.printStackTrace();
         }
 
-        ViewInteraction appCompatButton9 = onView(
-                allOf(withId(R.id.level3), withText("3"),
-                        childAtPosition(
-                                allOf(withId(R.id.root_layout),
-                                        childAtPosition(
-                                                withId(android.R.id.content),
-                                                0)),
-                                4),
-                        isDisplayed()));
-        appCompatButton9.perform(click());
-
-        // Added a sleep statement to match the app's execution delay.
-        // The recommended way to handle such scenarios is to use Espresso idling resources:
-        // https://google.github.io/android-testing-support-library/docs/espresso/idling-resource/index.html
-        try {
-            Thread.sleep(7000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        ViewInteraction appCompatButton10 = onView(
-                allOf(withId(R.id.btnAnswerB), withText("11"),
-                        childAtPosition(
-                                childAtPosition(
-                                        withId(R.id.group),
-                                        1),
-                                1),
-                        isDisplayed()));
-        appCompatButton10.perform(click());
-
-        // Added a sleep statement to match the app's execution delay.
-        // The recommended way to handle such scenarios is to use Espresso idling resources:
-        // https://google.github.io/android-testing-support-library/docs/espresso/idling-resource/index.html
-        try {
-            Thread.sleep(1500);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        ViewInteraction appCompatButton11 = onView(
-                allOf(withId(R.id.btnAnswerA), withText("9"),
-                        childAtPosition(
-                                childAtPosition(
-                                        withId(R.id.group),
-                                        1),
-                                0),
-                        isDisplayed()));
-        appCompatButton11.perform(click());
-
-        // Added a sleep statement to match the app's execution delay.
-        // The recommended way to handle such scenarios is to use Espresso idling resources:
-        // https://google.github.io/android-testing-support-library/docs/espresso/idling-resource/index.html
-        try {
-            Thread.sleep(1500);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        ViewInteraction appCompatButton12 = onView(
-                allOf(withId(R.id.btnAnswerC), withText("The program may not stop because of the phenomenon referred to as numerical inaccuracy for operating with floating-point numbers."),
-                        childAtPosition(
-                                childAtPosition(
-                                        withId(R.id.group),
-                                        2),
-                                0),
-                        isDisplayed()));
-        appCompatButton12.perform(click());
-
-        // Added a sleep statement to match the app's execution delay.
-        // The recommended way to handle such scenarios is to use Espresso idling resources:
-        // https://google.github.io/android-testing-support-library/docs/espresso/idling-resource/index.html
-        try {
-            Thread.sleep(1500);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        ViewInteraction appCompatButton13 = onView(
-                allOf(withId(R.id.btnAnswerB), withText("The program compiles despite the semicolon (;) on the for loop line, and displays 4."),
-                        childAtPosition(
-                                childAtPosition(
-                                        withId(R.id.group),
-                                        1),
-                                1),
-                        isDisplayed()));
-        appCompatButton13.perform(click());
-
-        // Added a sleep statement to match the app's execution delay.
-        // The recommended way to handle such scenarios is to use Espresso idling resources:
-        // https://google.github.io/android-testing-support-library/docs/espresso/idling-resource/index.html
-        try {
-            Thread.sleep(1500);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        ViewInteraction appCompatButton14 = onView(
-                allOf(withId(R.id.btnAnswerB), withText("20"),
-                        childAtPosition(
-                                childAtPosition(
-                                        withId(R.id.group),
-                                        1),
-                                1),
-                        isDisplayed()));
-        appCompatButton14.perform(click());
-
-        // Added a sleep statement to match the app's execution delay.
-        // The recommended way to handle such scenarios is to use Espresso idling resources:
-        // https://google.github.io/android-testing-support-library/docs/espresso/idling-resource/index.html
-        try {
-            Thread.sleep(7000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        ViewInteraction appCompatButton15 = onView(
-                allOf(withId(R.id.tryAgainButton), withText("Try Again?"),
-                        childAtPosition(
-                                allOf(withId(R.id.updatedPassingScore),
-                                        childAtPosition(
-                                                withId(android.R.id.content),
-                                                0)),
-                                5),
-                        isDisplayed()));
-        appCompatButton15.perform(click());
+        pressBack();
     }
 
     private static Matcher<View> childAtPosition(
