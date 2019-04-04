@@ -46,7 +46,7 @@ public class LevelCompletionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_levelcompletion_page);
 
-        //Ranking Instantiation
+        //LeaderBoardActivity Instantiation
         database = FirebaseDatabase.getInstance();
         Award = database.getReference("Awards");
         completionMessage = findViewById(R.id.completionMessage);

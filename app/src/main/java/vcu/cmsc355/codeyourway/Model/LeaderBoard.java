@@ -1,13 +1,13 @@
 package vcu.cmsc355.codeyourway.Model;
 
-public class Ranking {
+public class LeaderBoard {
     private String username;
     private long score;
 
-    public Ranking() {
+    public LeaderBoard() {
     }
 
-    public Ranking(String username, long score) {
+    public LeaderBoard(String username, long score) {
         this.username = username;
         this.score = score;
     }
