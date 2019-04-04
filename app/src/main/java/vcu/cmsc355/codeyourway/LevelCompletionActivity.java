@@ -169,10 +169,11 @@ public class LevelCompletionActivity extends AppCompatActivity {
                 else if ( completedLevel <6 ) {
                     completedLevel++;
                 }
+
                 Intent nextLevel = new Intent(LevelCompletionActivity.this,GamePlay.class);
                 nextLevel.putExtra("moduleID",completedModule );
                 nextLevel.putExtra("level",completedLevel );
-               startActivity(nextLevel);
+                startActivity(nextLevel);
             }
         });
     }
