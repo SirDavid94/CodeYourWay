@@ -135,7 +135,7 @@ public class LevelCompletionActivity extends AppCompatActivity {
             {
                 // If score is less than 80% then the user failed the level
                 totalScore.setTextColor(Color.RED);
-                congratulationMessage.setText("Sorry you fucked up. Try Again!!");
+                congratulationMessage.setText("Sorry you did not pass. Try Again!!");
                 congratulationMessage.setTextColor(Color.RED);
             }
             // Sets the user's score to the display page
