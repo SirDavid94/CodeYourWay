@@ -1,4 +1,4 @@
-package vcu.cmsc355.codeyourway;
+ package vcu.cmsc355.codeyourway;
 
 
 import android.support.test.espresso.ViewInteraction;
