@@ -10,7 +10,6 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import vcu.cmsc355.codeyourway.CreateProfileActivity;
 import vcu.cmsc355.codeyourway.GamePlay;
 import vcu.cmsc355.codeyourway.LoginActivity;
 import vcu.cmsc355.codeyourway.ProfileActivity;
