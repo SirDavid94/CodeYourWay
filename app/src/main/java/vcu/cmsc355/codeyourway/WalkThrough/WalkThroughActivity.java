@@ -103,15 +103,11 @@ public class WalkThroughActivity extends AppCompatActivity {
         });
 
     }
-
     private void loadLastScreen() {
 
         buttonNext.setVisibility(View.INVISIBLE);
         buttonGetStarted.setVisibility(View.VISIBLE);
         buttonSkip.setVisibility(View.INVISIBLE);
-
-
-
 
     }
 }
