@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
 
-public class SplashActivity extends AppCompatActivity {
+ public class SplashActivity extends AppCompatActivity {
     private static int splash = 1500;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,11 +20,11 @@ public class SplashActivity extends AppCompatActivity {
          * This class creates an instance of the splash screen for 2000 milliseconds
          */
         new Handler().postDelayed(new Runnable() {
-            @Override
+          @Override
             public void run() {
                 startActivity(new Intent( SplashActivity.this, LoginActivity.class));
 
-            }
-        },splash);
-    }
+           }
+       },splash);
+   }
 }
