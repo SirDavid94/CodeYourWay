@@ -72,6 +72,12 @@ public class LoopTutorialActivity extends AppCompatActivity {
                 startActivity(new Intent(this, LeaderBoardActivity.class));
                 finish();
                 break;
+
+            case R.id.home_menu:
+                Toast.makeText(this, "Going Home",Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(this,HomeActivity.class));
+                finish();
+                break;
         }
         return true;
 

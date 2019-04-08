@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
         android:id="@+id/menuLogout"
@@ -20,5 +21,8 @@
         android:id="@+id/HallOfFame"
         android:title="Hall of Fame"
         />
+    <item
+        android:id="@+id/home_menu"
+        android:title="Home" />
 
 </menu>
