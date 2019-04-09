@@ -12,6 +12,7 @@ public class Question {
         this.AnswerD = answerD;
         this.CategoryID = categoryID;
         this.IsFillAnswer = isFillAnswer;
+
     }
 
     public Question() {
