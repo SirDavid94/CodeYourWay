@@ -12,9 +12,12 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -26,6 +29,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import vcu.cmsc355.codeyourway.Model.Awards;
 import vcu.cmsc355.codeyourway.Model.Common;
+import vcu.cmsc355.codeyourway.TutorialPages.ArraysTutorialActivity;
 
 
 public class LevelCompletionActivity extends AppCompatActivity {
@@ -176,5 +180,48 @@ public class LevelCompletionActivity extends AppCompatActivity {
                 startActivity(nextLevel);
             }
         });
+    }
+    @Override
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+
+        return true;
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+            case R.id.menuLogout:
+                Toast.makeText(this, "Logging user out", Toast.LENGTH_SHORT).show();
+                finish();
+                startActivity(new Intent(this, LoginActivity.class));
+                break;
+            case R.id.menuSettings:
+                startActivity(new Intent(this, SettingsActivity.class));
+                break;
+
+            case R.id.menuProfile:
+                Toast.makeText(this, "Opening user profile", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(LevelCompletionActivity.this, ProfileActivity.class));
+                finish();
+                break;
+
+            case R.id.HallOfFame:
+                Toast.makeText(this, "Opening LeaderBoardActivity", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(this, LeaderBoardActivity.class));
+                finish();
+                break;
+
+            case R.id.home_menu:
+                Toast.makeText(this, "Going Home", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(this, HomeActivity.class));
+                finish();
+                break;
+        }
+        return true;
+
     }
 }

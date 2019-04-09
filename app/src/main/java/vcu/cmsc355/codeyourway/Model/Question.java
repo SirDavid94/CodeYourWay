@@ -80,4 +80,7 @@ public class Question {
     public void setIsFillAnswer(String isFillAnswer) {
         this.IsFillAnswer = isFillAnswer;
     }
+
+
 }
+
