@@ -59,21 +59,20 @@ public class ProfileActivity extends AppCompatActivity {
         profileUserRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//                if (dataSnapshot.exists()){
-//                    String myUserName = dataSnapshot.child("userName").getValue().toString();
-//                    String myFirstName = dataSnapshot.child("firstName").getValue().toString();
-//                    String myLastName = dataSnapshot.child("lastName").getValue().toString();
-//                    String myEmail = dataSnapshot.child("email").getValue().toString();
-//                    String myExpertise = dataSnapshot.child("expertise").getValue().toString();
-//
-//
-//                    userName.setText("@"+ myUserName);
-//                    name.setText(myFirstName);
-//                    lastName.setText(myLastName);
-//                    EmailProfile.setText(myEmail);
-//                    expertise.setText(myExpertise);
-//
-//                }
+               if (dataSnapshot.exists()){
+                    String myUserName = dataSnapshot.child("username").getValue().toString();
+                    String myFirstName = dataSnapshot.child("firstName").getValue().toString();
+                    String myLastName = dataSnapshot.child("lastName").getValue().toString();
+                    String myEmail = dataSnapshot.child("email").getValue().toString();
+                    String myExpertise = dataSnapshot.child("expertise").getValue().toString();
+
+                    userName.setText("@"+ myUserName);
+                    name.setText(myFirstName);
+                    lastName.setText(myLastName);
+                    EmailProfile.setText(myEmail);
+                    expertise.setText(myExpertise);
+
+               }
             }
 
             @Override
