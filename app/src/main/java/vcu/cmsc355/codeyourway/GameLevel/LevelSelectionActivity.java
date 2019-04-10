@@ -48,7 +48,7 @@ public class LevelSelectionActivity extends AppCompatActivity implements View.On
         moduleID.setText("MOD:  "+moduleNum);
 
         moduleIdentification = moduleNum;
-
+        backButton();;
 
 
     }

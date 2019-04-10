@@ -22,8 +22,9 @@
         android:textColor="@color/bTColor"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/textView"
+        app:layout_constraintHorizontal_bias="0.636"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="48dp" />
+        tools:layout_editor_absoluteY="88dp" />
 
     <ImageButton
         android:id="@+id/backbtn"
@@ -139,12 +140,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="106dp"
         android:layout_marginLeft="106dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="84dp"
         android:layout_marginEnd="123dp"
         android:layout_marginRight="123dp"
         android:text="Select a level to continue"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.833"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
