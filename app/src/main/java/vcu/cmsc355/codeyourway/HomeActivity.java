@@ -103,7 +103,7 @@ public class HomeActivity extends AppCompatActivity {
 
             case R.id.HallOfFame:
                 Toast.makeText(this, "Opening LeaderBoardActivity", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(this, LeaderBoardActivity.class));
+                startActivity(new Intent(HomeActivity.this, LeaderBoardActivity.class));
                 finish();
                 break;
 
