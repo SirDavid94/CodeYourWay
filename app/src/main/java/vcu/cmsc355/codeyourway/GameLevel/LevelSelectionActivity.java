@@ -55,7 +55,14 @@ public class LevelSelectionActivity extends AppCompatActivity implements View.On
 
     public  void backButton(){
 
-        backBtn =
+        backBtn = (ImageButton) findViewById(R.id.backbtn);
+
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
 
 
 
