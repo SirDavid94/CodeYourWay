@@ -27,15 +27,15 @@ public class IntroTutorialActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_intro_to_programming);
 
-//        Button backButton;
-//        backButton = (Button) findViewById(R.id.backbtn);
-//
-//        backButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                onBackPressed();
-//            }
-//        });
+        Button backButton;
+        backButton = (Button) findViewById(R.id.backbtn);
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
 
         Button BtContinue;
         BtContinue = (Button) findViewById(R.id.ContinueIntro);
