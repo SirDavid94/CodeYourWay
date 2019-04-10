@@ -1,6 +1,7 @@
 package vcu.cmsc355.codeyourway.TutorialPages;
 
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -21,14 +22,20 @@ import vcu.cmsc355.codeyourway.R;
 import vcu.cmsc355.codeyourway.SettingsActivity;
 
 public class IntroTutorialActivity extends AppCompatActivity {
+    @SuppressLint("WrongViewCast")
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_intro_to_programming);
 
-        Button backButton;
-        backButton = (Button) findViewById(R.id.backbtn);
-
-        backButton
+//        Button backButton;
+//        backButton = (Button) findViewById(R.id.backbtn);
+//
+//        backButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                onBackPressed();
+//            }
+//        });
 
         Button BtContinue;
         BtContinue = (Button) findViewById(R.id.ContinueIntro);
