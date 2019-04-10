@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,11 +21,14 @@ import vcu.cmsc355.codeyourway.R;
 import vcu.cmsc355.codeyourway.SettingsActivity;
 
 public class ArraysTutorialActivity extends AppCompatActivity {
+
+    ImageButton backBtn;
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_arrays);
 
-
+        backButton();
         Button BtContinue;
         BtContinue = (Button) findViewById(R.id.ContinueArrays);
 
@@ -48,6 +52,18 @@ public class ArraysTutorialActivity extends AppCompatActivity {
 
     }
 
+
+    public void backButton(){
+        backBtn = (ImageButton) findViewById(R.id.backbtn);
+
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+
+    }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
