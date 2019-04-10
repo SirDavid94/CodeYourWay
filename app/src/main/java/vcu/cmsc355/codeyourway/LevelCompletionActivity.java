@@ -109,6 +109,8 @@ public class LevelCompletionActivity extends AppCompatActivity {
                            Awards Count  = dataSnapshot.child(currentUser).getValue(Awards.class);
 
                            final int labelCount = Label.getCount()+1;
+                           // getcount gets 0 every time due to count function in awards
+                            // I need to update to actually get Badge ID value
                            final int awardCounter = Count.getAwardCount()+1;
 
                             Award.child(currentUser).child(awardLabel).setValue(labelCount);
