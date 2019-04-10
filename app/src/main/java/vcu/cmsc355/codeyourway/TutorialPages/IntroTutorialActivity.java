@@ -23,7 +23,7 @@ import vcu.cmsc355.codeyourway.R;
 import vcu.cmsc355.codeyourway.SettingsActivity;
 
 public class IntroTutorialActivity extends AppCompatActivity {
-    ImageButton backButton;
+    ImageButton backBtn;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,7 +34,7 @@ public class IntroTutorialActivity extends AppCompatActivity {
         Button BtContinue;
         BtContinue = (Button) findViewById(R.id.ContinueIntro);
 
-
+        backButton();
 
         BtContinue.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,10 +59,10 @@ public class IntroTutorialActivity extends AppCompatActivity {
     public void backButton(){
 
 
-        backButton = (ImageButton) findViewById(R.id.backbtn);
+        backBtn = (ImageButton) findViewById(R.id.backbtn);
 
 
-        backButton.setOnClickListener(new View.OnClickListener() {
+        backButton().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onBackPressed();
