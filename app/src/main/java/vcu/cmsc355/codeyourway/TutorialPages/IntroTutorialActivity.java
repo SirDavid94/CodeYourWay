@@ -62,7 +62,7 @@ public class IntroTutorialActivity extends AppCompatActivity {
         backBtn = (ImageButton) findViewById(R.id.backbtn);
 
 
-        backButton().setOnClickListener(new View.OnClickListener() {
+        backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onBackPressed();
