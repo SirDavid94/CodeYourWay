@@ -29,9 +29,8 @@ public class ProfileActivity extends AppCompatActivity {
 
 
     TextView name, lastName, EmailProfile, userName, levelsCompleted, moduleCompletionLevel, expertise;
-    private String currentUserId;
-    private FirebaseAuth mAuth;
-    private DatabaseReference profileUserRef;
+    private FirebaseDatabase mData;
+    private DatabaseReference profileUserRef, moduleUserRef, levelUserRef;
     Button btChangePassword,btDownloadGameData;
 
 
@@ -40,9 +39,10 @@ public class ProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
-        mAuth = FirebaseAuth.getInstance();
-       //currentUserId = mAuth.getCurrentUser().getUid();
-        profileUserRef = FirebaseDatabase.getInstance().getReference().child("Users").child(Common.getCurrentUser());
+        mData = FirebaseDatabase.getInstance();
+        profileUserRef = mData.getReference().child("Users").child(Common.getCurrentUser());
+        levelUserRef = mData.getReference().child("Awards").child(Common.getCurrentUser());
+        //moduleUserRef = mData.getReference().child("Users").child(Common.getCurrentUser());
 
 
         backButton();
@@ -55,25 +55,29 @@ public class ProfileActivity extends AppCompatActivity {
         btDownloadGameData = (Button) findViewById(R.id.downloadGameDataProfile);
 
         //working on this function
-        //levelsCompleted = (TextView) findViewById(R.id.levelCompleted);
+        levelsCompleted = (TextView) findViewById(R.id.levelCompleted);
+        //moduleCompletionLevel = (TextView) findViewById(R.id.moduleCompletionLevel);
 
 
 
         profileUserRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
                if (dataSnapshot.exists()){
                     String myUserName = dataSnapshot.child("username").getValue().toString();
                     String myFirstName = dataSnapshot.child("firstName").getValue().toString();
                     String myLastName = dataSnapshot.child("lastName").getValue().toString();
                     String myEmail = dataSnapshot.child("email").getValue().toString();
                     String myExpertise = dataSnapshot.child("expertise").getValue().toString();
+                    //String myLevelsCompleted = dataSnapshot.child("awardCount").getValue().toString();
 
                     userName.setText("@"+ myUserName);
                     name.setText(myFirstName);
                     lastName.setText(myLastName);
                     EmailProfile.setText(myEmail);
                     expertise.setText(myExpertise);
+                    //levelsCompleted.setText(myLevelsCompleted);
 
                }
             }
@@ -86,6 +90,7 @@ public class ProfileActivity extends AppCompatActivity {
             }
         });
 
+        //This button takes you to the change password page
         btChangePassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -93,6 +98,7 @@ public class ProfileActivity extends AppCompatActivity {
             }
         });
 
+        //Initiates the downloading of user game data
         btDownloadGameData.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -102,6 +108,7 @@ public class ProfileActivity extends AppCompatActivity {
 
     }
 
+    //Function for the pressing of the back button
     public void backButton(){
         backBtn = (ImageButton) findViewById(R.id.backbtn);
 
