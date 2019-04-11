@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,11 +21,13 @@ import vcu.cmsc355.codeyourway.R;
 import vcu.cmsc355.codeyourway.SettingsActivity;
 
 public class MathFuncTutorialActivity extends AppCompatActivity {
+
+    ImageButton backBtn;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_math_fucntions);
 
-
+        backButton();
         Button BtContinue;
         BtContinue = (Button) findViewById(R.id.ContinueMathFunc);
 
@@ -45,6 +48,20 @@ public class MathFuncTutorialActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu, menu);
 
         return true;
+
+    }
+
+    public void backButton(){
+        backBtn = (ImageButton) findViewById(R.id.backbtn);
+
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+
+
 
     }
 
