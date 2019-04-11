@@ -26,7 +26,7 @@ public class SelectionsTutorialActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_selections);
 
-
+        backButton();
         Button BtContinue;
         BtContinue = (Button) findViewById(R.id.ContinueSelections);
 
