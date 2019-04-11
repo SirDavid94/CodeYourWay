@@ -6,6 +6,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,6 +24,8 @@ import vcu.cmsc355.codeyourway.TutorialPages.ArraysTutorialActivity;
 
 
 public class ProfileActivity extends AppCompatActivity {
+
+    ImageButton backBtn;
 
 
     TextView name, lastName, EmailProfile, userName, levelsCompleted, moduleCompletionLevel, expertise;
@@ -73,6 +76,11 @@ public class ProfileActivity extends AppCompatActivity {
                     expertise.setText(myExpertise);
 
                }
+            }
+
+
+            public void backButton(){
+
             }
 
             @Override
