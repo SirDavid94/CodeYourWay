@@ -27,7 +27,7 @@ public class GamePlay extends AppCompatActivity {
     int moduleID = 0;
     int levelID = 0;
     int correct = 0;
-    int wrong  = 0;
+    int wrong = 0;
     int count = 1;
     int total = 1;
     String moduleCall;
@@ -51,49 +51,44 @@ public class GamePlay extends AppCompatActivity {
         database = FirebaseDatabase.getInstance();
         questions = database.getReference("module1");
 
-        currentModule  = findViewById(R.id.CurrentModule);
-        currentLevel   = findViewById(R.id.CurrentLevel);
-        question_text  = findViewById(R.id.questionMultipleAnswer);
-        buttonA        = findViewById(R.id.btnAnswerA);
-        buttonB        = findViewById(R.id.btnAnswerB);
-        buttonC        = findViewById(R.id.btnAnswerC);
-        buttonD        = findViewById(R.id.btnAnswerD);
+        currentModule = findViewById(R.id.CurrentModule);
+        currentLevel = findViewById(R.id.CurrentLevel);
+        question_text = findViewById(R.id.questionMultipleAnswer);
+        buttonA = findViewById(R.id.btnAnswerA);
+        buttonB = findViewById(R.id.btnAnswerB);
+        buttonC = findViewById(R.id.btnAnswerC);
+        buttonD = findViewById(R.id.btnAnswerD);
 
         //Gets level and Module data sent from previous page
         Bundle bundle = getIntent().getExtras();
-         moduleID = bundle.getInt("moduleID");
-         levelID  = bundle.getInt("level");
-         //Adds level ID to string module for call to fireBase database
-         moduleCall = "module"+moduleID;
-         //Sets Tag texts to identify game pages
-         currentLevel.setText( "LVL : "+ levelID);
-         currentModule.setText("MOD : "+moduleID);
+        moduleID = bundle.getInt("moduleID");
+        levelID = bundle.getInt("level");
+        //Adds level ID to string module for call to fireBase database
+        moduleCall = "module" + moduleID;
+        //Sets Tag texts to identify game pages
+        currentLevel.setText("LVL : " + levelID);
+        currentModule.setText("MOD : " + moduleID);
 
 
-         //uses the LevelID sent from previous page to
+        //uses the LevelID sent from previous page to
         //set question pointer to appropriate question Number
-         selectLevel(levelID);
-         UpdateQuestion();
+        selectLevel(levelID);
+        UpdateQuestion();
     }
 
     private void selectLevel(int levelID) {
 
-        if ( levelID == 1) {
+        if (levelID == 1) {
             count = 1;
-        }
-        else if ( levelID == 2) {
+        } else if (levelID == 2) {
             count = 6;
-        }
-        else if (levelID == 3) {
+        } else if (levelID == 3) {
             count = 11;
-        }
-        else if (levelID == 4) {
+        } else if (levelID == 4) {
             count = 16;
-        }
-        else if (levelID == 5) {
+        } else if (levelID == 5) {
             count = 21;
-        }
-        else if (levelID == 6) {
+        } else if (levelID == 6) {
             count = 26;
         } else {
             count = count;
@@ -104,14 +99,10 @@ public class GamePlay extends AppCompatActivity {
     private void UpdateQuestion() {
 
 
-        if (total > 5)
-        {
+        if (total > 5) {
             // Open Done Activity
             onFinish();
-        }
-
-        else
-        {
+        } else {
 
             reference = FirebaseDatabase.getInstance().getReference().child(moduleCall).child(String.valueOf(count));
             reference.addValueEventListener(new ValueEventListener() {
@@ -128,8 +119,7 @@ public class GamePlay extends AppCompatActivity {
                     buttonA.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            if (buttonA.getText().toString().equals(question.getCorrectAnswer()))
-                            {
+                            if (buttonA.getText().toString().equals(question.getCorrectAnswer())) {
                                 buttonA.setBackgroundColor(Color.GREEN);
                                 Handler handler = new Handler();
                                 handler.postDelayed(new Runnable() {
@@ -140,10 +130,8 @@ public class GamePlay extends AppCompatActivity {
 
                                         UpdateQuestion();
                                     }
-                                },1500);
-                            }
-
-                            else {
+                                }, 1500);
+                            } else {
                                 //answer is wrong...  Correct answer turns green and selection t
 
                                 wrong++;
@@ -151,18 +139,12 @@ public class GamePlay extends AppCompatActivity {
                                 buttonA.setBackgroundColor(Color.RED);
 
 
-                                if (buttonB.getText().toString().equals(question.getCorrectAnswer()))
-                                {
+                                if (buttonB.getText().toString().equals(question.getCorrectAnswer())) {
                                     buttonB.setBackgroundColor(Color.GREEN);
 
-                                }
-                                else if (buttonC.getText().toString().equals(question.getCorrectAnswer() ))
-                                {
+                                } else if (buttonC.getText().toString().equals(question.getCorrectAnswer())) {
                                     buttonC.setBackgroundColor(Color.GREEN);
-                                }
-
-                                else if ( buttonD.getText().toString().equals(question.getCorrectAnswer()))
-                                {
+                                } else if (buttonD.getText().toString().equals(question.getCorrectAnswer())) {
                                     buttonD.setBackgroundColor(Color.GREEN);
                                 }
 
@@ -176,8 +158,7 @@ public class GamePlay extends AppCompatActivity {
                                         buttonD.setBackgroundColor(Color.parseColor("#03A9F4"));
                                         UpdateQuestion();
                                     }
-                                },1500);
-
+                                }, 1500);
 
 
                             }
@@ -189,8 +170,7 @@ public class GamePlay extends AppCompatActivity {
                         @Override
                         public void onClick(View v) {
 
-                            if (buttonB.getText().toString().equals(question.getCorrectAnswer()))
-                            {
+                            if (buttonB.getText().toString().equals(question.getCorrectAnswer())) {
                                 buttonB.setBackgroundColor(Color.GREEN);
                                 Handler handler = new Handler();
                                 handler.postDelayed(new Runnable() {
@@ -201,10 +181,8 @@ public class GamePlay extends AppCompatActivity {
 
                                         UpdateQuestion();
                                     }
-                                },1500);
-                            }
-
-                            else {
+                                }, 1500);
+                            } else {
                                 //answer is wrong...  Correct answer turns green and selection t
 
                                 wrong++;
@@ -212,18 +190,12 @@ public class GamePlay extends AppCompatActivity {
                                 buttonB.setBackgroundColor(Color.RED);
 
 
-                                if (buttonA.getText().toString().equals(question.getCorrectAnswer()))
-                                {
+                                if (buttonA.getText().toString().equals(question.getCorrectAnswer())) {
                                     buttonA.setBackgroundColor(Color.GREEN);
 
-                                }
-                                else if (buttonC.getText().toString().equals(question.getCorrectAnswer() ))
-                                {
+                                } else if (buttonC.getText().toString().equals(question.getCorrectAnswer())) {
                                     buttonC.setBackgroundColor(Color.GREEN);
-                                }
-
-                                else if ( buttonD.getText().toString().equals(question.getCorrectAnswer()))
-                                {
+                                } else if (buttonD.getText().toString().equals(question.getCorrectAnswer())) {
                                     buttonD.setBackgroundColor(Color.GREEN);
                                 }
 
@@ -237,8 +209,7 @@ public class GamePlay extends AppCompatActivity {
                                         buttonD.setBackgroundColor(Color.parseColor("#03A9F4"));
                                         UpdateQuestion();
                                     }
-                                },1500);
-
+                                }, 1500);
 
 
                             }
@@ -250,8 +221,7 @@ public class GamePlay extends AppCompatActivity {
                     buttonC.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            if (buttonC.getText().toString().equals(question.getCorrectAnswer()))
-                            {
+                            if (buttonC.getText().toString().equals(question.getCorrectAnswer())) {
                                 buttonC.setBackgroundColor(Color.GREEN);
                                 Handler handler = new Handler();
                                 handler.postDelayed(new Runnable() {
@@ -262,10 +232,8 @@ public class GamePlay extends AppCompatActivity {
 
                                         UpdateQuestion();
                                     }
-                                },1500);
-                            }
-
-                            else {
+                                }, 1500);
+                            } else {
                                 //answer is wrong...  Correct answer turns green and selection t
 
                                 wrong++;
@@ -273,18 +241,12 @@ public class GamePlay extends AppCompatActivity {
                                 buttonC.setBackgroundColor(Color.RED);
 
 
-                                if (buttonB.getText().toString().equals(question.getCorrectAnswer()))
-                                {
+                                if (buttonB.getText().toString().equals(question.getCorrectAnswer())) {
                                     buttonB.setBackgroundColor(Color.GREEN);
 
-                                }
-                                else if (buttonA.getText().toString().equals(question.getCorrectAnswer() ))
-                                {
+                                } else if (buttonA.getText().toString().equals(question.getCorrectAnswer())) {
                                     buttonA.setBackgroundColor(Color.GREEN);
-                                }
-
-                                else if ( buttonD.getText().toString().equals(question.getCorrectAnswer()))
-                                {
+                                } else if (buttonD.getText().toString().equals(question.getCorrectAnswer())) {
                                     buttonD.setBackgroundColor(Color.GREEN);
                                 }
 
@@ -298,8 +260,7 @@ public class GamePlay extends AppCompatActivity {
                                         buttonD.setBackgroundColor(Color.parseColor("#03A9F4"));
                                         UpdateQuestion();
                                     }
-                                },1500);
-
+                                }, 1500);
 
 
                             }
@@ -309,8 +270,7 @@ public class GamePlay extends AppCompatActivity {
                     buttonD.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            if (buttonD.getText().toString().equals(question.getCorrectAnswer()))
-                            {
+                            if (buttonD.getText().toString().equals(question.getCorrectAnswer())) {
                                 buttonD.setBackgroundColor(Color.GREEN);
                                 Handler handler = new Handler();
                                 handler.postDelayed(new Runnable() {
@@ -321,10 +281,8 @@ public class GamePlay extends AppCompatActivity {
 
                                         UpdateQuestion();
                                     }
-                                },1500);
-                            }
-
-                            else {
+                                }, 1500);
+                            } else {
                                 //answer is wrong...  Correct answer turns green and selection t
 
                                 wrong++;
@@ -332,18 +290,12 @@ public class GamePlay extends AppCompatActivity {
                                 buttonD.setBackgroundColor(Color.RED);
 
 
-                                if (buttonB.getText().toString().equals(question.getCorrectAnswer()))
-                                {
+                                if (buttonB.getText().toString().equals(question.getCorrectAnswer())) {
                                     buttonB.setBackgroundColor(Color.GREEN);
 
-                                }
-                                else if (buttonC.getText().toString().equals(question.getCorrectAnswer() ))
-                                {
+                                } else if (buttonC.getText().toString().equals(question.getCorrectAnswer())) {
                                     buttonC.setBackgroundColor(Color.GREEN);
-                                }
-
-                                else if ( buttonA.getText().toString().equals(question.getCorrectAnswer()))
-                                {
+                                } else if (buttonA.getText().toString().equals(question.getCorrectAnswer())) {
                                     buttonA.setBackgroundColor(Color.GREEN);
                                 }
 
@@ -357,8 +309,7 @@ public class GamePlay extends AppCompatActivity {
                                         buttonD.setBackgroundColor(Color.parseColor("#03A9F4"));
                                         UpdateQuestion();
                                     }
-                                },1500);
-
+                                }, 1500);
 
 
                             }
@@ -378,61 +329,16 @@ public class GamePlay extends AppCompatActivity {
         }
 
 
-        }
+    }
+
     public void onFinish() {
-       // tv.setText("Completed");
+        // tv.setText("Completed");
         Intent completed = new Intent(GamePlay.this, LevelCompletionActivity.class);
-        completed.putExtra("total",String.valueOf(total));
-        completed.putExtra("correct",String.valueOf(correct));
-        completed.putExtra("Incorrect",String.valueOf(wrong));
+        completed.putExtra("total", String.valueOf(total));
+        completed.putExtra("correct", String.valueOf(correct));
+        completed.putExtra("Incorrect", String.valueOf(wrong));
         completed.putExtra("ModuleID", String.valueOf(moduleID));
         completed.putExtra("LevelID", String.valueOf(levelID));
         startActivity(completed);
     }
-
-
-    @Override
-
-    public boolean onCreateOptionsMenu (Menu menu) {
-        getMenuInflater().inflate(R.menu.menu, menu);
-
-        return true;
-
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-
-        switch(item.getItemId())  {
-            case R.id.menuLogout:
-                Toast.makeText(this, "Logging user out", Toast.LENGTH_SHORT).show();
-                finish();
-                startActivity(new Intent(this, LoginActivity.class));
-                break;
-            case R.id.menuSettings:
-                startActivity(new Intent(this,SettingsActivity.class));
-                break;
-
-            case R.id.menuProfile:
-                Toast.makeText(this, "Opening user profile", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(GamePlay.this, ProfileActivity.class));
-                finish();
-                break;
-
-            case R.id.HallOfFame:
-                Toast.makeText(this, "Opening LeaderBoardActivity", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(this, LeaderBoardActivity.class));
-                finish();
-                break;
-
-            case R.id.home_menu:
-                Toast.makeText(this, "Going Home",Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(this,HomeActivity.class));
-                finish();
-                break;
-        }
-        return true;
-
-    }
-
 }
