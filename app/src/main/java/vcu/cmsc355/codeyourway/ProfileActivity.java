@@ -45,7 +45,7 @@ public class ProfileActivity extends AppCompatActivity {
         profileUserRef = FirebaseDatabase.getInstance().getReference().child("Users").child(Common.getCurrentUser());
 
 
-
+        backButton();
         name = (TextView) findViewById(R.id.profile_firstname);
         lastName = (TextView) findViewById(R.id.profile_lastname);
         EmailProfile = (TextView) findViewById(R.id.email_address_profile);
@@ -79,9 +79,6 @@ public class ProfileActivity extends AppCompatActivity {
             }
 
 
-            public void backButton(){
-
-            }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
@@ -104,5 +101,17 @@ public class ProfileActivity extends AppCompatActivity {
         });
 
     }
+
+    public void backButton(){
+        backBtn = (ImageButton) findViewById(R.id.backbtn);
+
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+    }
+
 
 }
