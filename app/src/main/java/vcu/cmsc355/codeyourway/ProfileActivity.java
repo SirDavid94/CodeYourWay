@@ -18,6 +18,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
 import vcu.cmsc355.codeyourway.GameLevel.LevelSelectionActivity;
 import vcu.cmsc355.codeyourway.Model.Common;
 import vcu.cmsc355.codeyourway.TutorialPages.ArraysTutorialActivity;
@@ -33,6 +37,7 @@ public class ProfileActivity extends AppCompatActivity {
     private DatabaseReference profileUserRef, moduleUserRef, levelUserRef;
     Button btChangePassword,btDownloadGameData;
 
+    private String GameData = ""; //the user information is stored temporarily
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,6 +77,8 @@ public class ProfileActivity extends AppCompatActivity {
                     String myExpertise = dataSnapshot.child("expertise").getValue().toString();
                     //String myLevelsCompleted = dataSnapshot.child("awardCount").getValue().toString();
 
+                   GameData = myUserName+ ", "+myFirstName+", "+myLastName+", "+myEmail+", "+myExpertise;
+
                     userName.setText("@"+ myUserName);
                     name.setText(myFirstName);
                     lastName.setText(myLastName);
@@ -102,10 +109,32 @@ public class ProfileActivity extends AppCompatActivity {
         btDownloadGameData.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(ProfileActivity.this, "Button under construction", Toast.LENGTH_SHORT).show();
+                saveDataOnDevice(GameData);
+//                Toast.makeText(ProfileActivity.this, "Button under construction", Toast.LENGTH_SHORT).show();
             }
         });
 
+    }
+    public void saveDataOnDevice(String sBody) {
+        FileOutputStream fos = null;
+        String FILE_NAME = "SavedData.txt";
+        try {
+          fos =openFileOutput(FILE_NAME, MODE_PRIVATE);
+          fos.write(sBody.getBytes());
+          Toast.makeText(this, "String saved to "+getFilesDir()+ "/"+FILE_NAME, Toast.LENGTH_LONG).show();
+        } catch (FileNotFoundException e){
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }finally {
+            if(fos !=null){
+                try {
+                    fos.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
     }
 
     //Function for the pressing of the back button
