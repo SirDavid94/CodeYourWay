@@ -74,8 +74,8 @@ public class HomeActivity extends AppCompatActivity {
 
         elementaryProgram.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent elementaryIntent = new Intent(HomeActivity.this, ExtraChallengesActivity.class);
-                startActivity(elementaryIntent);
+                Intent extraChallenges = new Intent(HomeActivity.this, ExtraChallengesActivity.class);
+                startActivity(extraChallenges);
             }
         });
 
