@@ -72,12 +72,12 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-        /*elementaryProgram.setOnClickListener(new View.OnClickListener() {
+        extraChallenges.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent extraChallenges = new Intent(HomeActivity.this, ExtraChallengesActivity.class);
                 startActivity(extraChallenges);
             }
-        });*/
+        });
 
     }
 
