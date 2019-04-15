@@ -22,6 +22,7 @@ public class HomeActivity extends AppCompatActivity {
     Button selections;
     Button mathFunctions;
     Button arrays;
+    Button extraChallenges;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +34,7 @@ public class HomeActivity extends AppCompatActivity {
         selections = (Button)findViewById(R.id.SelectionsModule);
         mathFunctions = (Button)findViewById(R.id.MathFunc);
         arrays = (Button)findViewById(R.id.SingleDimArray);
+        extraChallenges = (Button)findViewById(R.id.ExtraChallenges);
 
 
         elementaryProgram.setOnClickListener(new View.OnClickListener() {
@@ -67,6 +69,13 @@ public class HomeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent arrays = new Intent(HomeActivity.this, ArraysTutorialActivity.class);
                 startActivity(arrays);
+            }
+        });
+
+        elementaryProgram.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent elementaryIntent = new Intent(HomeActivity.this, ExtraChallengesActivity.class);
+                startActivity(elementaryIntent);
             }
         });
 
