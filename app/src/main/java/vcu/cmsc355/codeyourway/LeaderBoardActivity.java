@@ -63,6 +63,7 @@ public class LeaderBoardActivity extends AppCompatActivity {
 
                          for ( DataSnapshot data: dataSnapshot.getChildren())
                          {
+
                              Awards rank = data.getValue(Awards.class);
                              username = data.getKey();
                              score = (int)(rank.getAwardCount());

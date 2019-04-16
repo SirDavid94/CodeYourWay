@@ -91,7 +91,7 @@ public class LoginActivity extends AppCompatActivity {
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SignIn(textUsername.getText().toString().trim(),
+                SignIn(textUsername.getText().toString().trim().toLowerCase(),
                         textPassword.getText().toString().trim());
             }
         });

@@ -60,7 +60,9 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
         buttonRegister = (Button) findViewById(R.id.button_register);
         textViewLogin = (TextView) findViewById(R.id.text_login);
         textExpertise.setOnItemSelectedListener(this);
-
+        textUsername.setHint("Username(Min 4 chars)");
+        textPassword.setHint("Password(Min 6 chars)");
+        textCnfPassword.setHint("Password(Min 6 chars)");
 
 
         // Create an ArrayAdapter using the string array and a default spinner layout
@@ -99,7 +101,7 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
                 {
                     Toast.makeText(RegisterActivity.this, "Invalid Email", Toast.LENGTH_SHORT).show();
                 }
-
+                //Checks if Password is valid
                 else if (ValidatePwd())
                 {
                     Toast.makeText(RegisterActivity.this, "Passwords doesn't match", Toast.LENGTH_SHORT).show();
@@ -126,8 +128,7 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
         final Awards awardUpload = new Awards(textUsername.getText().toString().trim(),
                 awardCount);
 
-
-        final User user = new User(textUsername.getText().toString().trim(),
+        final User user = new User(textUsername.getText().toString().trim().toLowerCase(),
                 textPassword.getText().toString().trim(),
                 textEmail.getText().toString().trim(),
                 textFirstName.getText().toString().trim(),
@@ -171,7 +172,7 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
      */
     private boolean Validate() {
 
-        if ((textUsername.getText().length() < 3) || (textPassword.getText().length() < 4)) {
+        if ((textUsername.getText().length() < 4) || (textPassword.getText().length() < 6)) {
             return true;
         }
         return false;
