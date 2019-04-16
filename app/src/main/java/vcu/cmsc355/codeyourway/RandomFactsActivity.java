@@ -8,6 +8,7 @@ package vcu.cmsc355.codeyourway;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatDelegate;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,6 +18,7 @@ import android.widget.Toast;
 
 import java.util.Random;
 
+import vcu.cmsc355.codeyourway.Model.Common;
 import vcu.cmsc355.codeyourway.TutorialPages.ArraysTutorialActivity;
 
 public class RandomFactsActivity extends AppCompatActivity {
@@ -29,6 +31,17 @@ public class RandomFactsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        final Common displayMode;
+        displayMode = new Common(this);
+
+        if (displayMode.getNightMode()) {
+            getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        }
+
+        else {
+            getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_random_facts);
 

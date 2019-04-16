@@ -50,10 +50,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.64"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/settingsicon" />
+        app:layout_constraintTop_toBottomOf="@+id/settingsIcon" />
 
     <Button
-        android:id="@+id/backbutton"
+        android:id="@+id/saveButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="157dp"
@@ -62,14 +62,16 @@
         android:layout_marginEnd="166dp"
         android:layout_marginRight="166dp"
         android:background="@drawable/rounded_button"
-        android:text="@string/back"
+        android:text="save"
+        android:textColor="#FFF"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Sound_Switch" />
 
     <ImageView
-        android:id="@+id/settingsicon"
+        android:id="@+id/settingsIcon"
         android:layout_width="148dp"
         android:layout_height="138dp"
         android:layout_marginStart="8dp"

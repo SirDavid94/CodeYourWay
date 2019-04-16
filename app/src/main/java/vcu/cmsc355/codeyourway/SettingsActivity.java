@@ -1,5 +1,4 @@
 package vcu.cmsc355.codeyourway;
-
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,48 +10,72 @@ import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.Toast;
-
-import vcu.cmsc355.codeyourway.TutorialPages.ArraysTutorialActivity;
-import vcu.cmsc355.codeyourway.TutorialPages.SelectionsTutorialActivity;
+import vcu.cmsc355.codeyourway.Model.Common;
 
 public class SettingsActivity extends AppCompatActivity {
-    Button backButton;
+    Button saveButton;
+    private Switch modeSwitch;
+    Common displayMode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
 
+        //Checks NightMode Status and updates Value
+        displayMode = new Common(this);
+
+        //Turns on nightmode if true
+        if( displayMode.getNightMode()==true) {
+            getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        }
+        else {
+            //uses default theme if otherwise
+            getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        }
+
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
-        backButton = (Button) findViewById(R.id.backbutton);
+        modeSwitch = findViewById(R.id.Theme_Switch);
+        // checks to see if Switched is turned left or right
+        if(displayMode.getNightMode() == true) {
+            modeSwitch.setChecked(true);
+        }
 
 
-        backButton.setOnClickListener(new View.OnClickListener() {
+        saveButton = (Button) findViewById(R.id.saveButton);
+        //Button directs us to Homepage after changing preferences
+        saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //startActivity(new Intent(SettingsActivity.this, HomeActivity.class));
-                onBackPressed();
+                startActivity(new Intent(SettingsActivity.this, HomeActivity.class));
+
             }
         });
 
-        Switch  modeSwitch = findViewById(R.id.Theme_Switch);
+
         modeSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if ( isChecked)
-                { //Turns on Nightmode when slide to right
-                    getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                { //Turns on NightMode when slided to right side
+                    displayMode.setNightMode(true);
+                    restartApp();
                 } else {
-                    //Turns off Nightmode when slide to left
-                    getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                    //Turns off NightMode when slided to left side
+                    displayMode.setNightMode(false);
+                    restartApp();
                 }
 
             }
         });
     }
 
-    @Override
+    private void restartApp() {
+        startActivity(new Intent(getApplicationContext(),SettingsActivity.class));
+        finish();
+    }
 
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
 
@@ -62,7 +85,6 @@ public class SettingsActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-
         switch (item.getItemId()) {
             case R.id.menuLogout:
                 Toast.makeText(this, "Logging user out", Toast.LENGTH_SHORT).show();
