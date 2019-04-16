@@ -74,18 +74,22 @@
 
     <TextView
         android:id="@+id/Show-next-page"
-        android:layout_width="143dp"
-        android:layout_height="28dp"
+        android:layout_width="177dp"
+        android:layout_height="31dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="116dp"
+        android:textAlignment="center"
         android:text="@string/show_next_facts"
         android:textAppearance="@style/TextAppearance.AppCompat"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/facts_conten"
+        app:layout_constraintVertical_bias="0.868"
         tools:ignore="MissingConstraints" />
 
 </android.support.constraint.ConstraintLayout>
