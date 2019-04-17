@@ -23,6 +23,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 import vcu.cmsc355.codeyourway.GameLevel.LevelSelectionActivity;
+import vcu.cmsc355.codeyourway.Model.Awards;
 import vcu.cmsc355.codeyourway.Model.Common;
 import vcu.cmsc355.codeyourway.TutorialPages.ArraysTutorialActivity;
 
@@ -30,6 +31,7 @@ import vcu.cmsc355.codeyourway.TutorialPages.ArraysTutorialActivity;
 public class ProfileActivity extends AppCompatActivity {
 
     ImageButton backBtn;
+    int levelComplete = 0;
 
 
     TextView name, lastName, EmailProfile, userName, levelsCompleted, moduleCompletionLevel, expertise;
@@ -61,7 +63,6 @@ public class ProfileActivity extends AppCompatActivity {
 
         //working on this function
         levelsCompleted = (TextView) findViewById(R.id.levelCompleted);
-        //moduleCompletionLevel = (TextView) findViewById(R.id.moduleCompletionLevel);
 
 
 
@@ -76,8 +77,9 @@ public class ProfileActivity extends AppCompatActivity {
                     String myEmail = dataSnapshot.child("email").getValue().toString();
                     String myExpertise = dataSnapshot.child("expertise").getValue().toString();
                     //String myLevelsCompleted = dataSnapshot.child("awardCount").getValue().toString();
+                    //int myLevelsCompleted = Integer.parseInt(dataSnapshot.child("awardCount").getValue().toString());
 
-                   GameData = myUserName+ ", "+myFirstName+", "+myLastName+", "+myEmail+", "+myExpertise;
+                    GameData = myUserName+ ", "+myFirstName+", "+myLastName+", "+myEmail+", "+myExpertise;
 
                     userName.setText("@"+ myUserName);
                     name.setText(myFirstName);
@@ -88,14 +90,31 @@ public class ProfileActivity extends AppCompatActivity {
 
                }
             }
-
-
-
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
         });
+
+
+
+        levelUserRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                if (dataSnapshot.exists()) {
+                    //int myLevelsCompleted = Integer.parseInt(dataSnapshot.child("awardCount").getValue().toString());
+                    String myLevelsCompleted = dataSnapshot.child("awardCount").getValue().toString();
+
+                    levelsCompleted.setText(myLevelsCompleted);
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
 
         //This button takes you to the change password page
         btChangePassword.setOnClickListener(new View.OnClickListener() {
@@ -105,16 +124,17 @@ public class ProfileActivity extends AppCompatActivity {
             }
         });
 
+
         //Initiates the downloading of user game data
         btDownloadGameData.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 saveDataOnDevice(GameData);
-//                Toast.makeText(ProfileActivity.this, "Button under construction", Toast.LENGTH_SHORT).show();
             }
         });
-
     }
+
+
     public void saveDataOnDevice(String sBody) {
         FileOutputStream fos = null;
         String FILE_NAME = "SavedData.txt";
@@ -148,6 +168,5 @@ public class ProfileActivity extends AppCompatActivity {
             }
         });
     }
-
-
 }
+
