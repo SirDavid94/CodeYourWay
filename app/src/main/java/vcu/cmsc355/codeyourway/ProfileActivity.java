@@ -53,6 +53,11 @@ public class ProfileActivity extends AppCompatActivity {
 
 
         backButton();
+        //View all badges clickable textView
+        TextView viewAllBadges  = findViewById(R.id.ViewAllBadges);
+
+
+
         name = (TextView) findViewById(R.id.profile_firstname);
         lastName = (TextView) findViewById(R.id.profile_lastname);
         EmailProfile = (TextView) findViewById(R.id.email_address_profile);
@@ -64,7 +69,13 @@ public class ProfileActivity extends AppCompatActivity {
         //working on this function
         levelsCompleted = (TextView) findViewById(R.id.levelCompleted);
 
-
+        // Opens the Badges page when clicked
+        viewAllBadges.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ProfileActivity.this, BadgeActivity.class));
+            }
+        });
 
         profileUserRef.addValueEventListener(new ValueEventListener() {
             @Override

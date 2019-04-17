@@ -188,7 +188,7 @@ values depends on the value of size.
  ]]></string>
 
     <string-array name="expertise">
-    <item>Beginner</item>
+        <item>Beginner</item>
         <item>Intermediate</item>
         <item>Professional</item>
         <item>Hacker</item>
