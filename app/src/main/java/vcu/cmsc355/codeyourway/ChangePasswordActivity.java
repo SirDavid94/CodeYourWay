@@ -110,8 +110,6 @@ public class ChangePasswordActivity extends AppCompatActivity {
         }
         return true;
     }
-
-
     @Override
 
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -141,13 +139,12 @@ public class ChangePasswordActivity extends AppCompatActivity {
                 break;
 
             case R.id.HallOfFame:
-                Toast.makeText(this, "Opening LeaderBoardActivity", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Opening LeaderBoard", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(this, LeaderBoardActivity.class));
                 finish();
                 break;
 
             case R.id.home_menu:
-                Toast.makeText(this, "Going Home", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(this, HomeActivity.class));
                 finish();
                 break;

@@ -73,7 +73,9 @@ public class ProfileActivity extends AppCompatActivity {
         viewAllBadges.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ProfileActivity.this, BadgeActivity.class));
+                Intent badgeDisplay = new Intent(ProfileActivity.this, BadgeActivity.class);
+                badgeDisplay.putExtra("total", String.valueOf(levelsCompleted));
+                startActivity(badgeDisplay);
             }
         });
 
