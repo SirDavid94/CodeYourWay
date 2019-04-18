@@ -36,6 +36,7 @@ public class ProfileActivity extends AppCompatActivity {
 
     TextView name, lastName, EmailProfile, userName, levelsCompleted, moduleCompletionLevel, expertise;
     private FirebaseDatabase mData;
+    String myLevelsCompleted;
     private DatabaseReference profileUserRef, moduleUserRef, levelUserRef;
     Button btChangePassword,btDownloadGameData;
 
@@ -74,7 +75,8 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent badgeDisplay = new Intent(ProfileActivity.this, BadgeActivity.class);
-                badgeDisplay.putExtra("total", String.valueOf(levelsCompleted));
+                badgeDisplay.putExtra("total", String.valueOf(myLevelsCompleted));
+                badgeDisplay.putExtra("picture","R.id.drawable/profile_pic" );
                 startActivity(badgeDisplay);
             }
         });
@@ -117,7 +119,7 @@ public class ProfileActivity extends AppCompatActivity {
 
                 if (dataSnapshot.exists()) {
                     //int myLevelsCompleted = Integer.parseInt(dataSnapshot.child("awardCount").getValue().toString());
-                    String myLevelsCompleted = dataSnapshot.child("awardCount").getValue().toString();
+                    myLevelsCompleted = dataSnapshot.child("awardCount").getValue().toString();
 
                     levelsCompleted.setText(myLevelsCompleted);
                 }
