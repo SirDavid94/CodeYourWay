@@ -7,15 +7,20 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import vcu.cmsc355.codeyourway.Model.Common;
 
 
+
+
 public class BadgeActivity extends AppCompatActivity {
 
     String total;
+    String userPicture;
+    ImageView pictureView;
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
@@ -24,10 +29,19 @@ public class BadgeActivity extends AppCompatActivity {
 
             TextView username = findViewById(R.id.badgeUsername);
             Button home = findViewById(R.id.badgesHome);
+            pictureView = findViewById(R.id.userPicture);
 
-            username.setText(Common.getCurrentUser() + "'s badges");
+            username.setText(Common.getCurrentUser() + "'s badges" + "  badges earned "+total);
+            pictureView.setImageResource(R.drawable.profile_pic);
 
             Bundle badgePage = getIntent().getExtras();
+
+            if (badgePage != null)
+            {
+                total = badgePage.getString("total");
+                userPicture = badgePage.getString("picture");
+
+            }
 
 
 
