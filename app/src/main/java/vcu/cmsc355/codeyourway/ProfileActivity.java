@@ -35,7 +35,7 @@ public class ProfileActivity extends AppCompatActivity {
     private FirebaseDatabase mData;
     String myLevelsCompleted;
     private DatabaseReference profileUserRef,levelUserRef;
-    Button btChangePassword,btDownloadGameData, edit_profile;
+    Button btChangePassword,btDownloadGameData, btEditProfile;
 
     private String GameData = ""; //the user information is stored temporarily
 
@@ -62,6 +62,7 @@ public class ProfileActivity extends AppCompatActivity {
         expertise = (TextView) findViewById(R.id.expertise_profile);
         btChangePassword = (Button) findViewById(R.id.changePasswrdProfile);
         btDownloadGameData = (Button) findViewById(R.id.downloadGameDataProfile);
+        btEditProfile = (Button) findViewById(R.id.edit_profile);
 
         //working on this function
         levelsCompleted = (TextView) findViewById(R.id.levelCompleted);
@@ -77,14 +78,7 @@ public class ProfileActivity extends AppCompatActivity {
             }
         });
 
-        //Starts the edit profile activity
-       edit_profile.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View v) {
-               Intent editProfile = new Intent(ProfileActivity.this, EditProfileActivity.class);
-               startActivity(editProfile);
-           }
-       });
+
 
         profileUserRef.addValueEventListener(new ValueEventListener() {
             @Override
@@ -149,7 +143,19 @@ public class ProfileActivity extends AppCompatActivity {
                 saveDataOnDevice(GameData);
             }
         });
+
+
+        //Starts the edit profile activity
+        btEditProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ProfileActivity.this, EditProfileActivity.class));
+
+            }
+        });
     }
+
+
 
 
     public void saveDataOnDevice(String sBody) {

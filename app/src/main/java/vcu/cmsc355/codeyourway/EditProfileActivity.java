@@ -20,8 +20,8 @@ public class EditProfileActivity extends AppCompatActivity {
 
     EditText firstName, lastName, email, expertise, username;
     private FirebaseDatabase mData;
-    private DatabaseReference profileUserRef;
-    Button saveProfile;
+    private DatabaseReference userRef;
+    Button btSaveProfile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,17 +29,17 @@ public class EditProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_edit_profile);
 
         mData = FirebaseDatabase.getInstance();
-        profileUserRef = mData.getReference().child("Users").child(Common.getCurrentUser());
+        userRef = mData.getReference().child("Users").child(Common.getCurrentUser());
 
         firstName = (EditText) findViewById(R.id.firstname_edit);
         lastName = (EditText) findViewById(R.id.lastname_edit);
         email = (EditText) findViewById(R.id.email_edit);
         expertise = (EditText) findViewById(R.id.expertise_edit);
         username = (EditText) findViewById(R.id.username_edit);
-        saveProfile = (Button) findViewById(R.id.save_profile);
+        btSaveProfile = (Button) findViewById(R.id.save_profile);
 
 
-        profileUserRef.addValueEventListener(new ValueEventListener() {
+        userRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
@@ -65,14 +65,14 @@ public class EditProfileActivity extends AppCompatActivity {
         });
 
         //initiates when save button is clicked
-        saveProfile.setOnClickListener(new View.OnClickListener() {
+        btSaveProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                profileUserRef.child("firstName").setValue(firstName);
-                profileUserRef.child("lastName").setValue(lastName);
-                profileUserRef.child("email").setValue(email);
-                profileUserRef.child("expertise").setValue(expertise);
-                profileUserRef.child("username").setValue(username);
+                userRef.child("firstName").setValue(firstName);
+                userRef.child("lastName").setValue(lastName);
+                userRef.child("email").setValue(email);
+                userRef.child("expertise").setValue(expertise);
+                userRef.child("username").setValue(username);
             }
         });
 
