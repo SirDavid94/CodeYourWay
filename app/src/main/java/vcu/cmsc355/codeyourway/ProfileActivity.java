@@ -31,11 +31,11 @@ import vcu.cmsc355.codeyourway.TutorialPages.ArraysTutorialActivity;
 public class ProfileActivity extends AppCompatActivity {
 
     ImageButton backBtn;
-    TextView name, lastName, EmailProfile, userName, levelsCompleted, moduleCompletionLevel, expertise;
+    TextView name, lastName, EmailProfile, userName, levelsCompleted, expertise;
     private FirebaseDatabase mData;
     String myLevelsCompleted;
-    private DatabaseReference profileUserRef, moduleUserRef, levelUserRef;
-    Button btChangePassword,btDownloadGameData;
+    private DatabaseReference profileUserRef,levelUserRef;
+    Button btChangePassword,btDownloadGameData, edit_profile;
 
     private String GameData = ""; //the user information is stored temporarily
 
@@ -47,10 +47,9 @@ public class ProfileActivity extends AppCompatActivity {
         mData = FirebaseDatabase.getInstance();
         profileUserRef = mData.getReference().child("Users").child(Common.getCurrentUser());
         levelUserRef = mData.getReference().child("Awards").child(Common.getCurrentUser());
-        //moduleUserRef = mData.getReference().child("Users").child(Common.getCurrentUser());
-
 
         backButton();
+
         //View all badges clickable textView
         TextView viewAllBadges  = findViewById(R.id.ViewAllBadges);
 
@@ -78,6 +77,15 @@ public class ProfileActivity extends AppCompatActivity {
             }
         });
 
+        //Starts the edit profile activity
+       edit_profile.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               Intent editProfile = new Intent(ProfileActivity.this, EditProfileActivity.class);
+               startActivity(editProfile);
+           }
+       });
+
         profileUserRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -96,7 +104,6 @@ public class ProfileActivity extends AppCompatActivity {
                     lastName.setText(myLastName);
                     EmailProfile.setText(myEmail);
                     expertise.setText(myExpertise);
-                    //levelsCompleted.setText(myLevelsCompleted);
 
                }
             }
@@ -113,7 +120,7 @@ public class ProfileActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
                 if (dataSnapshot.exists()) {
-                    //int myLevelsCompleted = Integer.parseInt(dataSnapshot.child("awardCount").getValue().toString());
+
                     myLevelsCompleted = dataSnapshot.child("awardCount").getValue().toString();
 
                     levelsCompleted.setText(myLevelsCompleted);
