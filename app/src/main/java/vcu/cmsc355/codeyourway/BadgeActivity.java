@@ -10,11 +10,7 @@ import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import vcu.cmsc355.codeyourway.Model.Common;
-
-
-
 
 public class BadgeActivity extends AppCompatActivity {
 
@@ -26,21 +22,17 @@ public class BadgeActivity extends AppCompatActivity {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_badge);
 
-
             TextView username = findViewById(R.id.badgeUsername);
-            Button home = findViewById(R.id.badgesHome);
+            Button home = findViewById(R.id.badgeHomeButton);
             pictureView = findViewById(R.id.userPicture);
-
-            username.setText(Common.getCurrentUser() + "'s badges" + "  badges earned "+total);
+            username.setText(Common.getCurrentUser() + "'s badges");
             pictureView.setImageResource(R.drawable.profile_pic);
-
             Bundle badgePage = getIntent().getExtras();
 
             if (badgePage != null)
             {
                 total = badgePage.getString("total");
                 userPicture = badgePage.getString("picture");
-
             }
 
 

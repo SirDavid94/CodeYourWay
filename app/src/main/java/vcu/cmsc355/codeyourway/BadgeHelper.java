@@ -34,7 +34,7 @@ import android.widget.ImageView;
 
         if (convertView == null) {
             imageView = new ImageView(mContext);
-            imageView.setLayoutParams(new GridView.LayoutParams(100, 100));
+            imageView.setLayoutParams(new GridView.LayoutParams(225, 225));
             imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
             imageView.setPadding(8, 8, 8, 8);
         }
