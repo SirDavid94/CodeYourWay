@@ -23,16 +23,21 @@ public class BadgeActivity extends AppCompatActivity {
             setContentView(R.layout.activity_badge);
 
             TextView username = findViewById(R.id.badgeUsername);
-            Button home = findViewById(R.id.badgeHomeButton);
+            TextView expertise = findViewById(R.id.userLevel);
+            TextView totalDescription = findViewById(R.id.badgeDescription);
+            Button home = findViewById(R.id.badgeHome);
             pictureView = findViewById(R.id.userPicture);
-            username.setText(Common.getCurrentUser() + "'s badges");
-            pictureView.setImageResource(R.drawable.profile_pic);
+            username.setText(Common.getCurrentUser());
+            pictureView.setImageResource(R.drawable.profile);
             Bundle badgePage = getIntent().getExtras();
+            expertise.setText("Professional");
+            totalDescription.setText("You own 29 out of 33 Badges");
 
             if (badgePage != null)
             {
                 total = badgePage.getString("total");
                 userPicture = badgePage.getString("picture");
+
             }
 
 

@@ -7,7 +7,6 @@
     android:orientation="vertical"
     tools:context=".BadgeActivity">
 
-
     <LinearLayout
         android:id="@+id/detailLayout"
         android:layout_width="match_parent"
@@ -22,83 +21,120 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
 
-        <ImageView
-            android:id="@+id/userPicture"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:layout_marginStart="130dp"
-            android:layout_marginLeft="0dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginBottom="8dp"
-            android:textAlignment="center" />
-
-        <TextView
-            android:id="@+id/badgeUsername"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:background="@color/colorPrimary"
-            android:text="username"
-            android:textAlignment="center"
-            android:textColor="#FFF"
-            android:textSize="25sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/group"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:orientation="horizontal">
+            <de.hdodenhof.circleimageview.CircleImageView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/userPicture"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/profile"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginBottom="16dp"
+                app:civ_border_width="4dp"
+                app:civ_border_color="#FFF"/>
 
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/badgeUsername"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/colorPrimary"
+                    android:text="username"
+
+                    android:textColor="#FFF"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                />
+
+                <TextView
+                    android:id="@+id/userLevel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@color/colorPrimary"
+                    android:text="Expertise"
+                    android:textColor="#FFF"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    />
+                <TextView
+                android:id="@+id/badgeDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@color/colorPrimary"
+                android:text="You Own 32 out of 33 Badges "
+                android:textAlignment="center"
+                android:textColor="#FFF"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
     </LinearLayout>
 
 
     <GridView
         android:id="@+id/group"
-        android:layout_width="395dp"
-        android:layout_height="363dp"
+        android:layout_width="match_parent"
+        android:layout_height="428dp"
         android:layout_gravity="center"
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginBottom="8dp"
-        android:columnWidth="100dp"
+        android:columnWidth="84dp"
         android:gravity="center"
         android:minHeight="90dp"
         android:numColumns="3"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
         android:stretchMode="columnWidth"
-        android:verticalSpacing="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/badgeHome"
+        android:verticalSpacing="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/badgeHome"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"></GridView>
+        app:layout_constraintHorizontal_bias="0.344"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detailLayout"></GridView>
 
-    <LinearLayout
+    <Button
         android:id="@+id/badgeHome"
-        android:layout_width="413dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="552dp"
-        android:layout_marginBottom="-2dp"
-        android:background="@color/colorPrimary"
-        android:orientation="vertical"
+        android:layout_width="132dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        style="@android:style/Widget.DeviceDefault.Button.Inset"
+        android:text="home"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:background="@drawable/rounded_button"
+        android:textColor="#fff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.456"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/detailLayout">
-
-        <Button
-            android:id="@+id/badgeHomeButton"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/colorPrimary"
-            android:text="Home"
-            android:textColor="#fff"
-            android:textSize="20dp"
-            android:textStyle="bold" />
-
-    </LinearLayout>
+        app:layout_constraintTop_toTopOf="@+id/viewPager"
+        app:layout_constraintVertical_bias="0.964" />
 
 
 </android.support.constraint.ConstraintLayout>
