@@ -31,9 +31,6 @@ import vcu.cmsc355.codeyourway.TutorialPages.ArraysTutorialActivity;
 public class ProfileActivity extends AppCompatActivity {
 
     ImageButton backBtn;
-    int levelComplete = 0;
-
-
     TextView name, lastName, EmailProfile, userName, levelsCompleted, moduleCompletionLevel, expertise;
     private FirebaseDatabase mData;
     String myLevelsCompleted;
@@ -91,8 +88,6 @@ public class ProfileActivity extends AppCompatActivity {
                     String myLastName = dataSnapshot.child("lastName").getValue().toString();
                     String myEmail = dataSnapshot.child("email").getValue().toString();
                     String myExpertise = dataSnapshot.child("expertise").getValue().toString();
-                    //String myLevelsCompleted = dataSnapshot.child("awardCount").getValue().toString();
-                    //int myLevelsCompleted = Integer.parseInt(dataSnapshot.child("awardCount").getValue().toString());
 
                     GameData = myUserName+ ", "+myFirstName+", "+myLastName+", "+myEmail+", "+myExpertise;
 
