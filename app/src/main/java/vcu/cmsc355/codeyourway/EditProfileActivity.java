@@ -1,5 +1,6 @@
 package vcu.cmsc355.codeyourway;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -23,10 +24,13 @@ public class EditProfileActivity extends AppCompatActivity {
     private DatabaseReference userRef;
     Button btSaveProfile;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_profile);
+
+
 
         mData = FirebaseDatabase.getInstance();
         userRef = mData.getReference().child("Users").child(Common.getCurrentUser());
@@ -50,7 +54,7 @@ public class EditProfileActivity extends AppCompatActivity {
                     String myEmail = dataSnapshot.child("email").getValue().toString();
                     String myExpertise = dataSnapshot.child("expertise").getValue().toString();
 
-                    username.setText("@"+ myUserName);
+                    username.setText(myUserName);
                     firstName.setText(myFirstName);
                     lastName.setText(myLastName);
                     email.setText(myEmail);
@@ -64,6 +68,7 @@ public class EditProfileActivity extends AppCompatActivity {
             }
         });
 
+
         //initiates when save button is clicked
         btSaveProfile.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,8 +78,9 @@ public class EditProfileActivity extends AppCompatActivity {
                 userRef.child("email").setValue(email);
                 userRef.child("expertise").setValue(expertise);
                 userRef.child("username").setValue(username);
+                startActivity(new Intent(EditProfileActivity.this, ProfileActivity.class));
             }
         });
-
     }
+
 }
